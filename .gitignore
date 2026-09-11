@@ -1,0 +1,29 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+frontend/dist/
+coverage/
+*.tsbuildinfo
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# Local tooling
+.tools/

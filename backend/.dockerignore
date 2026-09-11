@@ -1,0 +1,11 @@
+.git
+.env
+.venv
+__pycache__
+.mypy_cache
+.pytest_cache
+.ruff_cache
+*.py[cod]
+tests
+dist
+build
