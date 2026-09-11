@@ -1,0 +1,93 @@
+from typing import cast
+from uuid import UUID
+
+from sqlalchemy import func, or_, select
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.models.domain import AuditLog, Ticket, TicketEvent, User
+from app.models.enums import TicketPriority, TicketStatus
+
+
+class TicketRepository:
+    def __init__(self, db: AsyncSession) -> None:
+        self.db = db
+
+    def add(self, value: Ticket | TicketEvent | AuditLog) -> None:
+        self.db.add(value)
+
+    async def get(self, ticket_id: UUID) -> Ticket | None:
+        return await self.db.get(Ticket, ticket_id)
+
+    async def active_user(self, user_id: UUID) -> User | None:
+        return cast(
+            User | None,
+            await self.db.scalar(select(User).where(User.id == user_id, User.is_active.is_(True))),
+        )
+
+    async def search(
+        self,
+        *,
+        page: int,
+        page_size: int,
+        q: str | None,
+        status: TicketStatus | None,
+        priority: TicketPriority | None,
+        assigned_to_id: UUID | None,
+    ) -> tuple[list[Ticket], int]:
+        filters = []
+        if q:
+            pattern = f"%{q}%"
+            filters.append(
+                or_(
+                    Ticket.title.ilike(pattern),
+                    Ticket.description.ilike(pattern),
+                    Ticket.requester_name.ilike(pattern),
+                    Ticket.application.ilike(pattern),
+                )
+            )
+        if status is not None:
+            filters.append(Ticket.status == status)
+        if priority is not None:
+            filters.append(Ticket.priority == priority)
+        if assigned_to_id is not None:
+            filters.append(Ticket.assigned_to_id == assigned_to_id)
+        total = await self.db.scalar(select(func.count(Ticket.id)).where(*filters))
+        rows = await self.db.scalars(
+            select(Ticket)
+            .where(*filters)
+            .order_by(Ticket.created_at.desc(), Ticket.id.desc())
+            .offset((page - 1) * page_size)
+            .limit(page_size)
+        )
+        return list(rows), int(total or 0)
+
+    async def events(self, ticket_id: UUID) -> list[TicketEvent]:
+        rows = await self.db.scalars(
+            select(TicketEvent)
+            .where(TicketEvent.ticket_id == ticket_id)
+            .order_by(TicketEvent.created_at.asc(), TicketEvent.id.asc())
+        )
+        return list(rows)
+
+    async def overview(self) -> tuple[int, int, int, int, list[Ticket]]:
+        result = await self.db.execute(
+            select(
+                func.count(Ticket.id),
+                func.count(Ticket.id).filter(
+                    Ticket.status.in_([TicketStatus.NEW, TicketStatus.IN_PROGRESS])
+                ),
+                func.count(Ticket.id).filter(Ticket.status == TicketStatus.RESOLVED),
+                func.count(Ticket.id).filter(Ticket.status == TicketStatus.ESCALATED),
+            )
+        )
+        total, open_count, resolved, escalated = result.one()
+        recent = await self.db.scalars(
+            select(Ticket).order_by(Ticket.created_at.desc(), Ticket.id.desc()).limit(5)
+        )
+        return int(total), int(open_count), int(resolved), int(escalated), list(recent)
+
+    async def active_users(self) -> list[User]:
+        rows = await self.db.scalars(
+            select(User).where(User.is_active.is_(True)).order_by(User.name.asc())
+        )
+        return list(rows)

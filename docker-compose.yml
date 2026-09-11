@@ -35,6 +35,7 @@ services:
       RESOLVEAI_DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-resolveai}:${POSTGRES_PASSWORD:-resolveai_local}@database:5432/${POSTGRES_DB:-resolveai}
       RESOLVEAI_ENVIRONMENT: ${RESOLVEAI_ENVIRONMENT:-development}
       RESOLVEAI_LOG_LEVEL: ${RESOLVEAI_LOG_LEVEL:-INFO}
+      RESOLVEAI_SESSION_COOKIE_SECURE: ${RESOLVEAI_SESSION_COOKIE_SECURE:-false}
     depends_on:
       database:
         condition: service_healthy

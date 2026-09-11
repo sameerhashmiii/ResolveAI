@@ -1,10 +1,51 @@
-import { createBrowserRouter } from 'react-router-dom'
+import {
+  Navigate,
+  createBrowserRouter,
+  useLocation,
+  type RouteObject,
+} from 'react-router-dom'
 
-import { HealthPage } from './pages/HealthPage'
+import { useAuth } from './auth/AuthContext'
+import { AppShell } from './components/AppShell'
+import { CreateTicketPage } from './pages/CreateTicketPage'
+import { DashboardPage } from './pages/DashboardPage'
+import { LoginPage } from './pages/LoginPage'
+import { TicketDetailPage } from './pages/TicketDetailPage'
+import { TicketsPage } from './pages/TicketsPage'
 
-export const router = createBrowserRouter([
+export function ProtectedRoute() {
+  const { user, isLoading } = useAuth()
+  const location = useLocation()
+  if (isLoading)
+    return (
+      <div className="auth-loading" role="status">
+        Preparing your workspace...
+      </div>
+    )
+  if (!user)
+    return (
+      <Navigate
+        to="/login"
+        replace
+        state={{ from: `${location.pathname}${location.search}` }}
+      />
+    )
+  return <AppShell />
+}
+
+export const routes: RouteObject[] = [
+  { path: '/login', element: <LoginPage /> },
   {
     path: '/',
-    element: <HealthPage />,
+    element: <ProtectedRoute />,
+    children: [
+      { index: true, element: <DashboardPage /> },
+      { path: 'tickets', element: <TicketsPage /> },
+      { path: 'tickets/new', element: <CreateTicketPage /> },
+      { path: 'tickets/:id', element: <TicketDetailPage /> },
+    ],
   },
-])
+  { path: '*', element: <Navigate to="/" replace /> },
+]
+
+export const router = createBrowserRouter(routes)

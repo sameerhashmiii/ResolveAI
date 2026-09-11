@@ -5,11 +5,13 @@ from contextlib import asynccontextmanager
 from uuid import uuid4
 
 from fastapi import FastAPI, Request, Response
+from fastapi.responses import JSONResponse
 from starlette.middleware.base import RequestResponseEndpoint
 
 from app.api.router import api_router
 from app.config import get_settings
 from app.db.session import engine
+from app.errors import ServiceError
 from app.logging import configure_logging
 
 settings = get_settings()
@@ -27,8 +29,13 @@ def create_app() -> FastAPI:
     application = FastAPI(
         title=f"{settings.app_name} API",
         version=settings.app_version,
+        description="ResolveAI support operations API",
         lifespan=lifespan,
     )
+
+    @application.exception_handler(ServiceError)
+    async def service_error_handler(_: Request, exc: ServiceError) -> JSONResponse:
+        return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail})
 
     @application.middleware("http")
     async def request_context(request: Request, call_next: RequestResponseEndpoint) -> Response:

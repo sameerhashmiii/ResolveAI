@@ -4,16 +4,24 @@ AI-powered IT support ticket copilot designed around auditable evidence, determi
 
 ## Project Status
 
-ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 1 establishes the runnable platform foundation; ticket workflows and AI capabilities are intentionally not represented as complete yet.
+ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 2 provides the secure ticket-management workflow; AI investigation capabilities are intentionally not represented as complete yet.
 
-Current foundation:
+Current product foundation:
 
 - React 19 and TypeScript frontend with accessible readiness states
 - FastAPI backend with typed liveness and database readiness contracts
 - PostgreSQL 16 with pgvector enabled by Alembic migration
 - Structured request logging and request IDs
 - Docker Compose startup with database, migration, API, and frontend health gates
-- Backend and frontend health tests, linting, and type-check configuration
+- Opaque database-backed sessions in HTTP-only cookies with CSRF protection
+- Password verification with Argon2id and role-based access controls
+- Credential-free recruiter demo access with synthetic identities
+- Ticket intake, search, filtering, pagination, assignment, status, and activity history
+- Dashboard metrics calculated from persisted tickets
+- Atomic ticket events and audit records for every mutation
+- Backend and frontend tests, linting, formatting, and strict type checks
+
+The ticket detail page explicitly marks AI investigation as unavailable until the evidence-backed workflow is implemented and tested in Phase 4. ResolveAI does not display fabricated analyses or metrics.
 
 ## Run With Docker
 
@@ -32,6 +40,16 @@ Open:
 
 The checked-in defaults are for local development only. Use `.env.example` as the configuration reference and set a strong database password in any shared environment.
 
+## Demo Workflow
+
+1. Open <http://localhost:3000>.
+2. Select **Try Demo**. No demo password is exposed.
+3. Review the empty or existing service desk dashboard.
+4. Create a ticket with requester and environment context.
+5. Assign the ticket, change its workflow status, and review the activity trail.
+
+All identities in demo mode are fictional. The larger coherent synthetic enterprise dataset is delivered in Phase 3.
+
 ## Local Development
 
 Backend requires Python 3.12:
@@ -41,7 +59,7 @@ cd backend
 python3.12 -m venv .venv
 .venv/bin/pip install -e '.[dev]'
 RESOLVEAI_DATABASE_URL=postgresql+asyncpg://resolveai:resolveai_local@localhost:5432/resolveai .venv/bin/alembic upgrade head
-RESOLVEAI_DATABASE_URL=postgresql+asyncpg://resolveai:resolveai_local@localhost:5432/resolveai .venv/bin/uvicorn app.main:app --reload
+RESOLVEAI_DATABASE_URL=postgresql+asyncpg://resolveai:resolveai_local@localhost:5432/resolveai RESOLVEAI_SESSION_COOKIE_SECURE=false .venv/bin/uvicorn app.main:app --reload
 ```
 
 Frontend requires Node.js 22 or later:
