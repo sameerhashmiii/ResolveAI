@@ -1,0 +1,864 @@
+[
+  {
+    "affected_application_ids": [
+      "APP-005"
+    ],
+    "affected_location_ids": [
+      "LOC-001"
+    ],
+    "affected_services": [
+      "DNS"
+    ],
+    "affected_user_ids": [
+      "USR-00001",
+      "USR-00011",
+      "USR-00021",
+      "USR-00031",
+      "USR-00041"
+    ],
+    "end_at": "2026-09-01T18:00:00Z",
+    "incident_id": "INC-0001",
+    "public_summary": "Users reported degraded DNS behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000009",
+      "TKT-000065",
+      "TKT-000089",
+      "TKT-000100",
+      "TKT-000105",
+      "TKT-000127",
+      "TKT-000161",
+      "TKT-000185",
+      "TKT-000193",
+      "TKT-000956"
+    ],
+    "resolution": "The simulated DNS condition was corrected and service health verified.",
+    "start_at": "2026-09-01T12:00:00Z",
+    "title": "Dallas DNS degradation affecting PayrollPro"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-002",
+      "LOC-007"
+    ],
+    "affected_services": [
+      "VPN"
+    ],
+    "affected_user_ids": [
+      "USR-00002",
+      "USR-00012",
+      "USR-00022",
+      "USR-00032",
+      "USR-00042",
+      "USR-00007",
+      "USR-00017",
+      "USR-00027",
+      "USR-00037",
+      "USR-00047"
+    ],
+    "end_at": "2026-09-02T04:00:00Z",
+    "incident_id": "INC-0002",
+    "public_summary": "Users reported degraded VPN behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000011",
+      "TKT-000041",
+      "TKT-000071",
+      "TKT-000191",
+      "TKT-000999"
+    ],
+    "resolution": "The simulated VPN condition was corrected and service health verified.",
+    "start_at": "2026-09-01T22:00:00Z",
+    "title": "Remote VPN authentication failures"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-003",
+      "LOC-009"
+    ],
+    "affected_services": [
+      "Microsoft 365"
+    ],
+    "affected_user_ids": [
+      "USR-00003",
+      "USR-00013",
+      "USR-00023",
+      "USR-00033",
+      "USR-00043",
+      "USR-00009",
+      "USR-00019",
+      "USR-00029",
+      "USR-00039",
+      "USR-00049"
+    ],
+    "end_at": "2026-09-02T14:00:00Z",
+    "incident_id": "INC-0003",
+    "public_summary": "Users reported degraded Microsoft 365 behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000021",
+      "TKT-000025",
+      "TKT-000031",
+      "TKT-000051",
+      "TKT-000146",
+      "TKT-000163",
+      "TKT-000175",
+      "TKT-000984"
+    ],
+    "resolution": "The simulated Microsoft 365 condition was corrected and service health verified.",
+    "start_at": "2026-09-02T08:00:00Z",
+    "title": "Microsoft 365 authentication interruption"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-004"
+    ],
+    "affected_services": [
+      "Wi-Fi"
+    ],
+    "affected_user_ids": [
+      "USR-00004",
+      "USR-00014",
+      "USR-00024",
+      "USR-00034",
+      "USR-00044"
+    ],
+    "end_at": "2026-09-03T00:00:00Z",
+    "incident_id": "INC-0004",
+    "public_summary": "Users reported degraded Wi-Fi behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000088",
+      "TKT-000098",
+      "TKT-000109",
+      "TKT-000112",
+      "TKT-000996"
+    ],
+    "resolution": "The simulated Wi-Fi condition was corrected and service health verified.",
+    "start_at": "2026-09-02T18:00:00Z",
+    "title": "Office wireless controller instability"
+  },
+  {
+    "affected_application_ids": [
+      "APP-005"
+    ],
+    "affected_location_ids": [
+      "LOC-001",
+      "LOC-005"
+    ],
+    "affected_services": [
+      "PayrollPro"
+    ],
+    "affected_user_ids": [
+      "USR-00001",
+      "USR-00011",
+      "USR-00021",
+      "USR-00031",
+      "USR-00041",
+      "USR-00005",
+      "USR-00015",
+      "USR-00025",
+      "USR-00035",
+      "USR-00045"
+    ],
+    "end_at": "2026-09-03T10:00:00Z",
+    "incident_id": "INC-0005",
+    "public_summary": "Users reported degraded PayrollPro behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000951"
+    ],
+    "resolution": "The simulated PayrollPro condition was corrected and service health verified.",
+    "start_at": "2026-09-03T04:00:00Z",
+    "title": "PayrollPro dependency timeout"
+  },
+  {
+    "affected_application_ids": [
+      "APP-015",
+      "APP-004"
+    ],
+    "affected_location_ids": [
+      "LOC-010"
+    ],
+    "affected_services": [
+      "CRM"
+    ],
+    "affected_user_ids": [
+      "USR-00010",
+      "USR-00020",
+      "USR-00030",
+      "USR-00040",
+      "USR-00050"
+    ],
+    "end_at": "2026-09-03T20:00:00Z",
+    "incident_id": "INC-0006",
+    "public_summary": "Users reported degraded CRM behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000067",
+      "TKT-000115",
+      "TKT-000139",
+      "TKT-000948"
+    ],
+    "resolution": "The simulated CRM condition was corrected and service health verified.",
+    "start_at": "2026-09-03T14:00:00Z",
+    "title": "CRM database connection saturation"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-006",
+      "LOC-008"
+    ],
+    "affected_services": [
+      "Network"
+    ],
+    "affected_user_ids": [
+      "USR-00006",
+      "USR-00016",
+      "USR-00026",
+      "USR-00036",
+      "USR-00046",
+      "USR-00008",
+      "USR-00018",
+      "USR-00028",
+      "USR-00038",
+      "USR-00048"
+    ],
+    "end_at": "2026-09-04T06:00:00Z",
+    "incident_id": "INC-0007",
+    "public_summary": "Users reported degraded Network behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000007",
+      "TKT-000192",
+      "TKT-000998"
+    ],
+    "resolution": "The simulated Network condition was corrected and service health verified.",
+    "start_at": "2026-09-04T00:00:00Z",
+    "title": "Regional packet loss"
+  },
+  {
+    "affected_application_ids": [
+      "APP-008"
+    ],
+    "affected_location_ids": [
+      "LOC-005",
+      "LOC-004"
+    ],
+    "affected_services": [
+      "Network"
+    ],
+    "affected_user_ids": [
+      "USR-00005",
+      "USR-00015",
+      "USR-00025",
+      "USR-00035",
+      "USR-00045",
+      "USR-00004",
+      "USR-00014",
+      "USR-00024",
+      "USR-00034",
+      "USR-00044"
+    ],
+    "end_at": "2026-09-04T16:00:00Z",
+    "incident_id": "INC-0008",
+    "public_summary": "Users reported degraded Network behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000131",
+      "TKT-000133",
+      "TKT-000945"
+    ],
+    "resolution": "The simulated Network condition was corrected and service health verified.",
+    "start_at": "2026-09-04T10:00:00Z",
+    "title": "Secure file storage access interruption"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-007"
+    ],
+    "affected_services": [
+      "Active Directory"
+    ],
+    "affected_user_ids": [
+      "USR-00007",
+      "USR-00017",
+      "USR-00027",
+      "USR-00037",
+      "USR-00047"
+    ],
+    "end_at": "2026-09-05T02:00:00Z",
+    "incident_id": "INC-0009",
+    "public_summary": "Users reported degraded Active Directory behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000015",
+      "TKT-000047",
+      "TKT-000077",
+      "TKT-000091",
+      "TKT-000092",
+      "TKT-000137",
+      "TKT-000157",
+      "TKT-000159",
+      "TKT-000162",
+      "TKT-000177",
+      "TKT-000993"
+    ],
+    "resolution": "The simulated Active Directory condition was corrected and service health verified.",
+    "start_at": "2026-09-04T20:00:00Z",
+    "title": "Directory authentication delay"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-009",
+      "LOC-003"
+    ],
+    "affected_services": [
+      "Email"
+    ],
+    "affected_user_ids": [
+      "USR-00009",
+      "USR-00019",
+      "USR-00029",
+      "USR-00039",
+      "USR-00049",
+      "USR-00003",
+      "USR-00013",
+      "USR-00023",
+      "USR-00033",
+      "USR-00043"
+    ],
+    "end_at": "2026-09-05T12:00:00Z",
+    "incident_id": "INC-0010",
+    "public_summary": "Users reported degraded Email behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000097",
+      "TKT-000122",
+      "TKT-000969"
+    ],
+    "resolution": "The simulated Email condition was corrected and service health verified.",
+    "start_at": "2026-09-05T06:00:00Z",
+    "title": "Email transport queue delay"
+  },
+  {
+    "affected_application_ids": [
+      "APP-005"
+    ],
+    "affected_location_ids": [
+      "LOC-001"
+    ],
+    "affected_services": [
+      "DNS"
+    ],
+    "affected_user_ids": [
+      "USR-00001",
+      "USR-00011",
+      "USR-00021",
+      "USR-00031",
+      "USR-00041"
+    ],
+    "end_at": "2026-09-05T22:00:00Z",
+    "incident_id": "INC-0011",
+    "public_summary": "Users reported degraded DNS behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000020",
+      "TKT-000028",
+      "TKT-000036",
+      "TKT-000060",
+      "TKT-000116",
+      "TKT-000987"
+    ],
+    "resolution": "The simulated DNS condition was corrected and service health verified.",
+    "start_at": "2026-09-05T16:00:00Z",
+    "title": "Dallas DNS degradation affecting PayrollPro 11"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-002",
+      "LOC-007"
+    ],
+    "affected_services": [
+      "VPN"
+    ],
+    "affected_user_ids": [
+      "USR-00002",
+      "USR-00012",
+      "USR-00022",
+      "USR-00032",
+      "USR-00042",
+      "USR-00007",
+      "USR-00017",
+      "USR-00027",
+      "USR-00037",
+      "USR-00047"
+    ],
+    "end_at": "2026-09-06T08:00:00Z",
+    "incident_id": "INC-0012",
+    "public_summary": "Users reported degraded VPN behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000018",
+      "TKT-000048",
+      "TKT-000053",
+      "TKT-000068",
+      "TKT-000083",
+      "TKT-000138",
+      "TKT-000178",
+      "TKT-000183",
+      "TKT-000991"
+    ],
+    "resolution": "The simulated VPN condition was corrected and service health verified.",
+    "start_at": "2026-09-06T02:00:00Z",
+    "title": "Remote VPN authentication failures 12"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-003",
+      "LOC-009"
+    ],
+    "affected_services": [
+      "Microsoft 365"
+    ],
+    "affected_user_ids": [
+      "USR-00003",
+      "USR-00013",
+      "USR-00023",
+      "USR-00033",
+      "USR-00043",
+      "USR-00009",
+      "USR-00019",
+      "USR-00029",
+      "USR-00039",
+      "USR-00049"
+    ],
+    "end_at": "2026-09-06T18:00:00Z",
+    "incident_id": "INC-0013",
+    "public_summary": "Users reported degraded Microsoft 365 behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000013",
+      "TKT-000014",
+      "TKT-000093",
+      "TKT-000101",
+      "TKT-000113",
+      "TKT-000148",
+      "TKT-000155",
+      "TKT-000173",
+      "TKT-000179",
+      "TKT-000967"
+    ],
+    "resolution": "The simulated Microsoft 365 condition was corrected and service health verified.",
+    "start_at": "2026-09-06T12:00:00Z",
+    "title": "Microsoft 365 authentication interruption 13"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-004"
+    ],
+    "affected_services": [
+      "Wi-Fi"
+    ],
+    "affected_user_ids": [
+      "USR-00004",
+      "USR-00014",
+      "USR-00024",
+      "USR-00034",
+      "USR-00044"
+    ],
+    "end_at": "2026-09-07T04:00:00Z",
+    "incident_id": "INC-0014",
+    "public_summary": "Users reported degraded Wi-Fi behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000037",
+      "TKT-000059",
+      "TKT-000061",
+      "TKT-000062",
+      "TKT-000074",
+      "TKT-000119",
+      "TKT-000125",
+      "TKT-000158",
+      "TKT-000182",
+      "TKT-000995"
+    ],
+    "resolution": "The simulated Wi-Fi condition was corrected and service health verified.",
+    "start_at": "2026-09-06T22:00:00Z",
+    "title": "Office wireless controller instability 14"
+  },
+  {
+    "affected_application_ids": [
+      "APP-005"
+    ],
+    "affected_location_ids": [
+      "LOC-001",
+      "LOC-005"
+    ],
+    "affected_services": [
+      "PayrollPro"
+    ],
+    "affected_user_ids": [
+      "USR-00001",
+      "USR-00011",
+      "USR-00021",
+      "USR-00031",
+      "USR-00041",
+      "USR-00005",
+      "USR-00015",
+      "USR-00025",
+      "USR-00035",
+      "USR-00045"
+    ],
+    "end_at": "2026-09-07T14:00:00Z",
+    "incident_id": "INC-0015",
+    "public_summary": "Users reported degraded PayrollPro behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000029",
+      "TKT-000117",
+      "TKT-000149",
+      "TKT-000181",
+      "TKT-000946"
+    ],
+    "resolution": "The simulated PayrollPro condition was corrected and service health verified.",
+    "start_at": "2026-09-07T08:00:00Z",
+    "title": "PayrollPro dependency timeout 15"
+  },
+  {
+    "affected_application_ids": [
+      "APP-015",
+      "APP-004"
+    ],
+    "affected_location_ids": [
+      "LOC-010"
+    ],
+    "affected_services": [
+      "CRM"
+    ],
+    "affected_user_ids": [
+      "USR-00010",
+      "USR-00020",
+      "USR-00030",
+      "USR-00040",
+      "USR-00050"
+    ],
+    "end_at": "2026-09-08T00:00:00Z",
+    "incident_id": "INC-0016",
+    "public_summary": "Users reported degraded CRM behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000126",
+      "TKT-000134",
+      "TKT-000190",
+      "TKT-000944"
+    ],
+    "resolution": "The simulated CRM condition was corrected and service health verified.",
+    "start_at": "2026-09-07T18:00:00Z",
+    "title": "CRM database connection saturation 16"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-006",
+      "LOC-008"
+    ],
+    "affected_services": [
+      "Network"
+    ],
+    "affected_user_ids": [
+      "USR-00006",
+      "USR-00016",
+      "USR-00026",
+      "USR-00036",
+      "USR-00046",
+      "USR-00008",
+      "USR-00018",
+      "USR-00028",
+      "USR-00038",
+      "USR-00048"
+    ],
+    "end_at": "2026-09-08T10:00:00Z",
+    "incident_id": "INC-0017",
+    "public_summary": "Users reported degraded Network behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000039",
+      "TKT-000079",
+      "TKT-000114",
+      "TKT-000118",
+      "TKT-000184",
+      "TKT-000986"
+    ],
+    "resolution": "The simulated Network condition was corrected and service health verified.",
+    "start_at": "2026-09-08T04:00:00Z",
+    "title": "Regional packet loss 17"
+  },
+  {
+    "affected_application_ids": [
+      "APP-008"
+    ],
+    "affected_location_ids": [
+      "LOC-005",
+      "LOC-004"
+    ],
+    "affected_services": [
+      "Network"
+    ],
+    "affected_user_ids": [
+      "USR-00005",
+      "USR-00015",
+      "USR-00025",
+      "USR-00035",
+      "USR-00045",
+      "USR-00004",
+      "USR-00014",
+      "USR-00024",
+      "USR-00034",
+      "USR-00044"
+    ],
+    "end_at": "2026-09-08T20:00:00Z",
+    "incident_id": "INC-0018",
+    "public_summary": "Users reported degraded Network behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000066",
+      "TKT-000188",
+      "TKT-000927"
+    ],
+    "resolution": "The simulated Network condition was corrected and service health verified.",
+    "start_at": "2026-09-08T14:00:00Z",
+    "title": "Secure file storage access interruption 18"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-007"
+    ],
+    "affected_services": [
+      "Active Directory"
+    ],
+    "affected_user_ids": [
+      "USR-00007",
+      "USR-00017",
+      "USR-00027",
+      "USR-00037",
+      "USR-00047"
+    ],
+    "end_at": "2026-09-09T06:00:00Z",
+    "incident_id": "INC-0019",
+    "public_summary": "Users reported degraded Active Directory behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000044",
+      "TKT-000054",
+      "TKT-000069",
+      "TKT-000124",
+      "TKT-000128",
+      "TKT-000150",
+      "TKT-000166",
+      "TKT-000974"
+    ],
+    "resolution": "The simulated Active Directory condition was corrected and service health verified.",
+    "start_at": "2026-09-09T00:00:00Z",
+    "title": "Directory authentication delay 19"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-009",
+      "LOC-003"
+    ],
+    "affected_services": [
+      "Email"
+    ],
+    "affected_user_ids": [
+      "USR-00009",
+      "USR-00019",
+      "USR-00029",
+      "USR-00039",
+      "USR-00049",
+      "USR-00003",
+      "USR-00013",
+      "USR-00023",
+      "USR-00033",
+      "USR-00043"
+    ],
+    "end_at": "2026-09-09T16:00:00Z",
+    "incident_id": "INC-0020",
+    "public_summary": "Users reported degraded Email behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000164",
+      "TKT-000169",
+      "TKT-000870"
+    ],
+    "resolution": "The simulated Email condition was corrected and service health verified.",
+    "start_at": "2026-09-09T10:00:00Z",
+    "title": "Email transport queue delay 20"
+  },
+  {
+    "affected_application_ids": [
+      "APP-005"
+    ],
+    "affected_location_ids": [
+      "LOC-001"
+    ],
+    "affected_services": [
+      "DNS"
+    ],
+    "affected_user_ids": [
+      "USR-00001",
+      "USR-00011",
+      "USR-00021",
+      "USR-00031",
+      "USR-00041"
+    ],
+    "end_at": "2026-09-10T02:00:00Z",
+    "incident_id": "INC-0021",
+    "public_summary": "Users reported degraded DNS behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000023",
+      "TKT-000084",
+      "TKT-000132",
+      "TKT-000135",
+      "TKT-000167",
+      "TKT-000168",
+      "TKT-000985"
+    ],
+    "resolution": "The simulated DNS condition was corrected and service health verified.",
+    "start_at": "2026-09-09T20:00:00Z",
+    "title": "Dallas DNS degradation affecting PayrollPro 21"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-002",
+      "LOC-007"
+    ],
+    "affected_services": [
+      "VPN"
+    ],
+    "affected_user_ids": [
+      "USR-00002",
+      "USR-00012",
+      "USR-00022",
+      "USR-00032",
+      "USR-00042",
+      "USR-00007",
+      "USR-00017",
+      "USR-00027",
+      "USR-00037",
+      "USR-00047"
+    ],
+    "end_at": "2026-09-10T12:00:00Z",
+    "incident_id": "INC-0022",
+    "public_summary": "Users reported degraded VPN behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000005",
+      "TKT-000050",
+      "TKT-000070",
+      "TKT-000085",
+      "TKT-000090",
+      "TKT-000095",
+      "TKT-000120",
+      "TKT-000170",
+      "TKT-000983"
+    ],
+    "resolution": "The simulated VPN condition was corrected and service health verified.",
+    "start_at": "2026-09-10T06:00:00Z",
+    "title": "Remote VPN authentication failures 22"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-003",
+      "LOC-009"
+    ],
+    "affected_services": [
+      "Microsoft 365"
+    ],
+    "affected_user_ids": [
+      "USR-00003",
+      "USR-00013",
+      "USR-00023",
+      "USR-00033",
+      "USR-00043",
+      "USR-00009",
+      "USR-00019",
+      "USR-00029",
+      "USR-00039",
+      "USR-00049"
+    ],
+    "end_at": "2026-09-10T22:00:00Z",
+    "incident_id": "INC-0023",
+    "public_summary": "Users reported degraded Microsoft 365 behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000027",
+      "TKT-000040",
+      "TKT-000055",
+      "TKT-000057",
+      "TKT-000063",
+      "TKT-000123",
+      "TKT-000860"
+    ],
+    "resolution": "The simulated Microsoft 365 condition was corrected and service health verified.",
+    "start_at": "2026-09-10T16:00:00Z",
+    "title": "Microsoft 365 authentication interruption 23"
+  },
+  {
+    "affected_application_ids": [],
+    "affected_location_ids": [
+      "LOC-004"
+    ],
+    "affected_services": [
+      "Wi-Fi"
+    ],
+    "affected_user_ids": [
+      "USR-00004",
+      "USR-00014",
+      "USR-00024",
+      "USR-00034",
+      "USR-00044"
+    ],
+    "end_at": "2026-09-11T08:00:00Z",
+    "incident_id": "INC-0024",
+    "public_summary": "Users reported degraded Wi-Fi behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000042",
+      "TKT-000056",
+      "TKT-000072",
+      "TKT-000099",
+      "TKT-000102",
+      "TKT-000174",
+      "TKT-000994"
+    ],
+    "resolution": "The simulated Wi-Fi condition was corrected and service health verified.",
+    "start_at": "2026-09-11T02:00:00Z",
+    "title": "Office wireless controller instability 24"
+  },
+  {
+    "affected_application_ids": [
+      "APP-005"
+    ],
+    "affected_location_ids": [
+      "LOC-001",
+      "LOC-005"
+    ],
+    "affected_services": [
+      "PayrollPro"
+    ],
+    "affected_user_ids": [
+      "USR-00001",
+      "USR-00011",
+      "USR-00021",
+      "USR-00031",
+      "USR-00041",
+      "USR-00005",
+      "USR-00015",
+      "USR-00025",
+      "USR-00035",
+      "USR-00045"
+    ],
+    "end_at": "2026-09-11T18:00:00Z",
+    "incident_id": "INC-0025",
+    "public_summary": "Users reported degraded PayrollPro behavior in the listed synthetic offices.",
+    "related_ticket_ids": [
+      "TKT-000064",
+      "TKT-000144",
+      "TKT-000935"
+    ],
+    "resolution": "The simulated PayrollPro condition was corrected and service health verified.",
+    "start_at": "2026-09-11T12:00:00Z",
+    "title": "PayrollPro dependency timeout 25"
+  }
+]

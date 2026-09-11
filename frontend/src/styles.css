@@ -233,6 +233,26 @@ h3 {
   margin-left: 252px;
   padding: 54px clamp(28px, 5vw, 76px) 72px;
 }
+.demo-environment {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  width: min(1220px, 100%);
+  margin: 0 auto 28px;
+  padding: 11px 14px;
+  border: 1px solid #d8cfaf;
+  background: #f7f1dc;
+  color: #5f5436;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.demo-environment strong {
+  flex: 0 0 auto;
+  color: #3e361f;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 .page {
   width: min(1220px, 100%);
   margin: 0 auto;

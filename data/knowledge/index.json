@@ -1,0 +1,2105 @@
+{
+  "articles": [
+    {
+      "article_id": "KA-0001",
+      "category": "VPN / Remote Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0001.md",
+      "related_systems": [
+        "VPN"
+      ],
+      "resolution_guidance": "Restore the approved VPN access path and verify the original workflow.",
+      "symptoms": [
+        "gateway rejection",
+        "remote disconnect"
+      ],
+      "title": "Gateway Sign-in Verification: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the gateway rejection symptom, affected synthetic office, and observed time window.",
+        "Compare VPN behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0002",
+      "category": "Password / MFA",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0002.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Restore the approved Active Directory access path and verify the original workflow.",
+      "symptoms": [
+        "MFA loop",
+        "credential rejection"
+      ],
+      "title": "Repeated MFA Prompts: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the MFA loop symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0003",
+      "category": "Wi-Fi / Wireless",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0003.md",
+      "related_systems": [
+        "Wi-Fi"
+      ],
+      "resolution_guidance": "Restore the approved Wi-Fi access path and verify the original workflow.",
+      "symptoms": [
+        "SSID join failure",
+        "unstable signal"
+      ],
+      "title": "Office SSID Join Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the SSID join failure symptom, affected synthetic office, and observed time window.",
+        "Compare Wi-Fi behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0004",
+      "category": "Application Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0004.md",
+      "related_systems": [
+        "PayrollPro"
+      ],
+      "resolution_guidance": "Restore the approved PayrollPro access path and verify the original workflow.",
+      "symptoms": [
+        "application timeout",
+        "access denied"
+      ],
+      "title": "Application Sign-in Evidence: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the application timeout symptom, affected synthetic office, and observed time window.",
+        "Compare PayrollPro behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0005",
+      "category": "Outlook / Email",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0005.md",
+      "related_systems": [
+        "Email"
+      ],
+      "resolution_guidance": "Restore the approved Email access path and verify the original workflow.",
+      "symptoms": [
+        "mail delay",
+        "client disconnected"
+      ],
+      "title": "Delayed Message Evidence: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the mail delay symptom, affected synthetic office, and observed time window.",
+        "Compare Email behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0006",
+      "category": "Laptop / Endpoint",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0006.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "slow endpoint",
+        "device connectivity loss"
+      ],
+      "title": "Endpoint Performance Evidence: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the slow endpoint symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0007",
+      "category": "Network Connectivity",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0007.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "intermittent path",
+        "internal timeout"
+      ],
+      "title": "Internal Path Verification: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the intermittent path symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0008",
+      "category": "Microsoft 365",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0008.md",
+      "related_systems": [
+        "Microsoft 365"
+      ],
+      "resolution_guidance": "Restore the approved Microsoft 365 access path and verify the original workflow.",
+      "symptoms": [
+        "suite login loop",
+        "collaboration timeout"
+      ],
+      "title": "Suite Sign-in Verification: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the suite login loop symptom, affected synthetic office, and observed time window.",
+        "Compare Microsoft 365 behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0009",
+      "category": "Account Lockout",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0009.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Restore the approved Active Directory access path and verify the original workflow.",
+      "symptoms": [
+        "locked account",
+        "sign-in refused"
+      ],
+      "title": "Lockout Verification: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the locked account symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0010",
+      "category": "Software Installation",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0010.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "installer failure",
+        "catalog download delay"
+      ],
+      "title": "Approved Installer Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the installer failure symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0011",
+      "category": "Printer / Peripheral",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0011.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "offline printer",
+        "unrecognized dock"
+      ],
+      "title": "Printer Queue Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the offline printer symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0012",
+      "category": "DNS / Name Resolution",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0012.md",
+      "related_systems": [
+        "DNS"
+      ],
+      "resolution_guidance": "Restore the approved DNS access path and verify the original workflow.",
+      "symptoms": [
+        "slow hostname lookup",
+        "internal names unavailable"
+      ],
+      "title": "Internal Hostname Verification: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the slow hostname lookup symptom, affected synthetic office, and observed time window.",
+        "Compare DNS behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0013",
+      "category": "File / Share Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0013.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "share unavailable",
+        "sync retry"
+      ],
+      "title": "Shared Folder Access Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the share unavailable symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0014",
+      "category": "Security Alerts",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0014.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Restore the approved Active Directory access path and verify the original workflow.",
+      "symptoms": [
+        "policy warning",
+        "sign-in risk prompt"
+      ],
+      "title": "Safe Alert Triage: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the policy warning symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0015",
+      "category": "Other",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0015.md",
+      "related_systems": [
+        "Service Desk"
+      ],
+      "resolution_guidance": "Restore the approved Service Desk access path and verify the original workflow.",
+      "symptoms": [
+        "workflow interruption",
+        "unexpected behavior"
+      ],
+      "title": "Evidence-led Initial Triage: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the workflow interruption symptom, affected synthetic office, and observed time window.",
+        "Compare Service Desk behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0016",
+      "category": "VPN / Remote Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0016.md",
+      "related_systems": [
+        "VPN"
+      ],
+      "resolution_guidance": "Refresh the supported VPN session, then record before-and-after evidence.",
+      "symptoms": [
+        "gateway rejection",
+        "remote disconnect"
+      ],
+      "title": "Unstable Remote Sessions: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the remote disconnect symptom, affected synthetic office, and observed time window.",
+        "Compare VPN behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0017",
+      "category": "Password / MFA",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0017.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Refresh the supported Active Directory session, then record before-and-after evidence.",
+      "symptoms": [
+        "MFA loop",
+        "credential rejection"
+      ],
+      "title": "Password Change Verification: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the credential rejection symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0018",
+      "category": "Wi-Fi / Wireless",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0018.md",
+      "related_systems": [
+        "Wi-Fi"
+      ],
+      "resolution_guidance": "Refresh the supported Wi-Fi session, then record before-and-after evidence.",
+      "symptoms": [
+        "SSID join failure",
+        "unstable signal"
+      ],
+      "title": "Roaming and Signal Evidence: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the unstable signal symptom, affected synthetic office, and observed time window.",
+        "Compare Wi-Fi behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0019",
+      "category": "Application Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0019.md",
+      "related_systems": [
+        "PayrollPro"
+      ],
+      "resolution_guidance": "Refresh the supported PayrollPro session, then record before-and-after evidence.",
+      "symptoms": [
+        "application timeout",
+        "access denied"
+      ],
+      "title": "Dependency Health Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the access denied symptom, affected synthetic office, and observed time window.",
+        "Compare PayrollPro behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0020",
+      "category": "Outlook / Email",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0020.md",
+      "related_systems": [
+        "Email"
+      ],
+      "resolution_guidance": "Refresh the supported Email session, then record before-and-after evidence.",
+      "symptoms": [
+        "mail delay",
+        "client disconnected"
+      ],
+      "title": "Mailbox Session Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the client disconnected symptom, affected synthetic office, and observed time window.",
+        "Compare Email behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0021",
+      "category": "Laptop / Endpoint",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0021.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Refresh the supported Network session, then record before-and-after evidence.",
+      "symptoms": [
+        "slow endpoint",
+        "device connectivity loss"
+      ],
+      "title": "Wake and Resume Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the device connectivity loss symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0022",
+      "category": "Network Connectivity",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0022.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Refresh the supported Network session, then record before-and-after evidence.",
+      "symptoms": [
+        "intermittent path",
+        "internal timeout"
+      ],
+      "title": "Latency Evidence Collection: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the internal timeout symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0023",
+      "category": "Microsoft 365",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0023.md",
+      "related_systems": [
+        "Microsoft 365"
+      ],
+      "resolution_guidance": "Refresh the supported Microsoft 365 session, then record before-and-after evidence.",
+      "symptoms": [
+        "suite login loop",
+        "collaboration timeout"
+      ],
+      "title": "Collaboration Session Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the collaboration timeout symptom, affected synthetic office, and observed time window.",
+        "Compare Microsoft 365 behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0024",
+      "category": "Account Lockout",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0024.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Refresh the supported Active Directory session, then record before-and-after evidence.",
+      "symptoms": [
+        "locked account",
+        "sign-in refused"
+      ],
+      "title": "Session Recovery: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the sign-in refused symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0025",
+      "category": "Software Installation",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0025.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Refresh the supported Network session, then record before-and-after evidence.",
+      "symptoms": [
+        "installer failure",
+        "catalog download delay"
+      ],
+      "title": "Catalog Download Evidence: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the catalog download delay symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0026",
+      "category": "Printer / Peripheral",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0026.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Refresh the supported Network session, then record before-and-after evidence.",
+      "symptoms": [
+        "offline printer",
+        "unrecognized dock"
+      ],
+      "title": "Dock Recognition Evidence: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the unrecognized dock symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0027",
+      "category": "DNS / Name Resolution",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0027.md",
+      "related_systems": [
+        "DNS"
+      ],
+      "resolution_guidance": "Refresh the supported DNS session, then record before-and-after evidence.",
+      "symptoms": [
+        "slow hostname lookup",
+        "internal names unavailable"
+      ],
+      "title": "Intermittent Lookup Evidence: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the internal names unavailable symptom, affected synthetic office, and observed time window.",
+        "Compare DNS behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0028",
+      "category": "File / Share Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0028.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Refresh the supported Network session, then record before-and-after evidence.",
+      "symptoms": [
+        "share unavailable",
+        "sync retry"
+      ],
+      "title": "File Sync Evidence: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the sync retry symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0029",
+      "category": "Security Alerts",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0029.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Refresh the supported Active Directory session, then record before-and-after evidence.",
+      "symptoms": [
+        "policy warning",
+        "sign-in risk prompt"
+      ],
+      "title": "Sign-in Evidence Review: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the sign-in risk prompt symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0030",
+      "category": "Other",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0030.md",
+      "related_systems": [
+        "Service Desk"
+      ],
+      "resolution_guidance": "Refresh the supported Service Desk session, then record before-and-after evidence.",
+      "symptoms": [
+        "workflow interruption",
+        "unexpected behavior"
+      ],
+      "title": "Impact Scoping: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the unexpected behavior symptom, affected synthetic office, and observed time window.",
+        "Compare Service Desk behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0031",
+      "category": "VPN / Remote Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0031.md",
+      "related_systems": [
+        "VPN"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "gateway rejection",
+        "remote disconnect"
+      ],
+      "title": "Remote Device Readiness: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the gateway rejection symptom, affected synthetic office, and observed time window.",
+        "Compare VPN behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0032",
+      "category": "Password / MFA",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0032.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "MFA loop",
+        "credential rejection"
+      ],
+      "title": "Authenticator Enrollment: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the MFA loop symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0033",
+      "category": "Wi-Fi / Wireless",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0033.md",
+      "related_systems": [
+        "Wi-Fi"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "SSID join failure",
+        "unstable signal"
+      ],
+      "title": "Wireless Profile Recovery: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the SSID join failure symptom, affected synthetic office, and observed time window.",
+        "Compare Wi-Fi behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0034",
+      "category": "Application Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0034.md",
+      "related_systems": [
+        "PayrollPro"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "application timeout",
+        "access denied"
+      ],
+      "title": "Workflow Access Verification: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the application timeout symptom, affected synthetic office, and observed time window.",
+        "Compare PayrollPro behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0035",
+      "category": "Outlook / Email",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0035.md",
+      "related_systems": [
+        "Email"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "mail delay",
+        "client disconnected"
+      ],
+      "title": "Outbox Recovery: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the mail delay symptom, affected synthetic office, and observed time window.",
+        "Compare Email behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0036",
+      "category": "Laptop / Endpoint",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0036.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "slow endpoint",
+        "device connectivity loss"
+      ],
+      "title": "Device Network Recovery: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the slow endpoint symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0037",
+      "category": "Network Connectivity",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0037.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "intermittent path",
+        "internal timeout"
+      ],
+      "title": "Office Uplink Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the intermittent path symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0038",
+      "category": "Microsoft 365",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0038.md",
+      "related_systems": [
+        "Microsoft 365"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "suite login loop",
+        "collaboration timeout"
+      ],
+      "title": "Document Access Evidence: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the suite login loop symptom, affected synthetic office, and observed time window.",
+        "Compare Microsoft 365 behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0039",
+      "category": "Account Lockout",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0039.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "locked account",
+        "sign-in refused"
+      ],
+      "title": "Credential State Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the locked account symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0040",
+      "category": "Software Installation",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0040.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "installer failure",
+        "catalog download delay"
+      ],
+      "title": "Installation Readiness: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the installer failure symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0041",
+      "category": "Printer / Peripheral",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0041.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "offline printer",
+        "unrecognized dock"
+      ],
+      "title": "Peripheral Connection Recovery: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the offline printer symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0042",
+      "category": "DNS / Name Resolution",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0042.md",
+      "related_systems": [
+        "DNS"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "slow hostname lookup",
+        "internal names unavailable"
+      ],
+      "title": "Resolver Health Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the slow hostname lookup symptom, affected synthetic office, and observed time window.",
+        "Compare DNS behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0043",
+      "category": "File / Share Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0043.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "share unavailable",
+        "sync retry"
+      ],
+      "title": "Team Drive Session Recovery: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the share unavailable symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0044",
+      "category": "Security Alerts",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0044.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "policy warning",
+        "sign-in risk prompt"
+      ],
+      "title": "Endpoint Policy Verification: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the policy warning symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0045",
+      "category": "Other",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0045.md",
+      "related_systems": [
+        "Service Desk"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "workflow interruption",
+        "unexpected behavior"
+      ],
+      "title": "Safe Reproduction Checks: Office Workflow",
+      "troubleshooting_steps": [
+        "Confirm the workflow interruption symptom, affected synthetic office, and observed time window.",
+        "Compare Service Desk behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0046",
+      "category": "VPN / Remote Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0046.md",
+      "related_systems": [
+        "VPN"
+      ],
+      "resolution_guidance": "Restore the approved VPN access path and verify the original workflow.",
+      "symptoms": [
+        "gateway rejection",
+        "remote disconnect"
+      ],
+      "title": "Gateway Sign-in Verification: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the remote disconnect symptom, affected synthetic office, and observed time window.",
+        "Compare VPN behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0047",
+      "category": "Password / MFA",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0047.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Restore the approved Active Directory access path and verify the original workflow.",
+      "symptoms": [
+        "MFA loop",
+        "credential rejection"
+      ],
+      "title": "Repeated MFA Prompts: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the credential rejection symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0048",
+      "category": "Wi-Fi / Wireless",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0048.md",
+      "related_systems": [
+        "Wi-Fi"
+      ],
+      "resolution_guidance": "Restore the approved Wi-Fi access path and verify the original workflow.",
+      "symptoms": [
+        "SSID join failure",
+        "unstable signal"
+      ],
+      "title": "Office SSID Join Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the unstable signal symptom, affected synthetic office, and observed time window.",
+        "Compare Wi-Fi behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0049",
+      "category": "Application Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0049.md",
+      "related_systems": [
+        "PayrollPro"
+      ],
+      "resolution_guidance": "Restore the approved PayrollPro access path and verify the original workflow.",
+      "symptoms": [
+        "application timeout",
+        "access denied"
+      ],
+      "title": "Application Sign-in Evidence: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the access denied symptom, affected synthetic office, and observed time window.",
+        "Compare PayrollPro behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0050",
+      "category": "Outlook / Email",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0050.md",
+      "related_systems": [
+        "Email"
+      ],
+      "resolution_guidance": "Restore the approved Email access path and verify the original workflow.",
+      "symptoms": [
+        "mail delay",
+        "client disconnected"
+      ],
+      "title": "Delayed Message Evidence: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the client disconnected symptom, affected synthetic office, and observed time window.",
+        "Compare Email behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0051",
+      "category": "Laptop / Endpoint",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0051.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "slow endpoint",
+        "device connectivity loss"
+      ],
+      "title": "Endpoint Performance Evidence: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the device connectivity loss symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0052",
+      "category": "Network Connectivity",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0052.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "intermittent path",
+        "internal timeout"
+      ],
+      "title": "Internal Path Verification: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the internal timeout symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0053",
+      "category": "Microsoft 365",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0053.md",
+      "related_systems": [
+        "Microsoft 365"
+      ],
+      "resolution_guidance": "Restore the approved Microsoft 365 access path and verify the original workflow.",
+      "symptoms": [
+        "suite login loop",
+        "collaboration timeout"
+      ],
+      "title": "Suite Sign-in Verification: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the collaboration timeout symptom, affected synthetic office, and observed time window.",
+        "Compare Microsoft 365 behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0054",
+      "category": "Account Lockout",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0054.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Restore the approved Active Directory access path and verify the original workflow.",
+      "symptoms": [
+        "locked account",
+        "sign-in refused"
+      ],
+      "title": "Lockout Verification: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the sign-in refused symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0055",
+      "category": "Software Installation",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0055.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "installer failure",
+        "catalog download delay"
+      ],
+      "title": "Approved Installer Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the catalog download delay symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0056",
+      "category": "Printer / Peripheral",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0056.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "offline printer",
+        "unrecognized dock"
+      ],
+      "title": "Printer Queue Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the unrecognized dock symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0057",
+      "category": "DNS / Name Resolution",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0057.md",
+      "related_systems": [
+        "DNS"
+      ],
+      "resolution_guidance": "Restore the approved DNS access path and verify the original workflow.",
+      "symptoms": [
+        "slow hostname lookup",
+        "internal names unavailable"
+      ],
+      "title": "Internal Hostname Verification: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the internal names unavailable symptom, affected synthetic office, and observed time window.",
+        "Compare DNS behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0058",
+      "category": "File / Share Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0058.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "share unavailable",
+        "sync retry"
+      ],
+      "title": "Shared Folder Access Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the sync retry symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0059",
+      "category": "Security Alerts",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0059.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Restore the approved Active Directory access path and verify the original workflow.",
+      "symptoms": [
+        "policy warning",
+        "sign-in risk prompt"
+      ],
+      "title": "Safe Alert Triage: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the sign-in risk prompt symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0060",
+      "category": "Other",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0060.md",
+      "related_systems": [
+        "Service Desk"
+      ],
+      "resolution_guidance": "Restore the approved Service Desk access path and verify the original workflow.",
+      "symptoms": [
+        "workflow interruption",
+        "unexpected behavior"
+      ],
+      "title": "Evidence-led Initial Triage: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the unexpected behavior symptom, affected synthetic office, and observed time window.",
+        "Compare Service Desk behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0061",
+      "category": "VPN / Remote Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0061.md",
+      "related_systems": [
+        "VPN"
+      ],
+      "resolution_guidance": "Refresh the supported VPN session, then record before-and-after evidence.",
+      "symptoms": [
+        "gateway rejection",
+        "remote disconnect"
+      ],
+      "title": "Unstable Remote Sessions: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the gateway rejection symptom, affected synthetic office, and observed time window.",
+        "Compare VPN behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0062",
+      "category": "Password / MFA",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0062.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Refresh the supported Active Directory session, then record before-and-after evidence.",
+      "symptoms": [
+        "MFA loop",
+        "credential rejection"
+      ],
+      "title": "Password Change Verification: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the MFA loop symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0063",
+      "category": "Wi-Fi / Wireless",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0063.md",
+      "related_systems": [
+        "Wi-Fi"
+      ],
+      "resolution_guidance": "Refresh the supported Wi-Fi session, then record before-and-after evidence.",
+      "symptoms": [
+        "SSID join failure",
+        "unstable signal"
+      ],
+      "title": "Roaming and Signal Evidence: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the SSID join failure symptom, affected synthetic office, and observed time window.",
+        "Compare Wi-Fi behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0064",
+      "category": "Application Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0064.md",
+      "related_systems": [
+        "PayrollPro"
+      ],
+      "resolution_guidance": "Refresh the supported PayrollPro session, then record before-and-after evidence.",
+      "symptoms": [
+        "application timeout",
+        "access denied"
+      ],
+      "title": "Dependency Health Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the application timeout symptom, affected synthetic office, and observed time window.",
+        "Compare PayrollPro behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0065",
+      "category": "Outlook / Email",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0065.md",
+      "related_systems": [
+        "Email"
+      ],
+      "resolution_guidance": "Refresh the supported Email session, then record before-and-after evidence.",
+      "symptoms": [
+        "mail delay",
+        "client disconnected"
+      ],
+      "title": "Mailbox Session Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the mail delay symptom, affected synthetic office, and observed time window.",
+        "Compare Email behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0066",
+      "category": "Laptop / Endpoint",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0066.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Refresh the supported Network session, then record before-and-after evidence.",
+      "symptoms": [
+        "slow endpoint",
+        "device connectivity loss"
+      ],
+      "title": "Wake and Resume Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the slow endpoint symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0067",
+      "category": "Network Connectivity",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0067.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Refresh the supported Network session, then record before-and-after evidence.",
+      "symptoms": [
+        "intermittent path",
+        "internal timeout"
+      ],
+      "title": "Latency Evidence Collection: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the intermittent path symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0068",
+      "category": "Microsoft 365",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0068.md",
+      "related_systems": [
+        "Microsoft 365"
+      ],
+      "resolution_guidance": "Refresh the supported Microsoft 365 session, then record before-and-after evidence.",
+      "symptoms": [
+        "suite login loop",
+        "collaboration timeout"
+      ],
+      "title": "Collaboration Session Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the suite login loop symptom, affected synthetic office, and observed time window.",
+        "Compare Microsoft 365 behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0069",
+      "category": "Account Lockout",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0069.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Refresh the supported Active Directory session, then record before-and-after evidence.",
+      "symptoms": [
+        "locked account",
+        "sign-in refused"
+      ],
+      "title": "Session Recovery: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the locked account symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0070",
+      "category": "Software Installation",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0070.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Refresh the supported Network session, then record before-and-after evidence.",
+      "symptoms": [
+        "installer failure",
+        "catalog download delay"
+      ],
+      "title": "Catalog Download Evidence: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the installer failure symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0071",
+      "category": "Printer / Peripheral",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0071.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Refresh the supported Network session, then record before-and-after evidence.",
+      "symptoms": [
+        "offline printer",
+        "unrecognized dock"
+      ],
+      "title": "Dock Recognition Evidence: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the offline printer symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0072",
+      "category": "DNS / Name Resolution",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0072.md",
+      "related_systems": [
+        "DNS"
+      ],
+      "resolution_guidance": "Refresh the supported DNS session, then record before-and-after evidence.",
+      "symptoms": [
+        "slow hostname lookup",
+        "internal names unavailable"
+      ],
+      "title": "Intermittent Lookup Evidence: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the slow hostname lookup symptom, affected synthetic office, and observed time window.",
+        "Compare DNS behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0073",
+      "category": "File / Share Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0073.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Refresh the supported Network session, then record before-and-after evidence.",
+      "symptoms": [
+        "share unavailable",
+        "sync retry"
+      ],
+      "title": "File Sync Evidence: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the share unavailable symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0074",
+      "category": "Security Alerts",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0074.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Refresh the supported Active Directory session, then record before-and-after evidence.",
+      "symptoms": [
+        "policy warning",
+        "sign-in risk prompt"
+      ],
+      "title": "Sign-in Evidence Review: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the policy warning symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0075",
+      "category": "Other",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate with timestamps when availability or latency breaches the simulated target.",
+      "file": "articles/ka-0075.md",
+      "related_systems": [
+        "Service Desk"
+      ],
+      "resolution_guidance": "Refresh the supported Service Desk session, then record before-and-after evidence.",
+      "symptoms": [
+        "workflow interruption",
+        "unexpected behavior"
+      ],
+      "title": "Impact Scoping: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the workflow interruption symptom, affected synthetic office, and observed time window.",
+        "Compare Service Desk behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0076",
+      "category": "VPN / Remote Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0076.md",
+      "related_systems": [
+        "VPN"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "gateway rejection",
+        "remote disconnect"
+      ],
+      "title": "Remote Device Readiness: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the remote disconnect symptom, affected synthetic office, and observed time window.",
+        "Compare VPN behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0077",
+      "category": "Password / MFA",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0077.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "MFA loop",
+        "credential rejection"
+      ],
+      "title": "Authenticator Enrollment: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the credential rejection symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0078",
+      "category": "Wi-Fi / Wireless",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0078.md",
+      "related_systems": [
+        "Wi-Fi"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "SSID join failure",
+        "unstable signal"
+      ],
+      "title": "Wireless Profile Recovery: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the unstable signal symptom, affected synthetic office, and observed time window.",
+        "Compare Wi-Fi behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0079",
+      "category": "Application Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0079.md",
+      "related_systems": [
+        "PayrollPro"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "application timeout",
+        "access denied"
+      ],
+      "title": "Workflow Access Verification: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the access denied symptom, affected synthetic office, and observed time window.",
+        "Compare PayrollPro behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0080",
+      "category": "Outlook / Email",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0080.md",
+      "related_systems": [
+        "Email"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "mail delay",
+        "client disconnected"
+      ],
+      "title": "Outbox Recovery: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the client disconnected symptom, affected synthetic office, and observed time window.",
+        "Compare Email behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0081",
+      "category": "Laptop / Endpoint",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0081.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "slow endpoint",
+        "device connectivity loss"
+      ],
+      "title": "Device Network Recovery: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the device connectivity loss symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0082",
+      "category": "Network Connectivity",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0082.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "intermittent path",
+        "internal timeout"
+      ],
+      "title": "Office Uplink Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the internal timeout symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0083",
+      "category": "Microsoft 365",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0083.md",
+      "related_systems": [
+        "Microsoft 365"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "suite login loop",
+        "collaboration timeout"
+      ],
+      "title": "Document Access Evidence: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the collaboration timeout symptom, affected synthetic office, and observed time window.",
+        "Compare Microsoft 365 behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0084",
+      "category": "Account Lockout",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0084.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "locked account",
+        "sign-in refused"
+      ],
+      "title": "Credential State Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the sign-in refused symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0085",
+      "category": "Software Installation",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0085.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "installer failure",
+        "catalog download delay"
+      ],
+      "title": "Installation Readiness: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the catalog download delay symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0086",
+      "category": "Printer / Peripheral",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0086.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "offline printer",
+        "unrecognized dock"
+      ],
+      "title": "Peripheral Connection Recovery: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the unrecognized dock symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0087",
+      "category": "DNS / Name Resolution",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0087.md",
+      "related_systems": [
+        "DNS"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "slow hostname lookup",
+        "internal names unavailable"
+      ],
+      "title": "Resolver Health Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the internal names unavailable symptom, affected synthetic office, and observed time window.",
+        "Compare DNS behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0088",
+      "category": "File / Share Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0088.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "share unavailable",
+        "sync retry"
+      ],
+      "title": "Team Drive Session Recovery: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the sync retry symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0089",
+      "category": "Security Alerts",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0089.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "policy warning",
+        "sign-in risk prompt"
+      ],
+      "title": "Endpoint Policy Verification: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the sign-in risk prompt symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0090",
+      "category": "Other",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when safe comparison tests indicate a service-wide interruption.",
+      "file": "articles/ka-0090.md",
+      "related_systems": [
+        "Service Desk"
+      ],
+      "resolution_guidance": "Apply the documented synthetic configuration and confirm multi-user recovery.",
+      "symptoms": [
+        "workflow interruption",
+        "unexpected behavior"
+      ],
+      "title": "Safe Reproduction Checks: Remote Workflow",
+      "troubleshooting_steps": [
+        "Confirm the unexpected behavior symptom, affected synthetic office, and observed time window.",
+        "Compare Service Desk behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0091",
+      "category": "VPN / Remote Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0091.md",
+      "related_systems": [
+        "VPN"
+      ],
+      "resolution_guidance": "Restore the approved VPN access path and verify the original workflow.",
+      "symptoms": [
+        "gateway rejection",
+        "remote disconnect"
+      ],
+      "title": "Gateway Sign-in Verification: Multi-user Evidence",
+      "troubleshooting_steps": [
+        "Confirm the gateway rejection symptom, affected synthetic office, and observed time window.",
+        "Compare VPN behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0092",
+      "category": "Password / MFA",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0092.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Restore the approved Active Directory access path and verify the original workflow.",
+      "symptoms": [
+        "MFA loop",
+        "credential rejection"
+      ],
+      "title": "Repeated MFA Prompts: Multi-user Evidence",
+      "troubleshooting_steps": [
+        "Confirm the MFA loop symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0093",
+      "category": "Wi-Fi / Wireless",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0093.md",
+      "related_systems": [
+        "Wi-Fi"
+      ],
+      "resolution_guidance": "Restore the approved Wi-Fi access path and verify the original workflow.",
+      "symptoms": [
+        "SSID join failure",
+        "unstable signal"
+      ],
+      "title": "Office SSID Join Checks: Multi-user Evidence",
+      "troubleshooting_steps": [
+        "Confirm the SSID join failure symptom, affected synthetic office, and observed time window.",
+        "Compare Wi-Fi behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0094",
+      "category": "Application Access",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0094.md",
+      "related_systems": [
+        "PayrollPro"
+      ],
+      "resolution_guidance": "Restore the approved PayrollPro access path and verify the original workflow.",
+      "symptoms": [
+        "application timeout",
+        "access denied"
+      ],
+      "title": "Application Sign-in Evidence: Multi-user Evidence",
+      "troubleshooting_steps": [
+        "Confirm the application timeout symptom, affected synthetic office, and observed time window.",
+        "Compare PayrollPro behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0095",
+      "category": "Outlook / Email",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0095.md",
+      "related_systems": [
+        "Email"
+      ],
+      "resolution_guidance": "Restore the approved Email access path and verify the original workflow.",
+      "symptoms": [
+        "mail delay",
+        "client disconnected"
+      ],
+      "title": "Delayed Message Evidence: Multi-user Evidence",
+      "troubleshooting_steps": [
+        "Confirm the mail delay symptom, affected synthetic office, and observed time window.",
+        "Compare Email behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0096",
+      "category": "Laptop / Endpoint",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0096.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "slow endpoint",
+        "device connectivity loss"
+      ],
+      "title": "Endpoint Performance Evidence: Multi-user Evidence",
+      "troubleshooting_steps": [
+        "Confirm the slow endpoint symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0097",
+      "category": "Network Connectivity",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0097.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "intermittent path",
+        "internal timeout"
+      ],
+      "title": "Internal Path Verification: Multi-user Evidence",
+      "troubleshooting_steps": [
+        "Confirm the intermittent path symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0098",
+      "category": "Microsoft 365",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0098.md",
+      "related_systems": [
+        "Microsoft 365"
+      ],
+      "resolution_guidance": "Restore the approved Microsoft 365 access path and verify the original workflow.",
+      "symptoms": [
+        "suite login loop",
+        "collaboration timeout"
+      ],
+      "title": "Suite Sign-in Verification: Multi-user Evidence",
+      "troubleshooting_steps": [
+        "Confirm the suite login loop symptom, affected synthetic office, and observed time window.",
+        "Compare Microsoft 365 behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0099",
+      "category": "Account Lockout",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0099.md",
+      "related_systems": [
+        "Active Directory"
+      ],
+      "resolution_guidance": "Restore the approved Active Directory access path and verify the original workflow.",
+      "symptoms": [
+        "locked account",
+        "sign-in refused"
+      ],
+      "title": "Lockout Verification: Multi-user Evidence",
+      "troubleshooting_steps": [
+        "Confirm the locked account symptom, affected synthetic office, and observed time window.",
+        "Compare Active Directory behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    },
+    {
+      "article_id": "KA-0100",
+      "category": "Software Installation",
+      "environment": "ResolveAI synthetic enterprise simulation",
+      "escalation_criteria": "Escalate when two or more synthetic users share the symptom or errors persist.",
+      "file": "articles/ka-0100.md",
+      "related_systems": [
+        "Network"
+      ],
+      "resolution_guidance": "Restore the approved Network access path and verify the original workflow.",
+      "symptoms": [
+        "installer failure",
+        "catalog download delay"
+      ],
+      "title": "Approved Installer Checks: Multi-user Evidence",
+      "troubleshooting_steps": [
+        "Confirm the installer failure symptom, affected synthetic office, and observed time window.",
+        "Compare Network behavior from an approved second synthetic device.",
+        "Capture safe status and latency evidence before changing the simulated service path."
+      ]
+    }
+  ],
+  "synthetic": true
+}

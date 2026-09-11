@@ -1,0 +1,212 @@
+[
+  {
+    "access_patterns": [
+      "office_lan",
+      "corporate_wifi",
+      "synthetic_vpn"
+    ],
+    "dns_servers": [
+      "dns-a-01.synthetic.invalid",
+      "dns-b-01.synthetic.invalid"
+    ],
+    "infrastructure_notice": "Synthetic office infrastructure; not routable or production-derived.",
+    "location_id": "LOC-001",
+    "name": "Dallas",
+    "office_network": "resolve-demo-01",
+    "subnet": "192.0.2.16/28",
+    "vpn_gateway": "vpn-dallas.synthetic.invalid",
+    "wifi_ssids": [
+      "ResolveAI-Demo",
+      "ResolveAI-Demo-Guest"
+    ]
+  },
+  {
+    "access_patterns": [
+      "office_lan",
+      "corporate_wifi",
+      "synthetic_vpn"
+    ],
+    "dns_servers": [
+      "dns-a-02.synthetic.invalid",
+      "dns-b-02.synthetic.invalid"
+    ],
+    "infrastructure_notice": "Synthetic office infrastructure; not routable or production-derived.",
+    "location_id": "LOC-002",
+    "name": "Austin",
+    "office_network": "resolve-demo-02",
+    "subnet": "192.0.2.32/28",
+    "vpn_gateway": "vpn-austin.synthetic.invalid",
+    "wifi_ssids": [
+      "ResolveAI-Demo",
+      "ResolveAI-Demo-Guest"
+    ]
+  },
+  {
+    "access_patterns": [
+      "office_lan",
+      "corporate_wifi",
+      "synthetic_vpn"
+    ],
+    "dns_servers": [
+      "dns-a-03.synthetic.invalid",
+      "dns-b-03.synthetic.invalid"
+    ],
+    "infrastructure_notice": "Synthetic office infrastructure; not routable or production-derived.",
+    "location_id": "LOC-003",
+    "name": "New York",
+    "office_network": "resolve-demo-03",
+    "subnet": "192.0.2.48/28",
+    "vpn_gateway": "vpn-new-york.synthetic.invalid",
+    "wifi_ssids": [
+      "ResolveAI-Demo",
+      "ResolveAI-Demo-Guest"
+    ]
+  },
+  {
+    "access_patterns": [
+      "office_lan",
+      "corporate_wifi",
+      "synthetic_vpn"
+    ],
+    "dns_servers": [
+      "dns-a-04.synthetic.invalid",
+      "dns-b-04.synthetic.invalid"
+    ],
+    "infrastructure_notice": "Synthetic office infrastructure; not routable or production-derived.",
+    "location_id": "LOC-004",
+    "name": "Chicago",
+    "office_network": "resolve-demo-04",
+    "subnet": "192.0.2.64/28",
+    "vpn_gateway": "vpn-chicago.synthetic.invalid",
+    "wifi_ssids": [
+      "ResolveAI-Demo",
+      "ResolveAI-Demo-Guest"
+    ]
+  },
+  {
+    "access_patterns": [
+      "office_lan",
+      "corporate_wifi",
+      "synthetic_vpn"
+    ],
+    "dns_servers": [
+      "dns-a-05.synthetic.invalid",
+      "dns-b-05.synthetic.invalid"
+    ],
+    "infrastructure_notice": "Synthetic office infrastructure; not routable or production-derived.",
+    "location_id": "LOC-005",
+    "name": "Atlanta",
+    "office_network": "resolve-demo-05",
+    "subnet": "192.0.2.80/28",
+    "vpn_gateway": "vpn-atlanta.synthetic.invalid",
+    "wifi_ssids": [
+      "ResolveAI-Demo",
+      "ResolveAI-Demo-Guest"
+    ]
+  },
+  {
+    "access_patterns": [
+      "office_lan",
+      "corporate_wifi",
+      "synthetic_vpn"
+    ],
+    "dns_servers": [
+      "dns-a-06.synthetic.invalid",
+      "dns-b-06.synthetic.invalid"
+    ],
+    "infrastructure_notice": "Synthetic office infrastructure; not routable or production-derived.",
+    "location_id": "LOC-006",
+    "name": "Seattle",
+    "office_network": "resolve-demo-06",
+    "subnet": "192.0.2.96/28",
+    "vpn_gateway": "vpn-seattle.synthetic.invalid",
+    "wifi_ssids": [
+      "ResolveAI-Demo",
+      "ResolveAI-Demo-Guest"
+    ]
+  },
+  {
+    "access_patterns": [
+      "office_lan",
+      "corporate_wifi",
+      "synthetic_vpn"
+    ],
+    "dns_servers": [
+      "dns-a-07.synthetic.invalid",
+      "dns-b-07.synthetic.invalid"
+    ],
+    "infrastructure_notice": "Synthetic office infrastructure; not routable or production-derived.",
+    "location_id": "LOC-007",
+    "name": "Denver",
+    "office_network": "resolve-demo-07",
+    "subnet": "192.0.2.112/28",
+    "vpn_gateway": "vpn-denver.synthetic.invalid",
+    "wifi_ssids": [
+      "ResolveAI-Demo",
+      "ResolveAI-Demo-Guest"
+    ]
+  },
+  {
+    "access_patterns": [
+      "office_lan",
+      "corporate_wifi",
+      "synthetic_vpn"
+    ],
+    "dns_servers": [
+      "dns-a-08.synthetic.invalid",
+      "dns-b-08.synthetic.invalid"
+    ],
+    "infrastructure_notice": "Synthetic office infrastructure; not routable or production-derived.",
+    "location_id": "LOC-008",
+    "name": "Phoenix",
+    "office_network": "resolve-demo-08",
+    "subnet": "192.0.2.128/28",
+    "vpn_gateway": "vpn-phoenix.synthetic.invalid",
+    "wifi_ssids": [
+      "ResolveAI-Demo",
+      "ResolveAI-Demo-Guest"
+    ]
+  },
+  {
+    "access_patterns": [
+      "office_lan",
+      "corporate_wifi",
+      "synthetic_vpn"
+    ],
+    "dns_servers": [
+      "dns-a-09.synthetic.invalid",
+      "dns-b-09.synthetic.invalid"
+    ],
+    "infrastructure_notice": "Synthetic office infrastructure; not routable or production-derived.",
+    "location_id": "LOC-009",
+    "name": "Boston",
+    "office_network": "resolve-demo-09",
+    "subnet": "192.0.2.144/28",
+    "vpn_gateway": "vpn-boston.synthetic.invalid",
+    "wifi_ssids": [
+      "ResolveAI-Demo",
+      "ResolveAI-Demo-Guest"
+    ]
+  },
+  {
+    "access_patterns": [
+      "office_lan",
+      "corporate_wifi",
+      "synthetic_vpn"
+    ],
+    "dns_servers": [
+      "dns-a-10.synthetic.invalid",
+      "dns-b-10.synthetic.invalid"
+    ],
+    "infrastructure_notice": "Synthetic office infrastructure; not routable or production-derived.",
+    "location_id": "LOC-010",
+    "name": "San Francisco",
+    "office_network": "resolve-demo-10",
+    "subnet": "192.0.2.160/28",
+    "vpn_gateway": "vpn-san-francisco.synthetic.invalid",
+    "wifi_ssids": [
+      "ResolveAI-Demo",
+      "ResolveAI-Demo-Guest"
+    ]
+  }
+]

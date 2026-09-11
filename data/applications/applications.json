@@ -1,0 +1,182 @@
+[
+  {
+    "application_id": "APP-001",
+    "criticality": "high",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "FinanceHub",
+    "normal_availability": 99.6,
+    "owner": "People Operations Systems"
+  },
+  {
+    "application_id": "APP-002",
+    "criticality": "high",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "HRConnect",
+    "normal_availability": 99.7,
+    "owner": "Sales Systems"
+  },
+  {
+    "application_id": "APP-003",
+    "criticality": "critical",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "SalesPortal",
+    "normal_availability": 99.8,
+    "owner": "Support Systems"
+  },
+  {
+    "application_id": "APP-004",
+    "criticality": "medium",
+    "dependencies": [
+      "CRM",
+      "DNS"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "Customer360",
+    "normal_availability": 99.9,
+    "owner": "Engineering Systems"
+  },
+  {
+    "application_id": "APP-005",
+    "criticality": "critical",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "PayrollPro",
+    "normal_availability": 99.5,
+    "owner": "Legal Systems"
+  },
+  {
+    "application_id": "APP-006",
+    "criticality": "high",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "ServiceDesk",
+    "normal_availability": 99.6,
+    "owner": "Operations Systems"
+  },
+  {
+    "application_id": "APP-007",
+    "criticality": "critical",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "InventoryOne",
+    "normal_availability": 99.7,
+    "owner": "Marketing Systems"
+  },
+  {
+    "application_id": "APP-008",
+    "criticality": "medium",
+    "dependencies": [
+      "Active Directory",
+      "Network"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "SecureFiles",
+    "normal_availability": 99.8,
+    "owner": "Finance Systems"
+  },
+  {
+    "application_id": "APP-009",
+    "criticality": "high",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "ExpenseCenter",
+    "normal_availability": 99.9,
+    "owner": "People Operations Systems"
+  },
+  {
+    "application_id": "APP-010",
+    "criticality": "high",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "BenefitsHub",
+    "normal_availability": 99.5,
+    "owner": "Sales Systems"
+  },
+  {
+    "application_id": "APP-011",
+    "criticality": "critical",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "AnalyticsPortal",
+    "normal_availability": 99.6,
+    "owner": "Support Systems"
+  },
+  {
+    "application_id": "APP-012",
+    "criticality": "medium",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "ProcurementPro",
+    "normal_availability": 99.7,
+    "owner": "Engineering Systems"
+  },
+  {
+    "application_id": "APP-013",
+    "criticality": "high",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "TimeTrack",
+    "normal_availability": 99.8,
+    "owner": "Legal Systems"
+  },
+  {
+    "application_id": "APP-014",
+    "criticality": "high",
+    "dependencies": [
+      "DNS",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "EmployeePortal",
+    "normal_availability": 99.9,
+    "owner": "Operations Systems"
+  },
+  {
+    "application_id": "APP-015",
+    "criticality": "critical",
+    "dependencies": [
+      "CRM",
+      "Active Directory"
+    ],
+    "environment": "synthetic-production-simulation",
+    "name": "CRMOne",
+    "normal_availability": 99.5,
+    "owner": "Marketing Systems"
+  }
+]

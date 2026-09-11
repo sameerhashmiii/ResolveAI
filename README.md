@@ -4,7 +4,7 @@ AI-powered IT support ticket copilot designed around auditable evidence, determi
 
 ## Project Status
 
-ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 2 provides the secure ticket-management workflow; AI investigation capabilities are intentionally not represented as complete yet.
+ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 3 adds a validated synthetic enterprise environment; AI investigation capabilities are intentionally not represented as complete yet.
 
 Current product foundation:
 
@@ -19,6 +19,8 @@ Current product foundation:
 - Ticket intake, search, filtering, pagination, assignment, status, and activity history
 - Dashboard metrics calculated from persisted tickets
 - Atomic ticket events and audit records for every mutation
+- Reproducible enterprise data generator with relational incidents, telemetry, logs, and knowledge
+- Versioned 1,000-ticket dataset with SHA-256 provenance and hidden evaluation truth
 - Backend and frontend tests, linting, formatting, and strict type checks
 
 The ticket detail page explicitly marks AI investigation as unavailable until the evidence-backed workflow is implemented and tested in Phase 4. ResolveAI does not display fabricated analyses or metrics.
@@ -48,7 +50,24 @@ The checked-in defaults are for local development only. Use `.env.example` as th
 4. Create a ticket with requester and environment context.
 5. Assign the ticket, change its workflow status, and review the activity trail.
 
-All identities in demo mode are fictional. The larger coherent synthetic enterprise dataset is delivered in Phase 3.
+All identities and infrastructure in demo mode are fictional. The generated corpus is available under `data/`; database ingestion and AI use arrive in later phases.
+
+## Synthetic Enterprise Data
+
+Generate and validate the default corpus without paid services or third-party Python packages:
+
+```bash
+python scripts/generate_demo_data.py \
+  --tickets 1000 \
+  --users 250 \
+  --incidents 25 \
+  --knowledge-articles 100 \
+  --seed 42
+
+python scripts/validate_demo_data.py
+```
+
+The checked-in seed-42 dataset contains 250 fictional users, 1,000 tickets, 25 correlated incidents, 100 knowledge articles, 10,800 telemetry observations, 2,767 synthetic logs, and 150 hidden evaluation cases. See [the synthetic data model](docs/data-model.md) for relationships, privacy boundaries, validation, and limitations.
 
 ## Local Development
 

@@ -43,6 +43,9 @@ describe('DashboardPage', () => {
     expect(
       screen.getByLabelText('Platform health: Operational'),
     ).toBeInTheDocument()
+    expect(screen.getByLabelText('Demo environment notice')).toHaveTextContent(
+      'are synthetic',
+    )
   })
 
   it('shows an honest empty queue state', async () => {

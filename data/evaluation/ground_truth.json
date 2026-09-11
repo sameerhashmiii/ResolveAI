@@ -1,0 +1,1958 @@
+{
+  "cases": [
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0022",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000005"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0007",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "packet_loss",
+      "ticket_id": "TKT-000007"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0001",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000009"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0002",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000011"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0013",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000013"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P2",
+      "incident_id": "INC-0013",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000014"
+    },
+    {
+      "expected_category": "Account Lockout",
+      "expected_priority": "P2",
+      "incident_id": "INC-0009",
+      "relevant_knowledge_article_ids": [
+        "KA-0009",
+        "KA-0024",
+        "KA-0039"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000015"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P1",
+      "incident_id": "INC-0012",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000018"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0011",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000020"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0003",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000021"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0021",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000023"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P2",
+      "incident_id": "INC-0003",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000025"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P1",
+      "incident_id": "INC-0023",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000027"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0011",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000028"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0015",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "application_dependency",
+      "ticket_id": "TKT-000029"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P2",
+      "incident_id": "INC-0003",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000031"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0011",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000036"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0014",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000037"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0017",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "packet_loss",
+      "ticket_id": "TKT-000039"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P1",
+      "incident_id": "INC-0023",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000040"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0002",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000041"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0024",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000042"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0019",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000044"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0009",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000047"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P1",
+      "incident_id": "INC-0012",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000048"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0022",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000050"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0003",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000051"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P1",
+      "incident_id": "INC-0012",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000053"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0019",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000054"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P1",
+      "incident_id": "INC-0023",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000055"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0024",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000056"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P1",
+      "incident_id": "INC-0023",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000057"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0014",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000059"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0011",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000060"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0014",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000061"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0014",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000062"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P1",
+      "incident_id": "INC-0023",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000063"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0025",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "application_dependency",
+      "ticket_id": "TKT-000064"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0001",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000065"
+    },
+    {
+      "expected_category": "File / Share Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0018",
+      "relevant_knowledge_article_ids": [
+        "KA-0013",
+        "KA-0028",
+        "KA-0043"
+      ],
+      "root_cause_key": "file_storage",
+      "ticket_id": "TKT-000066"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0006",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "crm_database",
+      "ticket_id": "TKT-000067"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P1",
+      "incident_id": "INC-0012",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000068"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0019",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000069"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0022",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000070"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0002",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000071"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0024",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000072"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0014",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000074"
+    },
+    {
+      "expected_category": "Account Lockout",
+      "expected_priority": "P2",
+      "incident_id": "INC-0009",
+      "relevant_knowledge_article_ids": [
+        "KA-0009",
+        "KA-0024",
+        "KA-0039"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000077"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0017",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "packet_loss",
+      "ticket_id": "TKT-000079"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P1",
+      "incident_id": "INC-0012",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000083"
+    },
+    {
+      "expected_category": "DNS / Name Resolution",
+      "expected_priority": "P2",
+      "incident_id": "INC-0021",
+      "relevant_knowledge_article_ids": [
+        "KA-0012",
+        "KA-0027",
+        "KA-0042"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000084"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0022",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000085"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0004",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000088"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0001",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000089"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0022",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000090"
+    },
+    {
+      "expected_category": "Account Lockout",
+      "expected_priority": "P2",
+      "incident_id": "INC-0009",
+      "relevant_knowledge_article_ids": [
+        "KA-0009",
+        "KA-0024",
+        "KA-0039"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000091"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0009",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000092"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0013",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000093"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0022",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000095"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0010",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "email_queue",
+      "ticket_id": "TKT-000097"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0004",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000098"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0024",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000099"
+    },
+    {
+      "expected_category": "DNS / Name Resolution",
+      "expected_priority": "P2",
+      "incident_id": "INC-0001",
+      "relevant_knowledge_article_ids": [
+        "KA-0012",
+        "KA-0027",
+        "KA-0042"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000100"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P2",
+      "incident_id": "INC-0013",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000101"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0024",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000102"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0001",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000105"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0004",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000109"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0004",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000112"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0013",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000113"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0017",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "packet_loss",
+      "ticket_id": "TKT-000114"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0006",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "crm_database",
+      "ticket_id": "TKT-000115"
+    },
+    {
+      "expected_category": "DNS / Name Resolution",
+      "expected_priority": "P2",
+      "incident_id": "INC-0011",
+      "relevant_knowledge_article_ids": [
+        "KA-0012",
+        "KA-0027",
+        "KA-0042"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000116"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0015",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "application_dependency",
+      "ticket_id": "TKT-000117"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0017",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "packet_loss",
+      "ticket_id": "TKT-000118"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0014",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000119"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0022",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000120"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0010",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "email_queue",
+      "ticket_id": "TKT-000122"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P1",
+      "incident_id": "INC-0023",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000123"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0019",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000124"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0014",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000125"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0016",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "crm_database",
+      "ticket_id": "TKT-000126"
+    },
+    {
+      "expected_category": "DNS / Name Resolution",
+      "expected_priority": "P2",
+      "incident_id": "INC-0001",
+      "relevant_knowledge_article_ids": [
+        "KA-0012",
+        "KA-0027",
+        "KA-0042"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000127"
+    },
+    {
+      "expected_category": "Account Lockout",
+      "expected_priority": "P2",
+      "incident_id": "INC-0019",
+      "relevant_knowledge_article_ids": [
+        "KA-0009",
+        "KA-0024",
+        "KA-0039"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000128"
+    },
+    {
+      "expected_category": "File / Share Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0008",
+      "relevant_knowledge_article_ids": [
+        "KA-0013",
+        "KA-0028",
+        "KA-0043"
+      ],
+      "root_cause_key": "file_storage",
+      "ticket_id": "TKT-000131"
+    },
+    {
+      "expected_category": "DNS / Name Resolution",
+      "expected_priority": "P2",
+      "incident_id": "INC-0021",
+      "relevant_knowledge_article_ids": [
+        "KA-0012",
+        "KA-0027",
+        "KA-0042"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000132"
+    },
+    {
+      "expected_category": "File / Share Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0008",
+      "relevant_knowledge_article_ids": [
+        "KA-0013",
+        "KA-0028",
+        "KA-0043"
+      ],
+      "root_cause_key": "file_storage",
+      "ticket_id": "TKT-000133"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0016",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "crm_database",
+      "ticket_id": "TKT-000134"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0021",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000135"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0009",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000137"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P1",
+      "incident_id": "INC-0012",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000138"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0006",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "crm_database",
+      "ticket_id": "TKT-000139"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0025",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "application_dependency",
+      "ticket_id": "TKT-000144"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0003",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000146"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0013",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000148"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0015",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "application_dependency",
+      "ticket_id": "TKT-000149"
+    },
+    {
+      "expected_category": "Account Lockout",
+      "expected_priority": "P2",
+      "incident_id": "INC-0019",
+      "relevant_knowledge_article_ids": [
+        "KA-0009",
+        "KA-0024",
+        "KA-0039"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000150"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P2",
+      "incident_id": "INC-0013",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000155"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0009",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000157"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0014",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000158"
+    },
+    {
+      "expected_category": "Account Lockout",
+      "expected_priority": "P2",
+      "incident_id": "INC-0009",
+      "relevant_knowledge_article_ids": [
+        "KA-0009",
+        "KA-0024",
+        "KA-0039"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000159"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0001",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000161"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0009",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000162"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P2",
+      "incident_id": "INC-0003",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000163"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0020",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "email_queue",
+      "ticket_id": "TKT-000164"
+    },
+    {
+      "expected_category": "Account Lockout",
+      "expected_priority": "P2",
+      "incident_id": "INC-0019",
+      "relevant_knowledge_article_ids": [
+        "KA-0009",
+        "KA-0024",
+        "KA-0039"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000166"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0021",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000167"
+    },
+    {
+      "expected_category": "DNS / Name Resolution",
+      "expected_priority": "P2",
+      "incident_id": "INC-0021",
+      "relevant_knowledge_article_ids": [
+        "KA-0012",
+        "KA-0027",
+        "KA-0042"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000168"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0020",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "email_queue",
+      "ticket_id": "TKT-000169"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0022",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000170"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0013",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000173"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0024",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000174"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P2",
+      "incident_id": "INC-0003",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000175"
+    },
+    {
+      "expected_category": "Account Lockout",
+      "expected_priority": "P2",
+      "incident_id": "INC-0009",
+      "relevant_knowledge_article_ids": [
+        "KA-0009",
+        "KA-0024",
+        "KA-0039"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000177"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P1",
+      "incident_id": "INC-0012",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000178"
+    },
+    {
+      "expected_category": "Microsoft 365",
+      "expected_priority": "P2",
+      "incident_id": "INC-0013",
+      "relevant_knowledge_article_ids": [
+        "KA-0008",
+        "KA-0023",
+        "KA-0038"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000179"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0015",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "application_dependency",
+      "ticket_id": "TKT-000181"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0014",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000182"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P1",
+      "incident_id": "INC-0012",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000183"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0017",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "packet_loss",
+      "ticket_id": "TKT-000184"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0001",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000185"
+    },
+    {
+      "expected_category": "File / Share Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0018",
+      "relevant_knowledge_article_ids": [
+        "KA-0013",
+        "KA-0028",
+        "KA-0043"
+      ],
+      "root_cause_key": "file_storage",
+      "ticket_id": "TKT-000188"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0016",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "crm_database",
+      "ticket_id": "TKT-000190"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0002",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000191"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0007",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "packet_loss",
+      "ticket_id": "TKT-000192"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0001",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000193"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P1",
+      "incident_id": "INC-0023",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000860"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0020",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "email_queue",
+      "ticket_id": "TKT-000870"
+    },
+    {
+      "expected_category": "File / Share Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0018",
+      "relevant_knowledge_article_ids": [
+        "KA-0013",
+        "KA-0028",
+        "KA-0043"
+      ],
+      "root_cause_key": "file_storage",
+      "ticket_id": "TKT-000927"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0025",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "application_dependency",
+      "ticket_id": "TKT-000935"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0016",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "crm_database",
+      "ticket_id": "TKT-000944"
+    },
+    {
+      "expected_category": "File / Share Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0008",
+      "relevant_knowledge_article_ids": [
+        "KA-0013",
+        "KA-0028",
+        "KA-0043"
+      ],
+      "root_cause_key": "file_storage",
+      "ticket_id": "TKT-000945"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0015",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "application_dependency",
+      "ticket_id": "TKT-000946"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0006",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "crm_database",
+      "ticket_id": "TKT-000948"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0005",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "application_dependency",
+      "ticket_id": "TKT-000951"
+    },
+    {
+      "expected_category": "Application Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0001",
+      "relevant_knowledge_article_ids": [
+        "KA-0004",
+        "KA-0019",
+        "KA-0034"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000956"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0013",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000967"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0010",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "email_queue",
+      "ticket_id": "TKT-000969"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0019",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000974"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0022",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000983"
+    },
+    {
+      "expected_category": "Outlook / Email",
+      "expected_priority": "P2",
+      "incident_id": "INC-0003",
+      "relevant_knowledge_article_ids": [
+        "KA-0005",
+        "KA-0020",
+        "KA-0035"
+      ],
+      "root_cause_key": "m365_authentication",
+      "ticket_id": "TKT-000984"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0021",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000985"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0017",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "packet_loss",
+      "ticket_id": "TKT-000986"
+    },
+    {
+      "expected_category": "Network Connectivity",
+      "expected_priority": "P2",
+      "incident_id": "INC-0011",
+      "relevant_knowledge_article_ids": [
+        "KA-0007",
+        "KA-0022",
+        "KA-0037"
+      ],
+      "root_cause_key": "dns_degradation",
+      "ticket_id": "TKT-000987"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P1",
+      "incident_id": "INC-0012",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000991"
+    },
+    {
+      "expected_category": "Password / MFA",
+      "expected_priority": "P2",
+      "incident_id": "INC-0009",
+      "relevant_knowledge_article_ids": [
+        "KA-0002",
+        "KA-0017",
+        "KA-0032"
+      ],
+      "root_cause_key": "directory_latency",
+      "ticket_id": "TKT-000993"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0024",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000994"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0014",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000995"
+    },
+    {
+      "expected_category": "Wi-Fi / Wireless",
+      "expected_priority": "P2",
+      "incident_id": "INC-0004",
+      "relevant_knowledge_article_ids": [
+        "KA-0003",
+        "KA-0018",
+        "KA-0033"
+      ],
+      "root_cause_key": "wifi_controller",
+      "ticket_id": "TKT-000996"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0007",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "packet_loss",
+      "ticket_id": "TKT-000998"
+    },
+    {
+      "expected_category": "VPN / Remote Access",
+      "expected_priority": "P2",
+      "incident_id": "INC-0002",
+      "relevant_knowledge_article_ids": [
+        "KA-0001",
+        "KA-0016",
+        "KA-0031"
+      ],
+      "root_cause_key": "vpn_authentication",
+      "ticket_id": "TKT-000999"
+    }
+  ],
+  "incidents": [
+    {
+      "ground_truth_category": "DNS / Name Resolution",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "dns_degradation",
+      "incident_id": "INC-0001"
+    },
+    {
+      "ground_truth_category": "VPN / Remote Access",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "vpn_authentication",
+      "incident_id": "INC-0002"
+    },
+    {
+      "ground_truth_category": "Microsoft 365",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "m365_authentication",
+      "incident_id": "INC-0003"
+    },
+    {
+      "ground_truth_category": "Wi-Fi / Wireless",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "wifi_controller",
+      "incident_id": "INC-0004"
+    },
+    {
+      "ground_truth_category": "Application Access",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "application_dependency",
+      "incident_id": "INC-0005"
+    },
+    {
+      "ground_truth_category": "Application Access",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "crm_database",
+      "incident_id": "INC-0006"
+    },
+    {
+      "ground_truth_category": "Network Connectivity",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "packet_loss",
+      "incident_id": "INC-0007"
+    },
+    {
+      "ground_truth_category": "File / Share Access",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "file_storage",
+      "incident_id": "INC-0008"
+    },
+    {
+      "ground_truth_category": "Account Lockout",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "directory_latency",
+      "incident_id": "INC-0009"
+    },
+    {
+      "ground_truth_category": "Outlook / Email",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "email_queue",
+      "incident_id": "INC-0010"
+    },
+    {
+      "ground_truth_category": "DNS / Name Resolution",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "dns_degradation",
+      "incident_id": "INC-0011"
+    },
+    {
+      "ground_truth_category": "VPN / Remote Access",
+      "ground_truth_priority": "P1",
+      "ground_truth_root_cause": "vpn_authentication",
+      "incident_id": "INC-0012"
+    },
+    {
+      "ground_truth_category": "Microsoft 365",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "m365_authentication",
+      "incident_id": "INC-0013"
+    },
+    {
+      "ground_truth_category": "Wi-Fi / Wireless",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "wifi_controller",
+      "incident_id": "INC-0014"
+    },
+    {
+      "ground_truth_category": "Application Access",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "application_dependency",
+      "incident_id": "INC-0015"
+    },
+    {
+      "ground_truth_category": "Application Access",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "crm_database",
+      "incident_id": "INC-0016"
+    },
+    {
+      "ground_truth_category": "Network Connectivity",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "packet_loss",
+      "incident_id": "INC-0017"
+    },
+    {
+      "ground_truth_category": "File / Share Access",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "file_storage",
+      "incident_id": "INC-0018"
+    },
+    {
+      "ground_truth_category": "Account Lockout",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "directory_latency",
+      "incident_id": "INC-0019"
+    },
+    {
+      "ground_truth_category": "Outlook / Email",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "email_queue",
+      "incident_id": "INC-0020"
+    },
+    {
+      "ground_truth_category": "DNS / Name Resolution",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "dns_degradation",
+      "incident_id": "INC-0021"
+    },
+    {
+      "ground_truth_category": "VPN / Remote Access",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "vpn_authentication",
+      "incident_id": "INC-0022"
+    },
+    {
+      "ground_truth_category": "Microsoft 365",
+      "ground_truth_priority": "P1",
+      "ground_truth_root_cause": "m365_authentication",
+      "incident_id": "INC-0023"
+    },
+    {
+      "ground_truth_category": "Wi-Fi / Wireless",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "wifi_controller",
+      "incident_id": "INC-0024"
+    },
+    {
+      "ground_truth_category": "Application Access",
+      "ground_truth_priority": "P2",
+      "ground_truth_root_cause": "application_dependency",
+      "incident_id": "INC-0025"
+    }
+  ],
+  "synthetic": true,
+  "visibility": "hidden_non_user_facing_evaluation_only"
+}

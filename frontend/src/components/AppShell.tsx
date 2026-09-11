@@ -66,6 +66,18 @@ export function AppShell() {
         </div>
       </aside>
       <main className="product-main">
+        {user?.is_demo && (
+          <aside
+            className="demo-environment"
+            aria-label="Demo environment notice"
+          >
+            <strong>Demo environment</strong>
+            <span>
+              All users, tickets, applications, incidents, telemetry, logs, and
+              knowledge articles are synthetic.
+            </span>
+          </aside>
+        )}
         <Outlet />
       </main>
     </div>

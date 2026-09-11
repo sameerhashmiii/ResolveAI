@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     )
 
     app_name: str = "ResolveAI"
-    app_version: str = "0.2.0"
+    app_version: str = "0.3.0"
     environment: str = "production"
     log_level: str = "INFO"
     database_url: str = Field(
