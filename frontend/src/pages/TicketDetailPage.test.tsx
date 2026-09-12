@@ -74,6 +74,14 @@ function setupFetch(
       const url = requestUrl(input)
       if (url.endsWith('/auth/me'))
         return Promise.resolve(jsonResponse(userResponse))
+      if (url.includes('/knowledge/search?'))
+        return Promise.resolve(
+          jsonResponse({
+            query: 'VPN access unavailable',
+            embedding_model: 'local-hash-v1',
+            items: [],
+          }),
+        )
       if (url.endsWith(`/tickets/${ticket.id}/analyses/latest`))
         return Promise.resolve(jsonResponse(analysis))
       if (url.endsWith(`/tickets/${ticket.id}/analyses`))

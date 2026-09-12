@@ -4,7 +4,7 @@ AI-powered IT support ticket copilot designed around auditable evidence, determi
 
 ## Project Status
 
-ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 4 adds validated ticket classification, entity extraction, deterministic priority policy, and human override; evidence retrieval and root-cause analysis are intentionally not represented as complete yet.
+ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 5 adds source-backed knowledge ingestion and hybrid pgvector retrieval; incident correlation and root-cause analysis are intentionally not represented as complete yet.
 
 Current product foundation:
 
@@ -24,6 +24,8 @@ Current product foundation:
 - Strict structured-output triage with deterministic local and optional hosted providers
 - Policy-controlled P1-P4 recommendations that cannot be selected arbitrarily by a model
 - Human priority override with reason, activity event, and audit record
+- Idempotent Markdown ingestion with 300 source-preserving chunks and pgvector embeddings
+- Hybrid vector/lexical retrieval with inspectable source excerpts and provenance
 - Backend and frontend tests, linting, formatting, and strict type checks
 
 The ticket detail page clearly labels deterministic demo analysis versus hosted model output. ResolveAI does not display fabricated retrieval evidence, root causes, or quality metrics.
@@ -83,6 +85,21 @@ Local demo mode requires no key. Create a ticket, open its detail page, and sele
 - A manual-review warning when confidence or scope is uncertain
 
 Hosted mode uses an OpenAI-compatible structured-output endpoint when explicitly configured. Provider output is schema-validated and supplies signals only; deterministic application policy assigns priority. See [the AI design](docs/ai-design.md).
+
+## RAG Knowledge Retrieval
+
+Docker Compose validates migrations, ingests the checked-in knowledge corpus, and starts the API only after ingestion succeeds. Ticket detail pages search the knowledge base using bounded ticket context and display only persisted article titles and exact chunk excerpts.
+
+Phase 5 uses a deterministic 384-dimensional signed hashing embedding plus lexical reranking and transparent domain query expansion. This keeps the demo fully local and reproducible without claiming learned semantic quality. The retrieval boundary can be replaced by a learned embedding model in a later production deployment.
+
+```bash
+cd backend
+RESOLVEAI_DATABASE_URL=postgresql+asyncpg://resolveai:resolveai_local@localhost:5432/resolveai \
+RESOLVEAI_KNOWLEDGE_DATA_DIR=../data/knowledge \
+.venv/bin/python -m app.rag.ingest
+```
+
+See [the RAG architecture](docs/rag-architecture.md) for chunking, ranking, citation integrity, and limitations.
 
 ## Local Development
 

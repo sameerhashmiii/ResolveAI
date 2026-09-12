@@ -15,11 +15,12 @@ import {
   formatDate,
   StatusBadge,
 } from '../components/TicketTable'
+import { KnowledgeSources } from '../features/knowledge/KnowledgeSources'
 import { AITicketTriage } from '../features/triage/AITicketTriage'
 
 export function TicketDetailPage() {
   const { id = '' } = useParams()
-  const { csrfToken } = useAuth()
+  const { csrfToken, user } = useAuth()
   const queryClient = useQueryClient()
   const [actionError, setActionError] = useState<string | null>(null)
   const ticket = useQuery({
@@ -129,6 +130,8 @@ export function TicketDetailPage() {
             <h2>Reported issue</h2>
             <p>{item.description}</p>
           </section>
+          <AITicketTriage ticket={item} csrfToken={csrfToken} />
+          <KnowledgeSources ticket={item} isAuthenticated={Boolean(user)} />
           <section className="content-card">
             <div className="section-heading">
               <div>
@@ -167,7 +170,6 @@ export function TicketDetailPage() {
               </ol>
             )}
           </section>
-          <AITicketTriage ticket={item} csrfToken={csrfToken} />
         </div>
         <aside className="detail-aside">
           <form

@@ -46,6 +46,14 @@ function setupFetch() {
     if (url.endsWith('/tickets/ticket-42/analyses/latest'))
       return Promise.resolve(jsonResponse(null))
     if (url.endsWith('/users')) return Promise.resolve(jsonResponse([]))
+    if (url.includes('/knowledge/search?'))
+      return Promise.resolve(
+        jsonResponse({
+          query: 'VPN access unavailable',
+          embedding_model: 'local-hash-v1',
+          items: [],
+        }),
+      )
     return Promise.resolve(jsonResponse({ status: 'ready' }))
   })
 }

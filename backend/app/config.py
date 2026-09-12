@@ -1,8 +1,16 @@
 from functools import lru_cache
+from pathlib import Path
 from typing import Literal
 
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+def default_knowledge_data_dir() -> Path:
+    container_path = Path("/data/knowledge")
+    if container_path.is_dir():
+        return container_path
+    return Path(__file__).resolve().parents[2] / "data" / "knowledge"
 
 
 class Settings(BaseSettings):
@@ -14,7 +22,7 @@ class Settings(BaseSettings):
     )
 
     app_name: str = "ResolveAI"
-    app_version: str = "0.4.0"
+    app_version: str = "0.5.0"
     environment: str = "production"
     log_level: str = "INFO"
     database_url: str = Field(
@@ -29,6 +37,7 @@ class Settings(BaseSettings):
     llm_base_url: str = Field(default="https://api.openai.com/v1", min_length=1)
     llm_api_key: SecretStr | None = None
     llm_model: str | None = None
+    knowledge_data_dir: Path = Field(default_factory=default_knowledge_data_dir)
 
 
 @lru_cache

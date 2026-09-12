@@ -47,6 +47,8 @@ services:
         condition: service_healthy
       migrate:
         condition: service_completed_successfully
+      ingest:
+        condition: service_completed_successfully
     healthcheck:
       test:
         - CMD
@@ -60,6 +62,23 @@ services:
     ports:
       - "${BACKEND_PORT:-8000}:8000"
     restart: unless-stopped
+
+  ingest:
+    build:
+      context: ./backend
+    command: ["python", "-m", "app.rag.ingest"]
+    environment:
+      RESOLVEAI_DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-resolveai}:${POSTGRES_PASSWORD:-resolveai_local}@database:5432/${POSTGRES_DB:-resolveai}
+      RESOLVEAI_ENVIRONMENT: ${RESOLVEAI_ENVIRONMENT:-development}
+      RESOLVEAI_KNOWLEDGE_DATA_DIR: /data/knowledge
+    volumes:
+      - ./data:/data:ro
+    depends_on:
+      database:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    restart: "no"
 
   frontend:
     build:
