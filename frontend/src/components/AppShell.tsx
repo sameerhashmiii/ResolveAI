@@ -44,6 +44,14 @@ export function AppShell() {
           <NavLink to="/tickets/new" onClick={() => setMenuOpen(false)}>
             <span aria-hidden="true">03</span> New request
           </NavLink>
+          {user?.role === 'administrator' && (
+            <NavLink
+              to="/admin/observability"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span aria-hidden="true">04</span> Observability
+            </NavLink>
+          )}
         </nav>
         <div className="sidebar-footer">
           <PlatformHealth />

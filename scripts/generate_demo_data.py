@@ -121,6 +121,8 @@ def main(argv=None):
     manifest = {
         "schema_version": "3.0",
         "dataset_version": "resolveai-phase3-v1",
+        "evaluation_dataset_version": ground_truth["dataset_version"],
+        "evaluation_schema_version": ground_truth["schema_version"],
         "seed": args.seed,
         "generated_at": iso(simulation_start - timedelta(days=1)),
         "simulation_window": {

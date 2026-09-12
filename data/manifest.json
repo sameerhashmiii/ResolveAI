@@ -29,7 +29,7 @@
   },
   "checksums": {
     "applications/applications.json": "4b49ef7438a562b8bc92fc864dc675187310af6480a2788a436dceaf329ac3ac",
-    "evaluation/ground_truth.json": "55f0ab5b2518fbce2d29e8bb45775cee6733cf2da6717ca631751d45d6e8f914",
+    "evaluation/ground_truth.json": "51c2973578cb4ccc72bd9f5c1e9ae7b40d61eaace87b0e6edbf88c1bf4f4f45f",
     "incidents/incidents.json": "9a76bbd2bf1e0ff9e9ae56bfd6fb930e4df054d6ba3a79b183480f9a0baf98d6",
     "knowledge/articles/ka-0001.md": "2d74c4d21de237ebab5d1f13fc8a7c11502f47a78b8dad7b7fb3ac144bedcded",
     "knowledge/articles/ka-0002.md": "b1664d4531069780c2b1f413075db4cf6facbfda9659ebcfcbad75851fb820c9",
@@ -139,6 +139,8 @@
     "users/users.jsonl": "6143a3ab71afa19119c280e2998345bbcd456960f1e451a078f6778a9cd61266"
   },
   "dataset_version": "resolveai-phase3-v1",
+  "evaluation_dataset_version": "resolveai-phase9-eval-v1",
+  "evaluation_schema_version": "1.0",
   "generated_at": "2026-08-31T00:00:00Z",
   "generator": "scripts/generate_demo_data.py",
   "requested_counts": {

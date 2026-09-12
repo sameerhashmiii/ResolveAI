@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from demo_data_common import (
+    AI_CATEGORY_BY_PRODUCT_CATEGORY,
     CATEGORY_COUNTS,
     LOCATION_NAMES,
     SERVICES,
@@ -501,6 +502,11 @@ def validate(root):
 
     ground_truth_ok = (
         data["ground_truth"].get("visibility") == "hidden_non_user_facing_evaluation_only"
+        and data["ground_truth"].get("schema_version") == "1.0"
+        and data["ground_truth"].get("dataset_version")
+        == manifest.get("evaluation_dataset_version")
+        and manifest.get("evaluation_schema_version") == "1.0"
+        and data["ground_truth"].get("synthetic") is True
     )
     truth_ids = [row.get("incident_id") for row in incident_truth]
     hidden_truth_by_id = {row["incident_id"]: row for row in incident_truth if "incident_id" in row}
@@ -526,9 +532,35 @@ def validate(root):
                 and case["ticket_id"] in linked_ticket_ids
                 and ticket["incident_id"] == case["incident_id"]
                 and case["expected_category"] == ticket["category"]
+                and case["expected_ai_category"]
+                == AI_CATEGORY_BY_PRODUCT_CATEGORY[ticket["category"]]
                 and case["expected_priority"] == ticket["priority"]
                 and case["root_cause_key"] == hidden_incident["ground_truth_root_cause"]
                 and set(case["relevant_knowledge_article_ids"]) <= article_ids
+                and set(case) == {
+                    "ticket_id",
+                    "incident_id",
+                    "root_cause_key",
+                    "expected_category",
+                    "expected_ai_category",
+                    "expected_priority",
+                    "relevant_knowledge_article_ids",
+                    "response_input",
+                    "response_rubric",
+                }
+                and set(case["response_input"]) == {
+                    "probable_root_cause",
+                    "recommendation",
+                    "limitations",
+                    "requires_escalation",
+                }
+                and set(case["response_rubric"]) == {
+                    "require_uncertainty",
+                    "prohibit_completed_actions",
+                    "require_professional_format",
+                    "required_recommendation_terms",
+                    "require_escalation_language",
+                }
             )
     except (KeyError, TypeError):
         ground_truth_ok = False

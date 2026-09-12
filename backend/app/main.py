@@ -1,10 +1,11 @@
 import logging
+import re
 import time
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 from uuid import uuid4
 
-from fastapi import FastAPI, Request, Response
+from fastapi import FastAPI, Request, Response, status
 from fastapi.responses import JSONResponse
 from starlette.middleware.base import RequestResponseEndpoint
 
@@ -17,6 +18,19 @@ from app.logging import configure_logging
 settings = get_settings()
 configure_logging(settings.log_level)
 logger = logging.getLogger(__name__)
+REQUEST_ID_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$")
+
+
+def request_id_from_header(value: str | None) -> str:
+    if value is not None and REQUEST_ID_PATTERN.fullmatch(value):
+        return value
+    return str(uuid4())
+
+
+def request_operation(request: Request) -> str:
+    route = request.scope.get("route")
+    route_path = getattr(route, "path", "unmatched")
+    return f"{request.method} {route_path}"
 
 
 @asynccontextmanager
@@ -39,17 +53,35 @@ def create_app() -> FastAPI:
 
     @application.middleware("http")
     async def request_context(request: Request, call_next: RequestResponseEndpoint) -> Response:
-        request_id = request.headers.get("X-Request-ID") or str(uuid4())
+        request_id = request_id_from_header(request.headers.get("X-Request-ID"))
         request.state.request_id = request_id
         started = time.perf_counter()
-        response = await call_next(request)
+        try:
+            response = await call_next(request)
+        except Exception:
+            logger.error(
+                "Request failed",
+                extra={
+                    "request_id": request_id,
+                    "operation": request_operation(request),
+                    "outcome": "unhandled_error",
+                    "status_code": status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    "duration_ms": round((time.perf_counter() - started) * 1000, 2),
+                },
+            )
+            response = JSONResponse(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                content={"detail": "Internal server error"},
+            )
         response.headers["X-Request-ID"] = request_id
+        if request.url.path.startswith(("/api/v1/analytics/", "/api/v1/admin/")):
+            response.headers["Cache-Control"] = "no-store"
         logger.info(
             "Request completed",
             extra={
                 "request_id": request_id,
-                "method": request.method,
-                "path": request.url.path,
+                "operation": request_operation(request),
+                "outcome": "success" if response.status_code < 400 else "error",
                 "status_code": response.status_code,
                 "duration_ms": round((time.perf_counter() - started) * 1000, 2),
             },

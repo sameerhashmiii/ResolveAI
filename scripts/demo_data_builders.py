@@ -558,6 +558,8 @@ def incident_log_signature(service, incident):
 
 
 def build_ground_truth(incidents, tickets, relevant_articles):
+    from demo_data_common import AI_CATEGORY_BY_PRODUCT_CATEGORY
+
     incident_by_id = {row["incident_id"]: row for row in incidents}
     incident_truth = [
         {
@@ -579,11 +581,32 @@ def build_ground_truth(incidents, tickets, relevant_articles):
                 "incident_id": incident["incident_id"],
                 "root_cause_key": incident["_ground_truth_root_cause"],
                 "expected_category": ticket["category"],
+                "expected_ai_category": AI_CATEGORY_BY_PRODUCT_CATEGORY[ticket["category"]],
                 "expected_priority": ticket["priority"],
                 "relevant_knowledge_article_ids": relevant_articles.get(ticket["category"], [])[:3],
+                "response_input": {
+                    "probable_root_cause": incident["_ground_truth_root_cause"].replace("_", " "),
+                    "recommendation": (
+                        "Please follow the approved %s diagnostic checklist and contact support "
+                        "if the issue persists." % ticket["category"].lower()
+                    ),
+                    "limitations": ["This assessment uses synthetic evidence only"],
+                    "requires_escalation": ticket["priority"] == "P1",
+                },
+                "response_rubric": {
+                    "require_uncertainty": True,
+                    "prohibit_completed_actions": True,
+                    "require_professional_format": True,
+                    "required_recommendation_terms": [
+                        "approved %s diagnostic checklist" % ticket["category"].lower()
+                    ],
+                    "require_escalation_language": ticket["priority"] == "P1",
+                },
             }
         )
     return {
+        "schema_version": "1.0",
+        "dataset_version": "resolveai-phase9-eval-v1",
         "visibility": "hidden_non_user_facing_evaluation_only",
         "synthetic": True,
         "incidents": incident_truth,

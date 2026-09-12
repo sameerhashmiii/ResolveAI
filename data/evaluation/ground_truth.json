@@ -1,6 +1,7 @@
 {
   "cases": [
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0022",
@@ -9,10 +10,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000005"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0007",
@@ -21,10 +40,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "packet loss",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "packet_loss",
       "ticket_id": "TKT-000007"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0001",
@@ -33,10 +70,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000009"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0002",
@@ -45,10 +100,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000011"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0013",
@@ -57,10 +130,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000013"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P2",
       "incident_id": "INC-0013",
@@ -69,10 +160,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000014"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Account Lockout",
       "expected_priority": "P2",
       "incident_id": "INC-0009",
@@ -81,10 +190,28 @@
         "KA-0024",
         "KA-0039"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved account lockout diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved account lockout diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000015"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P1",
       "incident_id": "INC-0012",
@@ -93,10 +220,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000018"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0011",
@@ -105,10 +250,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000020"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0003",
@@ -117,10 +280,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000021"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0021",
@@ -129,10 +310,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000023"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P2",
       "incident_id": "INC-0003",
@@ -141,10 +340,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000025"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P1",
       "incident_id": "INC-0023",
@@ -153,10 +370,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000027"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0011",
@@ -165,10 +400,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000028"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0015",
@@ -177,10 +430,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "application dependency",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "application_dependency",
       "ticket_id": "TKT-000029"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P2",
       "incident_id": "INC-0003",
@@ -189,10 +460,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000031"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0011",
@@ -201,10 +490,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000036"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0014",
@@ -213,10 +520,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000037"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0017",
@@ -225,10 +550,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "packet loss",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "packet_loss",
       "ticket_id": "TKT-000039"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P1",
       "incident_id": "INC-0023",
@@ -237,10 +580,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000040"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0002",
@@ -249,10 +610,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000041"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0024",
@@ -261,10 +640,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000042"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0019",
@@ -273,10 +670,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000044"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0009",
@@ -285,10 +700,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000047"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P1",
       "incident_id": "INC-0012",
@@ -297,10 +730,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000048"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0022",
@@ -309,10 +760,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000050"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0003",
@@ -321,10 +790,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000051"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P1",
       "incident_id": "INC-0012",
@@ -333,10 +820,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000053"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0019",
@@ -345,10 +850,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000054"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P1",
       "incident_id": "INC-0023",
@@ -357,10 +880,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000055"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0024",
@@ -369,10 +910,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000056"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P1",
       "incident_id": "INC-0023",
@@ -381,10 +940,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000057"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0014",
@@ -393,10 +970,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000059"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0011",
@@ -405,10 +1000,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000060"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0014",
@@ -417,10 +1030,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000061"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0014",
@@ -429,10 +1060,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000062"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P1",
       "incident_id": "INC-0023",
@@ -441,10 +1090,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000063"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0025",
@@ -453,10 +1120,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "application dependency",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "application_dependency",
       "ticket_id": "TKT-000064"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0001",
@@ -465,10 +1150,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000065"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "File / Share Access",
       "expected_priority": "P2",
       "incident_id": "INC-0018",
@@ -477,10 +1180,28 @@
         "KA-0028",
         "KA-0043"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "file storage",
+        "recommendation": "Please follow the approved file / share access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved file / share access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "file_storage",
       "ticket_id": "TKT-000066"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0006",
@@ -489,10 +1210,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "crm database",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "crm_database",
       "ticket_id": "TKT-000067"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P1",
       "incident_id": "INC-0012",
@@ -501,10 +1240,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000068"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0019",
@@ -513,10 +1270,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000069"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0022",
@@ -525,10 +1300,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000070"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0002",
@@ -537,10 +1330,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000071"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0024",
@@ -549,10 +1360,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000072"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0014",
@@ -561,10 +1390,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000074"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Account Lockout",
       "expected_priority": "P2",
       "incident_id": "INC-0009",
@@ -573,10 +1420,28 @@
         "KA-0024",
         "KA-0039"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved account lockout diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved account lockout diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000077"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0017",
@@ -585,10 +1450,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "packet loss",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "packet_loss",
       "ticket_id": "TKT-000079"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P1",
       "incident_id": "INC-0012",
@@ -597,10 +1480,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000083"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "DNS / Name Resolution",
       "expected_priority": "P2",
       "incident_id": "INC-0021",
@@ -609,10 +1510,28 @@
         "KA-0027",
         "KA-0042"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved dns / name resolution diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved dns / name resolution diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000084"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0022",
@@ -621,10 +1540,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000085"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0004",
@@ -633,10 +1570,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000088"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0001",
@@ -645,10 +1600,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000089"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0022",
@@ -657,10 +1630,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000090"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Account Lockout",
       "expected_priority": "P2",
       "incident_id": "INC-0009",
@@ -669,10 +1660,28 @@
         "KA-0024",
         "KA-0039"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved account lockout diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved account lockout diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000091"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0009",
@@ -681,10 +1690,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000092"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0013",
@@ -693,10 +1720,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000093"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0022",
@@ -705,10 +1750,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000095"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0010",
@@ -717,10 +1780,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "email queue",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "email_queue",
       "ticket_id": "TKT-000097"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0004",
@@ -729,10 +1810,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000098"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0024",
@@ -741,10 +1840,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000099"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "DNS / Name Resolution",
       "expected_priority": "P2",
       "incident_id": "INC-0001",
@@ -753,10 +1870,28 @@
         "KA-0027",
         "KA-0042"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved dns / name resolution diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved dns / name resolution diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000100"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P2",
       "incident_id": "INC-0013",
@@ -765,10 +1900,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000101"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0024",
@@ -777,10 +1930,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000102"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0001",
@@ -789,10 +1960,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000105"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0004",
@@ -801,10 +1990,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000109"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0004",
@@ -813,10 +2020,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000112"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0013",
@@ -825,10 +2050,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000113"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0017",
@@ -837,10 +2080,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "packet loss",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "packet_loss",
       "ticket_id": "TKT-000114"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0006",
@@ -849,10 +2110,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "crm database",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "crm_database",
       "ticket_id": "TKT-000115"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "DNS / Name Resolution",
       "expected_priority": "P2",
       "incident_id": "INC-0011",
@@ -861,10 +2140,28 @@
         "KA-0027",
         "KA-0042"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved dns / name resolution diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved dns / name resolution diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000116"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0015",
@@ -873,10 +2170,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "application dependency",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "application_dependency",
       "ticket_id": "TKT-000117"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0017",
@@ -885,10 +2200,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "packet loss",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "packet_loss",
       "ticket_id": "TKT-000118"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0014",
@@ -897,10 +2230,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000119"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0022",
@@ -909,10 +2260,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000120"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0010",
@@ -921,10 +2290,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "email queue",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "email_queue",
       "ticket_id": "TKT-000122"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P1",
       "incident_id": "INC-0023",
@@ -933,10 +2320,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000123"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0019",
@@ -945,10 +2350,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000124"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0014",
@@ -957,10 +2380,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000125"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0016",
@@ -969,10 +2410,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "crm database",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "crm_database",
       "ticket_id": "TKT-000126"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "DNS / Name Resolution",
       "expected_priority": "P2",
       "incident_id": "INC-0001",
@@ -981,10 +2440,28 @@
         "KA-0027",
         "KA-0042"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved dns / name resolution diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved dns / name resolution diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000127"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Account Lockout",
       "expected_priority": "P2",
       "incident_id": "INC-0019",
@@ -993,10 +2470,28 @@
         "KA-0024",
         "KA-0039"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved account lockout diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved account lockout diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000128"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "File / Share Access",
       "expected_priority": "P2",
       "incident_id": "INC-0008",
@@ -1005,10 +2500,28 @@
         "KA-0028",
         "KA-0043"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "file storage",
+        "recommendation": "Please follow the approved file / share access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved file / share access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "file_storage",
       "ticket_id": "TKT-000131"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "DNS / Name Resolution",
       "expected_priority": "P2",
       "incident_id": "INC-0021",
@@ -1017,10 +2530,28 @@
         "KA-0027",
         "KA-0042"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved dns / name resolution diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved dns / name resolution diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000132"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "File / Share Access",
       "expected_priority": "P2",
       "incident_id": "INC-0008",
@@ -1029,10 +2560,28 @@
         "KA-0028",
         "KA-0043"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "file storage",
+        "recommendation": "Please follow the approved file / share access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved file / share access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "file_storage",
       "ticket_id": "TKT-000133"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0016",
@@ -1041,10 +2590,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "crm database",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "crm_database",
       "ticket_id": "TKT-000134"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0021",
@@ -1053,10 +2620,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000135"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0009",
@@ -1065,10 +2650,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000137"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P1",
       "incident_id": "INC-0012",
@@ -1077,10 +2680,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000138"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0006",
@@ -1089,10 +2710,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "crm database",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "crm_database",
       "ticket_id": "TKT-000139"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0025",
@@ -1101,10 +2740,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "application dependency",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "application_dependency",
       "ticket_id": "TKT-000144"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0003",
@@ -1113,10 +2770,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000146"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0013",
@@ -1125,10 +2800,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000148"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0015",
@@ -1137,10 +2830,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "application dependency",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "application_dependency",
       "ticket_id": "TKT-000149"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Account Lockout",
       "expected_priority": "P2",
       "incident_id": "INC-0019",
@@ -1149,10 +2860,28 @@
         "KA-0024",
         "KA-0039"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved account lockout diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved account lockout diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000150"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P2",
       "incident_id": "INC-0013",
@@ -1161,10 +2890,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000155"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0009",
@@ -1173,10 +2920,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000157"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0014",
@@ -1185,10 +2950,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000158"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Account Lockout",
       "expected_priority": "P2",
       "incident_id": "INC-0009",
@@ -1197,10 +2980,28 @@
         "KA-0024",
         "KA-0039"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved account lockout diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved account lockout diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000159"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0001",
@@ -1209,10 +3010,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000161"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0009",
@@ -1221,10 +3040,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000162"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P2",
       "incident_id": "INC-0003",
@@ -1233,10 +3070,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000163"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0020",
@@ -1245,10 +3100,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "email queue",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "email_queue",
       "ticket_id": "TKT-000164"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Account Lockout",
       "expected_priority": "P2",
       "incident_id": "INC-0019",
@@ -1257,10 +3130,28 @@
         "KA-0024",
         "KA-0039"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved account lockout diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved account lockout diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000166"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0021",
@@ -1269,10 +3160,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000167"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "DNS / Name Resolution",
       "expected_priority": "P2",
       "incident_id": "INC-0021",
@@ -1281,10 +3190,28 @@
         "KA-0027",
         "KA-0042"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved dns / name resolution diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved dns / name resolution diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000168"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0020",
@@ -1293,10 +3220,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "email queue",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "email_queue",
       "ticket_id": "TKT-000169"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0022",
@@ -1305,10 +3250,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000170"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0013",
@@ -1317,10 +3280,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000173"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0024",
@@ -1329,10 +3310,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000174"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P2",
       "incident_id": "INC-0003",
@@ -1341,10 +3340,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000175"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Account Lockout",
       "expected_priority": "P2",
       "incident_id": "INC-0009",
@@ -1353,10 +3370,28 @@
         "KA-0024",
         "KA-0039"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved account lockout diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved account lockout diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000177"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P1",
       "incident_id": "INC-0012",
@@ -1365,10 +3400,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000178"
     },
     {
+      "expected_ai_category": "application",
       "expected_category": "Microsoft 365",
       "expected_priority": "P2",
       "incident_id": "INC-0013",
@@ -1377,10 +3430,28 @@
         "KA-0023",
         "KA-0038"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved microsoft 365 diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved microsoft 365 diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000179"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0015",
@@ -1389,10 +3460,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "application dependency",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "application_dependency",
       "ticket_id": "TKT-000181"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0014",
@@ -1401,10 +3490,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000182"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P1",
       "incident_id": "INC-0012",
@@ -1413,10 +3520,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000183"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0017",
@@ -1425,10 +3550,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "packet loss",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "packet_loss",
       "ticket_id": "TKT-000184"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0001",
@@ -1437,10 +3580,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000185"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "File / Share Access",
       "expected_priority": "P2",
       "incident_id": "INC-0018",
@@ -1449,10 +3610,28 @@
         "KA-0028",
         "KA-0043"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "file storage",
+        "recommendation": "Please follow the approved file / share access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved file / share access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "file_storage",
       "ticket_id": "TKT-000188"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0016",
@@ -1461,10 +3640,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "crm database",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "crm_database",
       "ticket_id": "TKT-000190"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0002",
@@ -1473,10 +3670,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000191"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0007",
@@ -1485,10 +3700,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "packet loss",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "packet_loss",
       "ticket_id": "TKT-000192"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0001",
@@ -1497,10 +3730,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000193"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P1",
       "incident_id": "INC-0023",
@@ -1509,10 +3760,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000860"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0020",
@@ -1521,10 +3790,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "email queue",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "email_queue",
       "ticket_id": "TKT-000870"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "File / Share Access",
       "expected_priority": "P2",
       "incident_id": "INC-0018",
@@ -1533,10 +3820,28 @@
         "KA-0028",
         "KA-0043"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "file storage",
+        "recommendation": "Please follow the approved file / share access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved file / share access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "file_storage",
       "ticket_id": "TKT-000927"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0025",
@@ -1545,10 +3850,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "application dependency",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "application_dependency",
       "ticket_id": "TKT-000935"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0016",
@@ -1557,10 +3880,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "crm database",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "crm_database",
       "ticket_id": "TKT-000944"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "File / Share Access",
       "expected_priority": "P2",
       "incident_id": "INC-0008",
@@ -1569,10 +3910,28 @@
         "KA-0028",
         "KA-0043"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "file storage",
+        "recommendation": "Please follow the approved file / share access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved file / share access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "file_storage",
       "ticket_id": "TKT-000945"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0015",
@@ -1581,10 +3940,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "application dependency",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "application_dependency",
       "ticket_id": "TKT-000946"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0006",
@@ -1593,10 +3970,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "crm database",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "crm_database",
       "ticket_id": "TKT-000948"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0005",
@@ -1605,10 +4000,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "application dependency",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "application_dependency",
       "ticket_id": "TKT-000951"
     },
     {
+      "expected_ai_category": "account_access",
       "expected_category": "Application Access",
       "expected_priority": "P2",
       "incident_id": "INC-0001",
@@ -1617,10 +4030,28 @@
         "KA-0019",
         "KA-0034"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved application access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved application access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000956"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0013",
@@ -1629,10 +4060,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000967"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0010",
@@ -1641,10 +4090,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "email queue",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "email_queue",
       "ticket_id": "TKT-000969"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0019",
@@ -1653,10 +4120,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000974"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0022",
@@ -1665,10 +4150,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000983"
     },
     {
+      "expected_ai_category": "email",
       "expected_category": "Outlook / Email",
       "expected_priority": "P2",
       "incident_id": "INC-0003",
@@ -1677,10 +4180,28 @@
         "KA-0020",
         "KA-0035"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "m365 authentication",
+        "recommendation": "Please follow the approved outlook / email diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved outlook / email diagnostic checklist"
+        ]
+      },
       "root_cause_key": "m365_authentication",
       "ticket_id": "TKT-000984"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0021",
@@ -1689,10 +4210,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000985"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0017",
@@ -1701,10 +4240,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "packet loss",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "packet_loss",
       "ticket_id": "TKT-000986"
     },
     {
+      "expected_ai_category": "network",
       "expected_category": "Network Connectivity",
       "expected_priority": "P2",
       "incident_id": "INC-0011",
@@ -1713,10 +4270,28 @@
         "KA-0022",
         "KA-0037"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "dns degradation",
+        "recommendation": "Please follow the approved network connectivity diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved network connectivity diagnostic checklist"
+        ]
+      },
       "root_cause_key": "dns_degradation",
       "ticket_id": "TKT-000987"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P1",
       "incident_id": "INC-0012",
@@ -1725,10 +4300,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": true
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": true,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000991"
     },
     {
+      "expected_ai_category": "password",
       "expected_category": "Password / MFA",
       "expected_priority": "P2",
       "incident_id": "INC-0009",
@@ -1737,10 +4330,28 @@
         "KA-0017",
         "KA-0032"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "directory latency",
+        "recommendation": "Please follow the approved password / mfa diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved password / mfa diagnostic checklist"
+        ]
+      },
       "root_cause_key": "directory_latency",
       "ticket_id": "TKT-000993"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0024",
@@ -1749,10 +4360,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000994"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0014",
@@ -1761,10 +4390,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000995"
     },
     {
+      "expected_ai_category": "wifi",
       "expected_category": "Wi-Fi / Wireless",
       "expected_priority": "P2",
       "incident_id": "INC-0004",
@@ -1773,10 +4420,28 @@
         "KA-0018",
         "KA-0033"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "wifi controller",
+        "recommendation": "Please follow the approved wi-fi / wireless diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved wi-fi / wireless diagnostic checklist"
+        ]
+      },
       "root_cause_key": "wifi_controller",
       "ticket_id": "TKT-000996"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0007",
@@ -1785,10 +4450,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "packet loss",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "packet_loss",
       "ticket_id": "TKT-000998"
     },
     {
+      "expected_ai_category": "vpn",
       "expected_category": "VPN / Remote Access",
       "expected_priority": "P2",
       "incident_id": "INC-0002",
@@ -1797,10 +4480,28 @@
         "KA-0016",
         "KA-0031"
       ],
+      "response_input": {
+        "limitations": [
+          "This assessment uses synthetic evidence only"
+        ],
+        "probable_root_cause": "vpn authentication",
+        "recommendation": "Please follow the approved vpn / remote access diagnostic checklist and contact support if the issue persists.",
+        "requires_escalation": false
+      },
+      "response_rubric": {
+        "prohibit_completed_actions": true,
+        "require_escalation_language": false,
+        "require_professional_format": true,
+        "require_uncertainty": true,
+        "required_recommendation_terms": [
+          "approved vpn / remote access diagnostic checklist"
+        ]
+      },
       "root_cause_key": "vpn_authentication",
       "ticket_id": "TKT-000999"
     }
   ],
+  "dataset_version": "resolveai-phase9-eval-v1",
   "incidents": [
     {
       "ground_truth_category": "DNS / Name Resolution",
@@ -1953,6 +4654,7 @@
       "incident_id": "INC-0025"
     }
   ],
+  "schema_version": "1.0",
   "synthetic": true,
   "visibility": "hidden_non_user_facing_evaluation_only"
 }

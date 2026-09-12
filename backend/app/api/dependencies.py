@@ -38,6 +38,29 @@ async def get_current_auth(
 CurrentAuth = Annotated[AuthContext, Depends(get_current_auth)]
 
 
+async def require_analyst(auth: CurrentAuth) -> AuthContext:
+    if not role_allows(auth.user.role, Role.SUPPORT_ANALYST):
+        raise HTTPException(status.HTTP_403_FORBIDDEN, "Forbidden")
+    return auth
+
+
+async def require_manager(auth: CurrentAuth) -> AuthContext:
+    if not role_allows(auth.user.role, Role.MANAGER):
+        raise HTTPException(status.HTTP_403_FORBIDDEN, "Forbidden")
+    return auth
+
+
+async def require_administrator(auth: CurrentAuth) -> AuthContext:
+    if not role_allows(auth.user.role, Role.ADMINISTRATOR):
+        raise HTTPException(status.HTTP_403_FORBIDDEN, "Forbidden")
+    return auth
+
+
+AnalystAuth = Annotated[AuthContext, Depends(require_analyst)]
+ManagerAuth = Annotated[AuthContext, Depends(require_manager)]
+AdministratorAuth = Annotated[AuthContext, Depends(require_administrator)]
+
+
 async def require_csrf(
     auth: CurrentAuth,
     csrf_token: Annotated[str | None, Header(alias="X-CSRF-Token")] = None,

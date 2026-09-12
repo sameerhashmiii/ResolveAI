@@ -4,7 +4,7 @@ AI-powered IT support ticket copilot designed around auditable evidence, determi
 
 ## Project Status
 
-ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 8 adds human recommendation decisions, grounded response drafting, approval-only communication, and explicit resolve/escalate outcomes.
+ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 9 adds reproducible synthetic evaluation, stored AI performance metrics, sourced operational analytics, and administrator observability.
 
 Current product foundation:
 
@@ -35,6 +35,9 @@ Current product foundation:
 - Human approve, reject, and modify decisions with Manager controls for high-impact actions
 - Grounded customer-response generation, human editing, and approval without false delivery claims
 - Dedicated audited resolution and internal escalation state transitions
+- Reproducible 150-case evaluation across classification, priority, retrieval, and response rubrics
+- Persisted aggregate evaluation runs with dataset checksums and documented methodology
+- Role-controlled operational analytics and sanitized administrator health visibility
 - Backend and frontend tests, linting, formatting, and strict type checks
 
 The ticket detail page clearly labels deterministic demo analysis versus hosted model output. ResolveAI does not display fabricated retrieval evidence, root causes, or quality metrics.
@@ -142,6 +145,20 @@ AI recommendations never execute actions. An analyst must approve, reject, or mo
 Only an accepted recommendation can generate a customer response. The draft can be edited and must be explicitly approved. Approval records `approval_only_not_sent`: ResolveAI has no delivery adapter and exposes no send endpoint or sent status.
 
 Resolving a ticket requires both an accepted recommendation and an approved response. Escalation is a separate explicit internal-routing action requiring destination and reason. Generic ticket updates cannot bypass either terminal transition. See [human approval and resolution](docs/human-approval.md).
+
+## Evaluation And Observability
+
+Phase 9 evaluates the deterministic local workflow against 150 hidden synthetic outcomes. The report measures exact AI-taxonomy classification, deterministic priority policy, article-level retrieval, and a versioned response safety/quality rubric. It records aggregate metrics only; hidden cases, ticket text, prompts, and generated responses are not persisted or exposed by product APIs.
+
+With PostgreSQL running and migrations applied:
+
+```bash
+cd backend
+RESOLVEAI_DATABASE_URL=postgresql+asyncpg://resolveai:resolveai_local@localhost:5432/resolveai \
+.venv/bin/python ../evaluation/run_eval.py
+```
+
+Administrators can review sourced demo workflow measurements, the latest completed evaluation, and sanitized component health at `/admin/observability`. Workflow completion is explicitly not presented as AI accuracy. See [evaluation and observability](docs/evaluation.md) for metric definitions, provenance, limitations, and the reproducibility contract.
 
 ## Local Development
 

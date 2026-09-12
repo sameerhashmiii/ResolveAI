@@ -331,3 +331,71 @@ export interface SimilarTicket {
 export interface SimilarTicketsResponse {
   items: SimilarTicket[]
 }
+
+export type JsonValue =
+  string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue }
+
+export interface AnalyticsTicketMetrics {
+  total_tickets: number
+  open_tickets: number
+  resolved_tickets: number
+  escalated_tickets: number
+  resolution_rate: number
+  sample_count: number
+}
+
+export interface AnalyticsWorkflowMetrics {
+  name: string
+  workflow_version: string
+  completed: number
+  failed: number
+  total: number
+  completion_rate: number
+  median_duration_ms: number
+}
+
+export interface AnalyticsOverview {
+  synthetic: boolean
+  source: string
+  methodology: string
+  measured_at: string
+  dataset_version: string
+  tickets: AnalyticsTicketMetrics
+  workflows: AnalyticsWorkflowMetrics[]
+}
+
+export interface EvaluationRun {
+  id: string
+  dataset_version: string
+  dataset_checksum: string
+  runner_version: string
+  workflow_version: string
+  provider: string
+  model: string | null
+  sample_count: number
+  metrics: JsonValue
+  methodology: JsonValue
+  completed_at: string
+}
+
+export interface AiPerformanceAnalytics {
+  synthetic: boolean
+  source: string
+  methodology: string
+  latest_run: EvaluationRun | null
+}
+
+export interface AdminHealthComponent {
+  name: string
+  status: 'up' | 'down'
+  latency_ms: number
+}
+
+export interface AdminHealth {
+  status: 'healthy' | 'degraded'
+  service: string
+  version: string
+  environment: string
+  checked_at: string
+  components: AdminHealthComponent[]
+}

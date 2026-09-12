@@ -22,6 +22,24 @@ CATEGORY_COUNTS = {
     "Other": 80,
 }
 
+AI_CATEGORY_BY_PRODUCT_CATEGORY = {
+    "VPN / Remote Access": "vpn",
+    "Password / MFA": "password",
+    "Wi-Fi / Wireless": "wifi",
+    "Application Access": "account_access",
+    "Outlook / Email": "email",
+    "Laptop / Endpoint": "hardware",
+    "Network Connectivity": "network",
+    "Microsoft 365": "application",
+    "Account Lockout": "account_access",
+    "Software Installation": "software",
+    "Printer / Peripheral": "hardware",
+    "DNS / Name Resolution": "network",
+    "File / Share Access": "account_access",
+    "Security Alerts": "security",
+    "Other": "other",
+}
+
 APP_NAMES = [
     "FinanceHub",
     "HRConnect",

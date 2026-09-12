@@ -23,6 +23,8 @@ class Manifest(StrictRow):
     category_distribution: dict[str, int]
     checksums: dict[str, str]
     dataset_version: str = Field(min_length=1, max_length=100)
+    evaluation_dataset_version: str | None = Field(default=None, min_length=1, max_length=100)
+    evaluation_schema_version: str | None = Field(default=None, min_length=1, max_length=30)
     generated_at: datetime
     generator: str
     requested_counts: dict[str, int]

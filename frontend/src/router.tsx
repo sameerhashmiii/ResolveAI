@@ -7,6 +7,7 @@ import {
 
 import { useAuth } from './auth/AuthContext'
 import { AppShell } from './components/AppShell'
+import { AdminObservabilityPage } from './pages/AdminObservabilityPage'
 import { CreateTicketPage } from './pages/CreateTicketPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { LoginPage } from './pages/LoginPage'
@@ -33,6 +34,15 @@ export function ProtectedRoute() {
   return <AppShell />
 }
 
+export function AdministratorRoute() {
+  const { user } = useAuth()
+  return user?.role === 'administrator' ? (
+    <AdminObservabilityPage />
+  ) : (
+    <Navigate to="/" replace />
+  )
+}
+
 export const routes: RouteObject[] = [
   { path: '/login', element: <LoginPage /> },
   {
@@ -43,6 +53,7 @@ export const routes: RouteObject[] = [
       { path: 'tickets', element: <TicketsPage /> },
       { path: 'tickets/new', element: <CreateTicketPage /> },
       { path: 'tickets/:id', element: <TicketDetailPage /> },
+      { path: 'admin/observability', element: <AdministratorRoute /> },
     ],
   },
   { path: '*', element: <Navigate to="/" replace /> },

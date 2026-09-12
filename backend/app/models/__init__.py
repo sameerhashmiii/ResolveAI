@@ -1,5 +1,6 @@
 from app.models.assessments import AssessmentEvidence, RootCauseAssessment
 from app.models.domain import AIAnalysis, AuditLog, Session, Ticket, TicketEvent, User
+from app.models.evaluation import EvaluationRun
 from app.models.knowledge import KnowledgeChunk, KnowledgeDocument
 from app.models.operational import (
     DatasetImport,
@@ -19,6 +20,7 @@ __all__ = [
     "AssessmentEvidence",
     "AuditLog",
     "DatasetImport",
+    "EvaluationRun",
     "HistoricalTicket",
     "Investigation",
     "InvestigationStep",
