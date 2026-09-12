@@ -18,6 +18,7 @@ import {
 import { KnowledgeSources } from '../features/knowledge/KnowledgeSources'
 import { RootCauseAssessment } from '../features/assessment/RootCauseAssessment'
 import { AIInvestigation } from '../features/investigation/AIInvestigation'
+import { HumanDecisionResolution } from '../features/resolution/HumanDecisionResolution'
 import { AITicketTriage } from '../features/triage/AITicketTriage'
 
 export function TicketDetailPage() {
@@ -48,7 +49,7 @@ export function TicketDetailPage() {
     ])
   }
   const statusMutation = useMutation({
-    mutationFn: (status: 'new' | 'in_progress' | 'resolved' | 'escalated') => {
+    mutationFn: (status: 'new' | 'in_progress') => {
       if (!csrfToken)
         throw new Error('Your session is missing a security token.')
       return updateTicket(id, { status }, csrfToken)
@@ -94,9 +95,14 @@ export function TicketDetailPage() {
     const assigneeValue = data.get('assigned_to_id')
     const nextStatus = (
       typeof statusValue === 'string' ? statusValue : 'new'
-    ) as 'new' | 'in_progress' | 'resolved' | 'escalated'
+    ) as 'new' | 'in_progress'
     const nextAssignee = typeof assigneeValue === 'string' ? assigneeValue : ''
-    if (nextStatus !== item.status) statusMutation.mutate(nextStatus)
+    if (
+      item.status !== 'resolved' &&
+      item.status !== 'escalated' &&
+      nextStatus !== item.status
+    )
+      statusMutation.mutate(nextStatus)
     if (nextAssignee !== (item.assigned_to?.id ?? ''))
       assignmentMutation.mutate(nextAssignee || null)
   }
@@ -136,6 +142,11 @@ export function TicketDetailPage() {
           <KnowledgeSources ticket={item} isAuthenticated={Boolean(user)} />
           <AIInvestigation ticket={item} csrfToken={csrfToken} />
           <RootCauseAssessment ticket={item} csrfToken={csrfToken} />
+          <HumanDecisionResolution
+            ticket={item}
+            csrfToken={csrfToken}
+            userRole={user?.role}
+          />
           <section className="content-card">
             <div className="section-heading">
               <div>
@@ -186,12 +197,15 @@ export function TicketDetailPage() {
               <select
                 id="ticket-status"
                 name="status"
-                defaultValue={item.status}
+                defaultValue={
+                  item.status === 'in_progress' ? 'in_progress' : 'new'
+                }
+                disabled={
+                  item.status === 'resolved' || item.status === 'escalated'
+                }
               >
                 <option value="new">New</option>
                 <option value="in_progress">In progress</option>
-                <option value="resolved">Resolved</option>
-                <option value="escalated">Escalated</option>
               </select>
             </div>
             <div className="field">

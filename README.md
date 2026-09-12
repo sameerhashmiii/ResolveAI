@@ -4,7 +4,7 @@ AI-powered IT support ticket copilot designed around auditable evidence, determi
 
 ## Project Status
 
-ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 7 adds source-grounded probable root-cause assessment, deterministic confidence, low-confidence escalation, and an auditable “Show Me Why” explanation.
+ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 8 adds human recommendation decisions, grounded response drafting, approval-only communication, and explicit resolve/escalate outcomes.
 
 Current product foundation:
 
@@ -32,6 +32,9 @@ Current product foundation:
 - Evidence-normalized probable root-cause inference with validated source identifiers
 - Versioned deterministic confidence factors and configurable low-confidence escalation
 - “Show Me Why” timeline, supporting evidence, and decision-factor disclosure without chain-of-thought
+- Human approve, reject, and modify decisions with Manager controls for high-impact actions
+- Grounded customer-response generation, human editing, and approval without false delivery claims
+- Dedicated audited resolution and internal escalation state transitions
 - Backend and frontend tests, linting, formatting, and strict type checks
 
 The ticket detail page clearly labels deterministic demo analysis versus hosted model output. ResolveAI does not display fabricated retrieval evidence, root causes, or quality metrics.
@@ -131,6 +134,14 @@ After investigation, an analyst can generate a separate assessment. ResolveAI di
 4. Recommended action labeled for human review, with no claim that it executed
 
 Confidence below the configured 70% threshold recommends human escalation. “Show Me Why” exposes the persisted investigation timeline, supporting evidence, and signed confidence factors while explicitly stating that hidden chain-of-thought is not stored or shown. See [root-cause analysis design](docs/root-cause-analysis.md).
+
+## Human-In-The-Loop Resolution
+
+AI recommendations never execute actions. An analyst must approve, reject, or modify ordinary troubleshooting guidance; recommendations involving account, MFA, credential, permission, or access changes require Manager or Administrator approval.
+
+Only an accepted recommendation can generate a customer response. The draft can be edited and must be explicitly approved. Approval records `approval_only_not_sent`: ResolveAI has no delivery adapter and exposes no send endpoint or sent status.
+
+Resolving a ticket requires both an accepted recommendation and an approved response. Escalation is a separate explicit internal-routing action requiring destination and reason. Generic ticket updates cannot bypass either terminal transition. See [human approval and resolution](docs/human-approval.md).
 
 ## Local Development
 

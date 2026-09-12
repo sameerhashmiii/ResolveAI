@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Any
+from typing import Any, Literal
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
@@ -44,7 +44,7 @@ class TicketCreate(BaseModel):
 class TicketUpdate(BaseModel):
     title: str | None = Field(default=None, min_length=1, max_length=200)
     description: str | None = Field(default=None, min_length=1, max_length=20_000)
-    status: TicketStatus | None = None
+    status: Literal[TicketStatus.NEW, TicketStatus.IN_PROGRESS] | None = None
 
     @field_validator("title", "description")
     @classmethod
@@ -83,6 +83,11 @@ class TicketResponse(BaseModel):
     priority_overridden: bool
     priority_override_reason: str | None
     status: TicketStatus
+    resolved_at: datetime | None
+    escalated_at: datetime | None
+    escalation_destination: str | None
+    escalation_reason: str | None
+    resolution_summary: str | None
     assigned_to: UserResponse | None
     created_by: UserResponse
     created_at: datetime

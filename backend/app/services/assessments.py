@@ -15,6 +15,7 @@ from app.errors import AIConfigurationError, ConflictError, NotFoundError
 from app.models.assessments import AssessmentEvidence, RootCauseAssessment
 from app.models.domain import AuditLog, TicketEvent, User
 from app.models.enums import RootCauseStatus
+from app.recommendations.policy import recommendation_from_assessment
 from app.repositories.assessments import AssessmentRepository
 from app.root_cause.confidence import calculate_confidence
 from app.root_cause.evidence import collect_evidence
@@ -201,13 +202,15 @@ class AssessmentService:
         analysis = await self.repository.analysis(value.analysis_id)
         investigation = value.investigation
         if ticket is None or investigation.id != value.investigation_id:
-            await self._fail(value, RootCauseStatus.FAILED, "required_context_missing")
+            await self._fail(assessment_id, RootCauseStatus.FAILED, "required_context_missing")
             return
         started = monotonic()
         try:
             evidence, collection_limitations = collect_evidence(investigation, ticket, analysis)
             if not evidence:
-                await self._fail(value, RootCauseStatus.FAILED, "insufficient_context", started)
+                await self._fail(
+                    assessment_id, RootCauseStatus.FAILED, "insufficient_context", started
+                )
                 return
             active_provider = provider or build_grounded_provider(self.settings)
             payload = GroundedInferenceInput(
@@ -253,6 +256,8 @@ class AssessmentService:
             value.error_code = None
             value.completed_at = datetime.now(UTC)
             value.duration_ms = max(0, round((monotonic() - started) * 1000))
+            recommendation = recommendation_from_assessment(value)
+            self.repository.add(recommendation)
             self._record(
                 value,
                 "completed",
@@ -265,17 +270,41 @@ class AssessmentService:
                     "evidence_count": len(evidence),
                 },
             )
+            self.repository.add(
+                TicketEvent(
+                    ticket_id=value.ticket_id,
+                    actor_id=value.requested_by_id,
+                    event_type="recommendation_proposed",
+                    summary="Support recommendation proposed for human decision",
+                    data={"action_type": recommendation.action_type.value},
+                )
+            )
+            self.repository.add(
+                AuditLog(
+                    actor_id=value.requested_by_id,
+                    action="ticket.recommendation.proposed",
+                    resource_type="ticket.recommendation",
+                    resource_id=recommendation.id,
+                    data={"action_type": recommendation.action_type.value},
+                )
+            )
             await self._commit(value)
         except TimeoutError:
-            await self._fail(value, RootCauseStatus.TIMED_OUT, "root_cause_timeout", started)
+            await self._fail(
+                assessment_id, RootCauseStatus.TIMED_OUT, "root_cause_timeout", started
+            )
         except ProviderUnavailable:
-            await self._fail(value, RootCauseStatus.FAILED, "provider_unavailable", started)
+            await self._fail(assessment_id, RootCauseStatus.FAILED, "provider_unavailable", started)
         except InvalidProviderResponse:
-            await self._fail(value, RootCauseStatus.FAILED, "invalid_provider_response", started)
+            await self._fail(
+                assessment_id, RootCauseStatus.FAILED, "invalid_provider_response", started
+            )
         except ValueError:
-            await self._fail(value, RootCauseStatus.FAILED, "provider_configuration", started)
+            await self._fail(
+                assessment_id, RootCauseStatus.FAILED, "provider_configuration", started
+            )
         except Exception:
-            await self._fail(value, RootCauseStatus.FAILED, "root_cause_failed", started)
+            await self._fail(assessment_id, RootCauseStatus.FAILED, "root_cause_failed", started)
 
     async def explanation(self, assessment_id: UUID) -> AssessmentExplanation:
         value = await self.get(assessment_id)
@@ -305,13 +334,13 @@ class AssessmentService:
 
     async def _fail(
         self,
-        value: RootCauseAssessment,
+        assessment_id: UUID,
         status: RootCauseStatus,
         error_code: str,
         started: float | None = None,
     ) -> None:
         await self.db.rollback()
-        value = await self.get(value.id)
+        value = await self.get(assessment_id)
         value.status = status
         value.requires_escalation = True
         value.error_code = error_code

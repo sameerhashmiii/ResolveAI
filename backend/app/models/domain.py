@@ -89,6 +89,28 @@ class Ticket(TimestampMixin, Base):
             "(priority_override_reason IS NOT NULL AND length(trim(priority_override_reason)) > 0)",
             name="ck_tickets_priority_override_reason",
         ),
+        CheckConstraint(
+            "resolved_at IS NULL OR escalated_at IS NULL",
+            name="ck_tickets_single_terminal_outcome",
+        ),
+        CheckConstraint(
+            "status != 'resolved' OR (escalated_at IS NULL AND escalation_destination IS NULL "
+            "AND escalation_reason IS NULL)",
+            name="ck_tickets_resolved_excludes_escalation",
+        ),
+        CheckConstraint(
+            "status != 'escalated' OR (resolved_at IS NULL AND resolution_summary IS NULL)",
+            name="ck_tickets_escalated_excludes_resolution",
+        ),
+        CheckConstraint(
+            "status != 'resolved' OR (resolved_at IS NOT NULL AND resolution_summary IS NOT NULL)",
+            name="ck_tickets_resolved_fields",
+        ),
+        CheckConstraint(
+            "status != 'escalated' OR (escalated_at IS NOT NULL AND "
+            "escalation_destination IS NOT NULL AND escalation_reason IS NOT NULL)",
+            name="ck_tickets_escalated_fields",
+        ),
     )
 
     id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
@@ -112,6 +134,11 @@ class Ticket(TimestampMixin, Base):
     status: Mapped[TicketStatus] = mapped_column(
         status_enum, default=TicketStatus.NEW, server_default=TicketStatus.NEW.value, nullable=False
     )
+    resolved_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    escalated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    escalation_destination: Mapped[str | None] = mapped_column(String(200))
+    escalation_reason: Mapped[str | None] = mapped_column(String(500))
+    resolution_summary: Mapped[str | None] = mapped_column(String(1000))
     assigned_to_id: Mapped[UUID | None] = mapped_column(ForeignKey("users.id"), index=True)
     created_by_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"), nullable=False)
     assigned_to: Mapped[User | None] = relationship(

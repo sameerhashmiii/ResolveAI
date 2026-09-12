@@ -37,6 +37,11 @@ export interface TicketSummary {
   created_by: UserSummary
   created_at: string
   updated_at: string
+  resolved_at?: string | null
+  resolution_summary?: string | null
+  escalated_at?: string | null
+  escalation_destination?: string | null
+  escalation_reason?: string | null
 }
 
 export type TicketDetail = TicketSummary
@@ -79,7 +84,52 @@ export interface CreateTicketInput {
 export interface UpdateTicketInput {
   title?: string
   description?: string
-  status?: 'new' | 'in_progress' | 'resolved' | 'escalated'
+  status?: 'new' | 'in_progress'
+}
+
+export type RecommendationStatus =
+  'proposed' | 'approved' | 'modified' | 'rejected' | 'completed'
+
+export interface Recommendation {
+  id: string
+  ticket_id: string
+  assessment_id: string
+  title: string
+  original_instructions: string
+  instructions: string
+  action_type: string
+  requires_approval: boolean
+  status: RecommendationStatus
+  decided_by_id: string | null
+  decision_reason: string | null
+  decided_at: string | null
+  created_at: string
+  updated_at: string
+}
+
+export type SupportResponseStatus = 'draft' | 'approved' | 'rejected'
+
+export interface SupportResponse {
+  id: string
+  ticket_id: string
+  assessment_id: string
+  recommendation_id: string
+  generated_by: string
+  provider: string
+  model: string | null
+  mode: string
+  draft_body: string
+  final_body: string | null
+  status: SupportResponseStatus
+  created_by_id: string
+  approved_by_id: string | null
+  rejected_by_id: string | null
+  rejection_reason: string | null
+  approved_at: string | null
+  rejected_at: string | null
+  created_at: string
+  updated_at: string
+  approval_semantics: 'approval_only_not_sent'
 }
 
 export type TicketPriority = 'p1' | 'p2' | 'p3' | 'p4'

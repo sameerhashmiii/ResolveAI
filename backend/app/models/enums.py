@@ -45,6 +45,32 @@ class RootCauseStatus(StrEnum):
     TIMED_OUT = "timed_out"
 
 
+class RecommendationActionType(StrEnum):
+    TROUBLESHOOT = "troubleshoot"
+    REQUEST_INFORMATION = "request_information"
+    HIGH_IMPACT = "high_impact"
+    ESCALATE = "escalate"
+
+
+class RecommendationStatus(StrEnum):
+    PROPOSED = "proposed"
+    APPROVED = "approved"
+    MODIFIED = "modified"
+    REJECTED = "rejected"
+    COMPLETED = "completed"
+
+
+class ResponseGeneratedBy(StrEnum):
+    AI = "ai"
+    HUMAN = "human"
+
+
+class SupportResponseStatus(StrEnum):
+    DRAFT = "draft"
+    APPROVED = "approved"
+    REJECTED = "rejected"
+
+
 class InvestigationStepStatus(StrEnum):
     STARTED = "started"
     COMPLETED = "completed"

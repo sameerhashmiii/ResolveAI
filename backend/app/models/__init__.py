@@ -12,6 +12,7 @@ from app.models.operational import (
     SyntheticLogRecord,
     TelemetryRecord,
 )
+from app.models.recommendations import Recommendation, SupportResponse
 
 __all__ = [
     "AIAnalysis",
@@ -25,11 +26,13 @@ __all__ = [
     "KnowledgeDocument",
     "Session",
     "RootCauseAssessment",
+    "Recommendation",
     "SyntheticApplication",
     "SyntheticIncident",
     "SyntheticLocation",
     "SyntheticLogRecord",
     "TelemetryRecord",
+    "SupportResponse",
     "Ticket",
     "TicketEvent",
     "User",

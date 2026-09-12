@@ -9,6 +9,7 @@ from app.models.assessments import AssessmentEvidence, RootCauseAssessment
 from app.models.domain import AIAnalysis, AuditLog, Ticket, TicketEvent
 from app.models.enums import InvestigationStatus, RootCauseStatus
 from app.models.operational import Investigation
+from app.models.recommendations import Recommendation
 
 
 class AssessmentRepository:
@@ -17,7 +18,7 @@ class AssessmentRepository:
 
     def add(
         self,
-        value: RootCauseAssessment | AssessmentEvidence | TicketEvent | AuditLog,
+        value: RootCauseAssessment | AssessmentEvidence | Recommendation | TicketEvent | AuditLog,
     ) -> None:
         self.db.add(value)
 

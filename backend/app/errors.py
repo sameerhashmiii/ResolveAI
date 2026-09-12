@@ -30,3 +30,13 @@ class ConflictError(ServiceError):
 class AIConfigurationError(ServiceError):
     status_code = 503
     detail = "AI analysis is not configured for this environment"
+
+
+class ResponseGenerationError(ServiceError):
+    status_code = 502
+    detail = "A safe customer response could not be generated"
+
+
+class UnsafeResponseContentError(ServiceError):
+    status_code = 422
+    detail = "Response text must not claim an unrecorded action was completed"

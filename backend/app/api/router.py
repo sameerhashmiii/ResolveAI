@@ -7,6 +7,7 @@ from app.api.v1.dashboard import router as dashboard_router
 from app.api.v1.health import router as health_router
 from app.api.v1.investigations import router as investigations_router
 from app.api.v1.knowledge import router as knowledge_router
+from app.api.v1.resolution import router as resolution_router
 from app.api.v1.tickets import router as tickets_router
 from app.api.v1.users import router as users_router
 
@@ -20,3 +21,4 @@ api_router.include_router(dashboard_router)
 api_router.include_router(knowledge_router)
 api_router.include_router(investigations_router)
 api_router.include_router(assessments_router)
+api_router.include_router(resolution_router)

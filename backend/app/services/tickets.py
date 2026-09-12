@@ -3,7 +3,7 @@ from uuid import UUID
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.errors import NotFoundError, ServiceError
+from app.errors import ConflictError, NotFoundError, ServiceError
 from app.models.domain import AuditLog, Ticket, TicketEvent, User
 from app.models.enums import TicketPriority, TicketStatus
 from app.repositories.tickets import TicketRepository
@@ -61,6 +61,10 @@ class TicketService:
 
     async def update(self, ticket_id: UUID, changes: dict[str, Any], actor: User) -> Ticket:
         ticket = await self.get(ticket_id)
+        if ticket.status in {TicketStatus.RESOLVED, TicketStatus.ESCALATED}:
+            raise ConflictError
+        if changes.get("status") in {TicketStatus.RESOLVED, TicketStatus.ESCALATED}:
+            raise ConflictError
         event_data: dict[str, Any] = {}
         for field, value in changes.items():
             setattr(ticket, field, value)
@@ -71,6 +75,8 @@ class TicketService:
 
     async def assign(self, ticket_id: UUID, assignee_id: UUID | None, actor: User) -> Ticket:
         ticket = await self.get(ticket_id)
+        if ticket.status in {TicketStatus.RESOLVED, TicketStatus.ESCALATED}:
+            raise ConflictError
         assignee = None
         if assignee_id is not None:
             assignee = await self._ensure_active_assignee(assignee_id)

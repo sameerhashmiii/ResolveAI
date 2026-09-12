@@ -2,7 +2,13 @@ import { screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
-import type { Analysis, TicketDetail } from '../api/types'
+import type {
+  Analysis,
+  Assessment,
+  Recommendation,
+  SupportResponse,
+  TicketDetail,
+} from '../api/types'
 import {
   jsonResponse,
   renderApp,
@@ -63,11 +69,62 @@ const completedAnalysis: Analysis = {
   created_at: '2026-09-11T10:01:00Z',
 }
 
+const completedAssessment: Assessment = {
+  id: 'assessment-1',
+  ticket_id: ticket.id,
+  investigation_id: 'investigation-1',
+  status: 'completed',
+  workflow_version: 'assessment-v1',
+  provider: 'resolveai-demo',
+  model: null,
+  mode: 'local_demo',
+  mode_label: 'Deterministic demo',
+  observed_evidence: [],
+  inference: { kind: 'probable', summary: 'VPN profile corruption' },
+  confidence: {
+    score: 0.9,
+    version: 'confidence-v1',
+    factors: [],
+    description: 'Strong evidence',
+  },
+  recommendation: { kind: 'recommendation', text: 'Reset VPN profile' },
+  limitations: [],
+  escalation: { required: false, threshold: 0.5, reason: '' },
+  error_code: null,
+  started_at: '2026-09-11T10:02:00Z',
+  completed_at: '2026-09-11T10:02:01Z',
+  duration_ms: 1000,
+  created_at: '2026-09-11T10:02:00Z',
+}
+
 function setupFetch(
   analysis: Analysis | null,
-  options: { ticket?: TicketDetail; activeAnalysis?: Analysis } = {},
+  options: {
+    ticket?: TicketDetail
+    activeAnalysis?: Analysis
+    resolutionFlow?: boolean
+  } = {},
 ) {
   let currentTicket = options.ticket ?? ticket
+  let currentRecommendation: Recommendation | null = options.resolutionFlow
+    ? {
+        id: 'rec-1',
+        ticket_id: ticket.id,
+        assessment_id: completedAssessment.id,
+        title: 'Reset VPN profile',
+        original_instructions: 'Reset VPN profile after identity verification.',
+        instructions: 'Reset VPN profile after identity verification.',
+        action_type: 'account_change',
+        requires_approval: false,
+        status: 'proposed',
+        decided_by_id: null,
+        decision_reason: null,
+        decided_at: null,
+        created_at: '2026-09-11T10:03:00Z',
+        updated_at: '2026-09-11T10:03:00Z',
+      }
+    : null
+  let currentResponse: SupportResponse | null = null
   return vi
     .spyOn(globalThis, 'fetch')
     .mockImplementation((input, init = {}) => {
@@ -91,7 +148,83 @@ function setupFetch(
       if (url.endsWith(`/tickets/${ticket.id}/investigations/latest`))
         return Promise.resolve(jsonResponse(null))
       if (url.endsWith(`/tickets/${ticket.id}/assessments/latest`))
-        return Promise.resolve(jsonResponse(null))
+        return Promise.resolve(
+          jsonResponse(options.resolutionFlow ? completedAssessment : null),
+        )
+      if (url.endsWith(`/tickets/${ticket.id}/recommendations/latest`))
+        return Promise.resolve(jsonResponse(currentRecommendation))
+      if (url.endsWith(`/tickets/${ticket.id}/responses/latest`))
+        return Promise.resolve(jsonResponse(currentResponse))
+      if (url.endsWith('/recommendations/rec-1/decision')) {
+        if (!currentRecommendation)
+          throw new Error('Recommendation fixture is unavailable.')
+        currentRecommendation = {
+          ...currentRecommendation,
+          status: 'approved',
+          decision_reason: 'Verified with requester',
+          decided_by_id: userResponse.user.id,
+          decided_at: '2026-09-11T10:04:00Z',
+        }
+        return Promise.resolve(jsonResponse(currentRecommendation))
+      }
+      if (
+        url.endsWith(`/tickets/${ticket.id}/responses`) &&
+        init.method === 'POST'
+      ) {
+        currentResponse = {
+          id: 'response-1',
+          ticket_id: ticket.id,
+          assessment_id: completedAssessment.id,
+          recommendation_id: 'rec-1',
+          generated_by: 'ai',
+          provider: 'resolveai-demo',
+          model: null,
+          mode: 'local_demo',
+          draft_body:
+            'Hello Jordan, based on evidence, the VPN issue appears to require profile review.',
+          final_body: null,
+          status: 'draft',
+          created_by_id: userResponse.user.id,
+          approved_by_id: null,
+          rejected_by_id: null,
+          rejection_reason: null,
+          approved_at: null,
+          rejected_at: null,
+          created_at: '2026-09-11T10:05:00Z',
+          updated_at: '2026-09-11T10:05:00Z',
+          approval_semantics: 'approval_only_not_sent',
+        }
+        return Promise.resolve(jsonResponse(currentResponse))
+      }
+      if (url.endsWith('/responses/response-1') && init.method === 'PATCH') {
+        if (!currentResponse)
+          throw new Error('Response fixture is unavailable.')
+        const body = requestBody(init) as { draft_body: string }
+        currentResponse = { ...currentResponse, draft_body: body.draft_body }
+        return Promise.resolve(jsonResponse(currentResponse))
+      }
+      if (url.endsWith('/responses/response-1/approve')) {
+        if (!currentResponse)
+          throw new Error('Response fixture is unavailable.')
+        currentResponse = {
+          ...currentResponse,
+          status: 'approved',
+          final_body: currentResponse.draft_body,
+          approved_by_id: userResponse.user.id,
+          approved_at: '2026-09-11T10:06:00Z',
+        }
+        return Promise.resolve(jsonResponse(currentResponse))
+      }
+      if (url.endsWith(`/tickets/${ticket.id}/resolve`)) {
+        const body = requestBody(init) as { resolution_summary: string }
+        currentTicket = {
+          ...currentTicket,
+          status: 'resolved',
+          resolved_at: '2026-09-11T10:07:00Z',
+          resolution_summary: body.resolution_summary,
+        }
+        return Promise.resolve(jsonResponse(currentTicket))
+      }
       if (url.endsWith('/analyses/analysis-new'))
         return Promise.resolve(
           jsonResponse(
@@ -156,6 +289,87 @@ function requestBody(init: RequestInit | undefined): unknown {
 }
 
 describe('TicketDetailPage AI triage', () => {
+  it('keeps terminal states out of the generic workflow selector', async () => {
+    setupFetch(null)
+    renderApp(`/tickets/${ticket.id}`)
+
+    const status = await screen.findByLabelText('Status')
+    expect(
+      screen.getByRole('heading', { name: 'Human Decision & Resolution' }),
+    ).toBeInTheDocument()
+    expect(
+      await screen.findByRole('heading', {
+        name: 'Completed assessment required',
+      }),
+    ).toBeInTheDocument()
+    expect(
+      within(status).getByRole('option', { name: 'New' }),
+    ).toBeInTheDocument()
+    expect(
+      within(status).getByRole('option', { name: 'In progress' }),
+    ).toBeInTheDocument()
+    expect(
+      within(status).queryByRole('option', { name: 'Resolved' }),
+    ).not.toBeInTheDocument()
+    expect(
+      within(status).queryByRole('option', { name: 'Escalated' }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('runs the critical approve, draft, approve, and resolve flow', async () => {
+    const user = userEvent.setup()
+    const fetchMock = setupFetch(completedAnalysis, { resolutionFlow: true })
+    renderApp(`/tickets/${ticket.id}`)
+
+    await screen.findByRole('heading', { name: 'Human Decision & Resolution' })
+    await user.click(await screen.findByRole('button', { name: 'Approve' }))
+    await user.type(
+      screen.getByLabelText('Decision reason'),
+      'Verified with requester',
+    )
+    await user.click(screen.getByRole('button', { name: 'Confirm approve' }))
+
+    await user.click(
+      await screen.findByRole('button', {
+        name: 'Generate customer response',
+      }),
+    )
+    const editor = await screen.findByLabelText('Professional response draft')
+    await user.clear(editor)
+    await user.type(
+      editor,
+      'Hello Jordan, your VPN access has now been restored.',
+    )
+    await user.click(screen.getByRole('button', { name: 'Save draft' }))
+    await screen.findByText('Response draft saved.')
+    await user.click(screen.getByRole('button', { name: 'Approve response' }))
+    expect(
+      await screen.findByText('Response approved. It has not been sent.'),
+    ).toBeInTheDocument()
+
+    await user.type(
+      await screen.findByLabelText('Resolution summary'),
+      'VPN profile reset and access confirmed',
+    )
+    await user.click(screen.getByRole('button', { name: 'Resolve ticket' }))
+
+    expect(
+      await screen.findByRole('heading', { name: 'Ticket resolved' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText('VPN profile reset and access confirmed'),
+    ).toBeInTheDocument()
+    const resolveRequest = fetchMock.mock.calls.find(([input]) =>
+      requestUrl(input).endsWith(`/tickets/${ticket.id}/resolve`),
+    )
+    expect(resolveRequest?.[1]?.method).toBe('POST')
+    expect(csrfHeader(resolveRequest?.[1])).toBe('csrf-test-token')
+    expect(requestBody(resolveRequest?.[1])).toEqual({
+      response_id: 'response-1',
+      resolution_summary: 'VPN profile reset and access confirmed',
+    })
+  })
+
   it('requests a new analysis with CSRF and transitions to queued status', async () => {
     const user = userEvent.setup()
     const fetchMock = setupFetch(null)

@@ -1576,6 +1576,129 @@ select:focus {
 .assessment-warning small {
   font-size: 10px;
 }
+
+.resolution-card {
+  overflow: hidden;
+  border-color: #b9ab7c;
+}
+.resolution-heading {
+  color: white;
+  background: #293f38;
+}
+.resolution-heading .section-label {
+  color: #d9c18e;
+}
+.resolution-heading h2 {
+  color: white;
+}
+.resolution-state,
+.resolution-body {
+  padding: 30px;
+}
+.resolution-state h3,
+.resolution-block h3,
+.terminal-state h3 {
+  margin-bottom: 9px;
+  font-size: 24px;
+}
+.resolution-state p,
+.resolution-block > p,
+.terminal-state > p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.resolution-state--error {
+  border-left: 4px solid var(--danger);
+  color: var(--danger);
+  background: #fff5f1;
+}
+.resolution-body,
+.terminal-actions,
+.decision-form {
+  display: grid;
+  gap: 18px;
+}
+.resolution-block,
+.terminal-state {
+  padding: 23px;
+  border: 1px solid var(--line);
+  background: #fffefb;
+}
+.resolution-block-heading,
+.decision-actions,
+.response-actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.execution-warning,
+.delivery-note,
+.advisory-note {
+  margin: 17px 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--gold);
+  color: #5f5436 !important;
+  background: #f7f1dc;
+}
+.approval-warning {
+  display: grid;
+  gap: 5px;
+  margin: 17px 0;
+  padding: 15px;
+  border: 1px solid #d6a69d;
+  border-left: 5px solid var(--danger);
+  color: #7d352a;
+  background: #fff1ed;
+  font-size: 12px;
+}
+.resolution-details {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+}
+.resolution-details div {
+  padding-bottom: 11px;
+  border-bottom: 1px solid var(--line);
+}
+.resolution-details dt {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.resolution-details dd {
+  margin: 5px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+.decision-actions {
+  justify-content: flex-start;
+}
+.response-editor {
+  margin-top: 18px;
+}
+.response-editor textarea {
+  min-height: 190px;
+}
+.response-actions {
+  justify-content: flex-start;
+}
+.success-message {
+  margin: 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--moss);
+  color: var(--forest);
+  background: #edf5f1;
+  font-size: 12px;
+}
+.escalation-form {
+  border-left: 4px solid var(--gold);
+}
 .button--why {
   margin-top: 24px;
   padding-inline: 24px;
