@@ -1,3 +1,3 @@
-from app.models.domain import AuditLog, Session, Ticket, TicketEvent, User
+from app.models.domain import AIAnalysis, AuditLog, Session, Ticket, TicketEvent, User
 
-__all__ = ["AuditLog", "Session", "Ticket", "TicketEvent", "User"]
+__all__ = ["AIAnalysis", "AuditLog", "Session", "Ticket", "TicketEvent", "User"]

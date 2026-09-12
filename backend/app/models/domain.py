@@ -5,6 +5,7 @@ from uuid import UUID, uuid4
 from sqlalchemy import (
     BigInteger,
     Boolean,
+    CheckConstraint,
     DateTime,
     Enum,
     ForeignKey,
@@ -13,12 +14,13 @@ from sqlalchemy import (
     String,
     Text,
     func,
+    text,
 )
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
-from app.models.enums import Role, TicketPriority, TicketStatus
+from app.models.enums import AnalysisStatus, Role, TicketPriority, TicketStatus
 
 role_enum = Enum(Role, name="user_role", values_callable=lambda enum: [item.value for item in enum])
 status_enum = Enum(
@@ -27,6 +29,11 @@ status_enum = Enum(
 priority_enum = Enum(
     TicketPriority,
     name="ticket_priority",
+    values_callable=lambda enum: [item.value for item in enum],
+)
+analysis_status_enum = Enum(
+    AnalysisStatus,
+    name="analysis_status",
     values_callable=lambda enum: [item.value for item in enum],
 )
 
@@ -75,7 +82,14 @@ class Session(Base):
 
 class Ticket(TimestampMixin, Base):
     __tablename__ = "tickets"
-    __table_args__ = (Index("ix_tickets_status_created_at", "status", "created_at"),)
+    __table_args__ = (
+        Index("ix_tickets_status_created_at", "status", "created_at"),
+        CheckConstraint(
+            "NOT priority_overridden OR "
+            "(priority_override_reason IS NOT NULL AND length(trim(priority_override_reason)) > 0)",
+            name="ck_tickets_priority_override_reason",
+        ),
+    )
 
     id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
     number: Mapped[int] = mapped_column(
@@ -91,6 +105,10 @@ class Ticket(TimestampMixin, Base):
     attachment_metadata: Mapped[list[dict[str, Any]] | None] = mapped_column(JSONB)
     category: Mapped[str | None] = mapped_column(String(100))
     priority: Mapped[TicketPriority | None] = mapped_column(priority_enum)
+    priority_overridden: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+    priority_override_reason: Mapped[str | None] = mapped_column(String(500))
     status: Mapped[TicketStatus] = mapped_column(
         status_enum, default=TicketStatus.NEW, server_default=TicketStatus.NEW.value, nullable=False
     )
@@ -104,6 +122,56 @@ class Ticket(TimestampMixin, Base):
     @property
     def ticket_number(self) -> str:
         return f"RAI-{self.number}"
+
+
+class AIAnalysis(Base):
+    __tablename__ = "ai_analyses"
+    __table_args__ = (
+        Index("ix_ai_analyses_ticket_created_at", "ticket_id", "created_at"),
+        Index("ix_ai_analyses_status", "status"),
+        Index(
+            "uq_ai_analyses_active_ticket",
+            "ticket_id",
+            unique=True,
+            postgresql_where=text("status IN ('queued', 'running')"),
+        ),
+        CheckConstraint(
+            "category_confidence IS NULL OR "
+            "(category_confidence >= 0 AND category_confidence <= 1)",
+            name="ck_ai_analyses_confidence",
+        ),
+        CheckConstraint("duration_ms IS NULL OR duration_ms >= 0", name="ck_ai_analyses_duration"),
+        CheckConstraint("mode IN ('local_demo', 'hosted')", name="ck_ai_analyses_mode"),
+    )
+
+    id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
+    ticket_id: Mapped[UUID] = mapped_column(
+        ForeignKey("tickets.id", ondelete="CASCADE"), nullable=False
+    )
+    requested_by_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"), nullable=False)
+    workflow_version: Mapped[str] = mapped_column(String(30), nullable=False)
+    provider: Mapped[str] = mapped_column(String(60), nullable=False)
+    model: Mapped[str | None] = mapped_column(String(120))
+    mode: Mapped[str] = mapped_column(String(20), nullable=False)
+    status: Mapped[AnalysisStatus] = mapped_column(analysis_status_enum, nullable=False)
+    category: Mapped[str | None] = mapped_column(String(100))
+    category_confidence: Mapped[float | None]
+    recommended_priority: Mapped[TicketPriority | None] = mapped_column(priority_enum)
+    validated_priority: Mapped[TicketPriority | None] = mapped_column(priority_enum)
+    entities: Mapped[dict[str, Any] | None] = mapped_column(JSONB)
+    priority_factors: Mapped[dict[str, Any] | None] = mapped_column(JSONB)
+    requires_manual_review: Mapped[bool] = mapped_column(
+        Boolean, default=False, server_default="false", nullable=False
+    )
+    error_code: Mapped[str | None] = mapped_column(String(50))
+    started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    duration_ms: Mapped[int | None]
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), nullable=False
+    )
+    ticket: Mapped[Ticket] = relationship()
+    requested_by: Mapped[User] = relationship()
 
 
 class TicketEvent(Base):

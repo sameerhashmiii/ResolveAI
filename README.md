@@ -4,7 +4,7 @@ AI-powered IT support ticket copilot designed around auditable evidence, determi
 
 ## Project Status
 
-ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 3 adds a validated synthetic enterprise environment; AI investigation capabilities are intentionally not represented as complete yet.
+ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 4 adds validated ticket classification, entity extraction, deterministic priority policy, and human override; evidence retrieval and root-cause analysis are intentionally not represented as complete yet.
 
 Current product foundation:
 
@@ -21,9 +21,12 @@ Current product foundation:
 - Atomic ticket events and audit records for every mutation
 - Reproducible enterprise data generator with relational incidents, telemetry, logs, and knowledge
 - Versioned 1,000-ticket dataset with SHA-256 provenance and hidden evaluation truth
+- Strict structured-output triage with deterministic local and optional hosted providers
+- Policy-controlled P1-P4 recommendations that cannot be selected arbitrarily by a model
+- Human priority override with reason, activity event, and audit record
 - Backend and frontend tests, linting, formatting, and strict type checks
 
-The ticket detail page explicitly marks AI investigation as unavailable until the evidence-backed workflow is implemented and tested in Phase 4. ResolveAI does not display fabricated analyses or metrics.
+The ticket detail page clearly labels deterministic demo analysis versus hosted model output. ResolveAI does not display fabricated retrieval evidence, root causes, or quality metrics.
 
 ## Run With Docker
 
@@ -68,6 +71,18 @@ python scripts/validate_demo_data.py
 ```
 
 The checked-in seed-42 dataset contains 250 fictional users, 1,000 tickets, 25 correlated incidents, 100 knowledge articles, 10,800 telemetry observations, 2,767 synthetic logs, and 150 hidden evaluation cases. See [the synthetic data model](docs/data-model.md) for relationships, privacy boundaries, validation, and limitations.
+
+## Structured AI Triage
+
+Local demo mode requires no key. Create a ticket, open its detail page, and select **Analyze ticket** to receive:
+
+- A validated category recommendation and confidence
+- Structured requester, location, application, device, scope, and urgency entities
+- Explicit priority decision factors
+- A deterministic P1-P4 recommendation
+- A manual-review warning when confidence or scope is uncertain
+
+Hosted mode uses an OpenAI-compatible structured-output endpoint when explicitly configured. Provider output is schema-validated and supplies signals only; deterministic application policy assigns priority. See [the AI design](docs/ai-design.md).
 
 ## Local Development
 

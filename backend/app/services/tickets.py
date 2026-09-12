@@ -25,6 +25,7 @@ class TicketService:
             device=payload.device,
             application=payload.application,
             attachment_metadata=[item.model_dump() for item in payload.attachment_metadata],
+            priority_overridden=False,
             created_by=actor,
         )
         self.repository.add(ticket)
@@ -89,6 +90,23 @@ class TicketService:
         await self.get(ticket_id)
         return await self.repository.events(ticket_id)
 
+    async def override_priority(
+        self, ticket_id: UUID, priority: TicketPriority, reason: str, actor: User
+    ) -> Ticket:
+        ticket = await self.get(ticket_id)
+        ticket.priority = priority
+        ticket.priority_overridden = True
+        ticket.priority_override_reason = reason
+        self._record(
+            ticket,
+            actor,
+            "priority_overridden",
+            "ticket.priority.override",
+            {"priority": priority.value, "reason": reason},
+        )
+        await self._commit_ticket(ticket)
+        return ticket
+
     async def overview(self) -> tuple[int, int, int, int, list[Ticket]]:
         return await self.repository.overview()
 
@@ -122,6 +140,7 @@ class TicketService:
                     "created": "Ticket created",
                     "updated": "Ticket details updated",
                     "assigned": "Ticket assigned",
+                    "priority_overridden": "Ticket priority manually overridden",
                 }[event_type],
                 data=safe_data or None,
             )

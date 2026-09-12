@@ -1,10 +1,15 @@
 from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, HTTPException, Query, status
+from fastapi import APIRouter, BackgroundTasks, HTTPException, Query, status
 
 from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession
 from app.models.enums import TicketPriority, TicketStatus
+from app.schemas.analyses import (
+    AnalysisAccepted,
+    AnalysisResponse,
+    PriorityOverrideRequest,
+)
 from app.schemas.tickets import (
     AssignTicketRequest,
     TicketCreate,
@@ -13,9 +18,48 @@ from app.schemas.tickets import (
     TicketResponse,
     TicketUpdate,
 )
+from app.services.analyses import AnalysisService, analysis_response, run_analysis_job
 from app.services.tickets import TicketService
 
 router = APIRouter(prefix="/tickets", tags=["tickets"])
+
+
+@router.post(
+    "/{ticket_id}/analyses",
+    response_model=AnalysisAccepted,
+    status_code=status.HTTP_202_ACCEPTED,
+)
+async def request_analysis(
+    ticket_id: UUID,
+    background_tasks: BackgroundTasks,
+    auth: CsrfAuth,
+    db: DbSession,
+) -> AnalysisAccepted:
+    analysis = await AnalysisService(db).request(ticket_id, auth.user)
+    background_tasks.add_task(run_analysis_job, analysis.id)
+    return AnalysisAccepted(analysis_id=analysis.id, status=analysis.status)
+
+
+@router.get("/{ticket_id}/analyses/latest", response_model=AnalysisResponse | None)
+async def latest_analysis(
+    ticket_id: UUID, auth: CurrentAuth, db: DbSession
+) -> AnalysisResponse | None:
+    del auth
+    analysis = await AnalysisService(db).latest(ticket_id)
+    return analysis_response(analysis) if analysis is not None else None
+
+
+@router.post("/{ticket_id}/priority-override", response_model=TicketResponse)
+async def override_priority(
+    ticket_id: UUID,
+    payload: PriorityOverrideRequest,
+    auth: CsrfAuth,
+    db: DbSession,
+) -> TicketResponse:
+    ticket = await TicketService(db).override_priority(
+        ticket_id, payload.priority, payload.reason.strip(), auth.user
+    )
+    return TicketResponse.model_validate(ticket)
 
 
 @router.post("", response_model=TicketResponse, status_code=status.HTTP_201_CREATED)

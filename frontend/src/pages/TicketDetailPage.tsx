@@ -15,6 +15,7 @@ import {
   formatDate,
   StatusBadge,
 } from '../components/TicketTable'
+import { AITicketTriage } from '../features/triage/AITicketTriage'
 
 export function TicketDetailPage() {
   const { id = '' } = useParams()
@@ -166,20 +167,7 @@ export function TicketDetailPage() {
               </ol>
             )}
           </section>
-          <section className="ai-future" aria-labelledby="ai-future-title">
-            <span className="future-number">Phase 4</span>
-            <div>
-              <p className="section-label">Investigation intelligence</p>
-              <h2 id="ai-future-title">
-                AI investigation is not available yet.
-              </h2>
-              <p>
-                Evidence-backed investigation assistance arrives in Phase 4.
-                ResolveAI will not generate simulated analysis before that
-                capability is connected and verifiable.
-              </p>
-            </div>
-          </section>
+          <AITicketTriage ticket={item} csrfToken={csrfToken} />
         </div>
         <aside className="detail-aside">
           <form
@@ -241,8 +229,19 @@ export function TicketDetailPage() {
               </div>
               <div>
                 <dt>Priority</dt>
-                <dd className="capitalize">{displayValue(item.priority)}</dd>
+                <dd className="ownership-priority capitalize">
+                  {displayValue(item.priority)}
+                  {item.priority_overridden && (
+                    <span className="badge badge--human">Human override</span>
+                  )}
+                </dd>
               </div>
+              {item.priority_overridden && item.priority_override_reason && (
+                <div>
+                  <dt>Override reason</dt>
+                  <dd>{item.priority_override_reason}</dd>
+                </div>
+              )}
               <div>
                 <dt>Status</dt>
                 <dd className="capitalize">{displayValue(item.status)}</dd>

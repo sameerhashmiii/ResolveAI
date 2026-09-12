@@ -21,6 +21,14 @@ class TicketPriority(StrEnum):
     P4 = "p4"
 
 
+class AnalysisStatus(StrEnum):
+    QUEUED = "queued"
+    RUNNING = "running"
+    COMPLETED = "completed"
+    FAILED = "failed"
+    TIMED_OUT = "timed_out"
+
+
 _ROLE_ORDER = {
     Role.SUPPORT_ANALYST: 0,
     Role.MANAGER: 1,

@@ -80,6 +80,8 @@ class TicketResponse(BaseModel):
     attachment_metadata: list[dict[str, Any]] | None
     category: str | None
     priority: TicketPriority | None
+    priority_overridden: bool
+    priority_override_reason: str | None
     status: TicketStatus
     assigned_to: UserResponse | None
     created_by: UserResponse

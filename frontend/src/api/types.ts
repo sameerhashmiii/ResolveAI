@@ -30,6 +30,8 @@ export interface TicketSummary {
   application?: string | null
   category: string | null
   priority: string | null
+  priority_overridden?: boolean
+  priority_override_reason?: string | null
   status: string
   assigned_to: UserSummary | null
   created_by: UserSummary
@@ -78,4 +80,57 @@ export interface UpdateTicketInput {
   title?: string
   description?: string
   status?: 'new' | 'in_progress' | 'resolved' | 'escalated'
+}
+
+export type TicketPriority = 'p1' | 'p2' | 'p3' | 'p4'
+
+export type AnalysisStatus =
+  'queued' | 'running' | 'completed' | 'failed' | 'timed_out'
+
+export type AnalysisMode = 'local_demo' | 'hosted'
+
+export type AnalysisEntityValue = string | string[] | null
+
+export interface AnalysisEntities {
+  user: AnalysisEntityValue
+  location: AnalysisEntityValue
+  application: AnalysisEntityValue
+  device: AnalysisEntityValue
+  issue_type: AnalysisEntityValue
+  affected_scope: AnalysisEntityValue
+  urgency: AnalysisEntityValue
+}
+
+export type AnalysisFactorValue = string | number | boolean | string[] | null
+
+export interface Analysis {
+  id: string
+  ticket_id: string
+  status: AnalysisStatus
+  workflow_version: string
+  provider: string
+  model: string | null
+  mode: AnalysisMode
+  category: string | null
+  category_confidence: number | null
+  recommended_priority: TicketPriority | null
+  validated_priority: TicketPriority | null
+  entities: AnalysisEntities | null
+  priority_factors: Record<string, AnalysisFactorValue> | string[] | null
+  requires_manual_review: boolean
+  error_code: string | null
+  started_at: string | null
+  completed_at: string | null
+  duration_ms: number | null
+  created_at: string
+}
+
+export interface AnalysisAccepted {
+  analysis_id: string
+  status: 'queued'
+}
+
+export interface PriorityOverrideInput {
+  priority: TicketPriority
+  reason: string
 }

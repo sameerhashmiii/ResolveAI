@@ -31,6 +31,8 @@ function setupFetch() {
           requester_name: 'Sam Lee',
           category: null,
           priority: null,
+          priority_overridden: false,
+          priority_override_reason: null,
           status: 'new',
           assigned_to: null,
           created_by: userResponse.user,
@@ -41,6 +43,8 @@ function setupFetch() {
     }
     if (url.endsWith('/tickets/ticket-42/events'))
       return Promise.resolve(jsonResponse([]))
+    if (url.endsWith('/tickets/ticket-42/analyses/latest'))
+      return Promise.resolve(jsonResponse(null))
     if (url.endsWith('/users')) return Promise.resolve(jsonResponse([]))
     return Promise.resolve(jsonResponse({ status: 'ready' }))
   })

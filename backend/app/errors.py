@@ -20,3 +20,13 @@ class AuthenticationError(ServiceError):
 
 class InvalidCredentialsError(AuthenticationError):
     detail = "Invalid email or password"
+
+
+class ConflictError(ServiceError):
+    status_code = 409
+    detail = "Resource state conflicts with this operation"
+
+
+class AIConfigurationError(ServiceError):
+    status_code = 503
+    detail = "AI analysis is not configured for this environment"
