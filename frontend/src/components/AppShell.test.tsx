@@ -83,7 +83,7 @@ describe('AppShell mobile navigation', () => {
     expect(document.body).not.toHaveStyle({ overflow: 'hidden' })
   })
 
-  it('closes on navigation and restores focus to the menu button', async () => {
+  it('closes on navigation and moves focus to the new page heading', async () => {
     setMobile(true)
     const user = userEvent.setup()
     renderShell()
@@ -92,10 +92,8 @@ describe('AppShell mobile navigation', () => {
     await user.click(menu)
     await user.click(screen.getByRole('link', { name: /Tickets/ }))
 
-    expect(
-      await screen.findByRole('heading', { name: 'Tickets page' }),
-    ).toBeInTheDocument()
-    await waitFor(() => expect(menu).toHaveFocus())
+    const heading = await screen.findByRole('heading', { name: 'Tickets page' })
+    await waitFor(() => expect(heading).toHaveFocus())
     expect(menu).toHaveAttribute('aria-expanded', 'false')
   })
 
