@@ -10,6 +10,7 @@ from app.schemas.analyses import (
     AnalysisResponse,
     PriorityOverrideRequest,
 )
+from app.schemas.assessments import AssessmentAccepted, AssessmentResponse
 from app.schemas.investigations import (
     InvestigationAccepted,
     InvestigationResponse,
@@ -24,6 +25,7 @@ from app.schemas.tickets import (
     TicketUpdate,
 )
 from app.services.analyses import AnalysisService, analysis_response, run_analysis_job
+from app.services.assessments import AssessmentService, assessment_response, run_assessment_job
 from app.services.investigations import (
     InvestigationService,
     investigation_response,
@@ -33,6 +35,32 @@ from app.services.similar_tickets import SimilarTicketService
 from app.services.tickets import TicketService
 
 router = APIRouter(prefix="/tickets", tags=["tickets"])
+
+
+@router.post(
+    "/{ticket_id}/assessments",
+    response_model=AssessmentAccepted,
+    status_code=status.HTTP_202_ACCEPTED,
+)
+async def request_assessment(
+    ticket_id: UUID,
+    background_tasks: BackgroundTasks,
+    auth: CsrfAuth,
+    db: DbSession,
+) -> AssessmentAccepted:
+    assessment = await AssessmentService(db).request(ticket_id, auth.user)
+    background_tasks.add_task(run_assessment_job, assessment.id)
+    return AssessmentAccepted(assessment_id=assessment.id, status=assessment.status)
+
+
+@router.get("/{ticket_id}/assessments/latest", response_model=AssessmentResponse | None)
+async def latest_assessment(
+    ticket_id: UUID, auth: CurrentAuth, db: DbSession
+) -> AssessmentResponse | None:
+    del auth
+    service = AssessmentService(db)
+    assessment = await service.latest(ticket_id)
+    return assessment_response(assessment, service.settings) if assessment is not None else None
 
 
 @router.get("/{ticket_id}/similar", response_model=list[SimilarTicketResponse])

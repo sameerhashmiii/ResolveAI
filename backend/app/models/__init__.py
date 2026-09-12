@@ -1,3 +1,4 @@
+from app.models.assessments import AssessmentEvidence, RootCauseAssessment
 from app.models.domain import AIAnalysis, AuditLog, Session, Ticket, TicketEvent, User
 from app.models.knowledge import KnowledgeChunk, KnowledgeDocument
 from app.models.operational import (
@@ -14,6 +15,7 @@ from app.models.operational import (
 
 __all__ = [
     "AIAnalysis",
+    "AssessmentEvidence",
     "AuditLog",
     "DatasetImport",
     "HistoricalTicket",
@@ -22,6 +24,7 @@ __all__ = [
     "KnowledgeChunk",
     "KnowledgeDocument",
     "Session",
+    "RootCauseAssessment",
     "SyntheticApplication",
     "SyntheticIncident",
     "SyntheticLocation",

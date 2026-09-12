@@ -4,7 +4,7 @@ AI-powered IT support ticket copilot designed around auditable evidence, determi
 
 ## Project Status
 
-ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 6 adds semantic historical-ticket search and a bounded LangGraph investigation over source-backed operational tools; root-cause inference is intentionally not represented as complete yet.
+ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 7 adds source-grounded probable root-cause assessment, deterministic confidence, low-confidence escalation, and an auditable “Show Me Why” explanation.
 
 Current product foundation:
 
@@ -29,6 +29,9 @@ Current product foundation:
 - Idempotent import of 1,000 historical tickets, 25 incidents, 10,800 telemetry observations, and 2,767 logs
 - Bounded LangGraph investigation with seven read-only tools and a persisted auditable timeline
 - Similar-ticket, system-status, telemetry, log, incident, history, and knowledge observations
+- Evidence-normalized probable root-cause inference with validated source identifiers
+- Versioned deterministic confidence factors and configurable low-confidence escalation
+- “Show Me Why” timeline, supporting evidence, and decision-factor disclosure without chain-of-thought
 - Backend and frontend tests, linting, formatting, and strict type checks
 
 The ticket detail page clearly labels deterministic demo analysis versus hosted model output. ResolveAI does not display fabricated retrieval evidence, root causes, or quality metrics.
@@ -117,6 +120,17 @@ After structured triage completes, an analyst can start a bounded investigation.
 - Read related public incident facts
 
 The primary VPN/PayrollPro scenario uses a clearly labeled curated synthetic reference time and collects both healthy VPN observations and degraded DNS observations. Phase 6 displays facts only and does not state a root cause, confidence, or recommendation. See [the investigation workflow](docs/investigation-workflow.md).
+
+## Root Cause And Trust
+
+After investigation, an analyst can generate a separate assessment. ResolveAI displays the information in trust order:
+
+1. Observed evidence with persisted source IDs
+2. Probable root cause labeled as an unconfirmed inference
+3. Deterministic evidence confidence labeled as not measured accuracy
+4. Recommended action labeled for human review, with no claim that it executed
+
+Confidence below the configured 70% threshold recommends human escalation. “Show Me Why” exposes the persisted investigation timeline, supporting evidence, and signed confidence factors while explicitly stating that hidden chain-of-thought is not stored or shown. See [root-cause analysis design](docs/root-cause-analysis.md).
 
 ## Local Development
 

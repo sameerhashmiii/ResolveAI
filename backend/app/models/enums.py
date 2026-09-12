@@ -37,6 +37,14 @@ class InvestigationStatus(StrEnum):
     TIMED_OUT = "timed_out"
 
 
+class RootCauseStatus(StrEnum):
+    QUEUED = "queued"
+    RUNNING = "running"
+    COMPLETED = "completed"
+    FAILED = "failed"
+    TIMED_OUT = "timed_out"
+
+
 class InvestigationStepStatus(StrEnum):
     STARTED = "started"
     COMPLETED = "completed"

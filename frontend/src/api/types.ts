@@ -176,6 +176,94 @@ export interface InvestigationAccepted {
   status: 'queued'
 }
 
+export type AssessmentStatus =
+  'queued' | 'running' | 'completed' | 'failed' | 'timed_out' | 'timedout'
+
+export interface AssessmentEvidence {
+  id: string
+  evidence_type: string
+  source_id: string
+  title: string
+  excerpt: string
+  supports: string | null
+  relevance_score: number | null
+  metadata: Record<string, unknown>
+  display_order: number
+}
+
+export interface AssessmentInference {
+  kind: 'probable'
+  summary: string
+}
+
+export interface AssessmentRecommendation {
+  kind: 'recommendation'
+  text: string
+}
+
+export interface ConfidenceFactor {
+  key: string
+  label: string
+  weight: number
+  applied: boolean
+  source_ids: string[]
+}
+
+export interface AssessmentConfidence {
+  score: number | null
+  version: string
+  factors: ConfidenceFactor[]
+  description: string
+}
+
+export interface AssessmentEscalation {
+  required: boolean
+  threshold: number
+  reason: string
+}
+
+export interface Assessment {
+  id: string
+  ticket_id: string
+  investigation_id: string
+  status: AssessmentStatus
+  workflow_version: string
+  provider: string
+  model: string | null
+  mode: string
+  mode_label: string
+  observed_evidence: AssessmentEvidence[]
+  inference: AssessmentInference | null
+  confidence: AssessmentConfidence
+  recommendation: AssessmentRecommendation | null
+  limitations: string[]
+  escalation: AssessmentEscalation
+  error_code: string | null
+  started_at: string | null
+  completed_at: string | null
+  duration_ms: number | null
+  created_at: string
+}
+
+export interface AssessmentAccepted {
+  assessment_id: string
+  status: 'queued'
+}
+
+export interface ExplanationTimelineItem {
+  label: string
+  status: string
+  source_count: number
+}
+
+export interface AssessmentExplanation {
+  assessment: Record<string, unknown>
+  investigation_timeline: ExplanationTimelineItem[]
+  supporting_evidence: AssessmentEvidence[]
+  confidence_factors: ConfidenceFactor[]
+  reasoning_disclosure: string
+}
+
 export interface SimilarTicket {
   source_id: string
   title: string

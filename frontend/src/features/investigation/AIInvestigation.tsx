@@ -152,8 +152,8 @@ export function AIInvestigation({ ticket, csrfToken }: AIInvestigationProps) {
         )}
       </div>
       <p className="investigation-disclaimer">
-        Collected observations only. Root-cause inference and recommendations
-        are not generated in this phase.
+        This investigation only collects observations and does not itself infer
+        a root cause or recommend an action. The assessment is separate.
       </p>
 
       {triage.isPending && (

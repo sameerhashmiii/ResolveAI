@@ -90,6 +90,8 @@ function setupFetch(
         )
       if (url.endsWith(`/tickets/${ticket.id}/investigations/latest`))
         return Promise.resolve(jsonResponse(null))
+      if (url.endsWith(`/tickets/${ticket.id}/assessments/latest`))
+        return Promise.resolve(jsonResponse(null))
       if (url.endsWith('/analyses/analysis-new'))
         return Promise.resolve(
           jsonResponse(

@@ -16,6 +16,7 @@ import {
   StatusBadge,
 } from '../components/TicketTable'
 import { KnowledgeSources } from '../features/knowledge/KnowledgeSources'
+import { RootCauseAssessment } from '../features/assessment/RootCauseAssessment'
 import { AIInvestigation } from '../features/investigation/AIInvestigation'
 import { AITicketTriage } from '../features/triage/AITicketTriage'
 
@@ -134,6 +135,7 @@ export function TicketDetailPage() {
           <AITicketTriage ticket={item} csrfToken={csrfToken} />
           <KnowledgeSources ticket={item} isAuthenticated={Boolean(user)} />
           <AIInvestigation ticket={item} csrfToken={csrfToken} />
+          <RootCauseAssessment ticket={item} csrfToken={csrfToken} />
           <section className="content-card">
             <div className="section-heading">
               <div>

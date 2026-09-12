@@ -207,6 +207,8 @@ function setupFetch(
       return Promise.resolve(jsonResponse(latestAnalysis))
     if (url.endsWith(`/tickets/${ticket.id}/investigations/latest`))
       return Promise.resolve(jsonResponse(latestInvestigation))
+    if (url.endsWith(`/tickets/${ticket.id}/assessments/latest`))
+      return Promise.resolve(jsonResponse(null))
     if (url.endsWith(`/tickets/${ticket.id}/investigations`))
       return Promise.resolve(
         jsonResponse(
@@ -313,7 +315,7 @@ describe('AI Investigation', () => {
       within(section).queryByText('must not render'),
     ).not.toBeInTheDocument()
     const disclaimer = within(section).getByText(
-      'Collected observations only. Root-cause inference and recommendations are not generated in this phase.',
+      'This investigation only collects observations and does not itself infer a root cause or recommend an action. The assessment is separate.',
     )
     expect(disclaimer).toBeInTheDocument()
     const observations = section.textContent?.replace(
