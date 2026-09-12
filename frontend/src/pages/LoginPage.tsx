@@ -1,16 +1,27 @@
-import { useState, type FormEvent } from 'react'
-import { Navigate, useLocation, useNavigate } from 'react-router-dom'
+import { useEffect, useState, type FormEvent } from 'react'
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from 'react-router-dom'
 
 import { ApiError } from '../api/client'
 import { useAuth } from '../auth/AuthContext'
 import { Brand } from '../components/Brand'
+import { getDemoScenario } from '../demo/scenarios'
 
 export function LoginPage() {
   const { user, isLoading, login, demoLogin } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
+  const [searchParams] = useSearchParams()
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState<'login' | 'demo' | null>(null)
+
+  useEffect(() => {
+    document.title = 'Sign in | ResolveAI'
+  }, [])
 
   if (isLoading) {
     return (
@@ -19,16 +30,20 @@ export function LoginPage() {
       </div>
     )
   }
-  if (user) return <Navigate to="/" replace />
-
   const routeState: unknown = location.state
-  const destination =
+  const protectedDestination =
     typeof routeState === 'object' &&
     routeState !== null &&
     'from' in routeState &&
     typeof routeState.from === 'string'
       ? routeState.from
-      : '/'
+      : null
+  const scenario = getDemoScenario(searchParams.get('scenario'))
+  const destination =
+    protectedDestination ??
+    (scenario ? `/tickets/new?scenario=${scenario.slug}` : '/workspace')
+
+  if (user) return <Navigate to={destination} replace />
 
   const run = async (kind: 'login' | 'demo', action: () => Promise<void>) => {
     setError('')
@@ -61,7 +76,10 @@ export function LoginPage() {
   }
 
   return (
-    <main className="login-page">
+    <main className="login-page" id="main-content" tabIndex={-1}>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <section className="login-story" aria-labelledby="login-heading">
         <Brand publicLink />
         <div className="story-copy">
@@ -125,11 +143,15 @@ export function LoginPage() {
             disabled={submitting !== null}
             onClick={() => void run('demo', demoLogin)}
           >
-            {submitting === 'demo' ? 'Preparing workspace...' : 'Try Demo'}
+            {submitting === 'demo'
+              ? 'Preparing workspace...'
+              : scenario
+                ? 'Continue guided demo'
+                : 'Try Demo'}
           </button>
           <p className="demo-note">
-            Uses synthetic sample tickets in an isolated demo workspace. No
-            customer or employee data is included.
+            The checked-in seed data is synthetic. This local workspace is
+            shared and single-tenant; do not enter real or confidential data.
           </p>
         </div>
       </section>

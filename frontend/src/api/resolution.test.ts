@@ -42,7 +42,7 @@ describe('resolution API', () => {
       jsonResponse({ id: 'response-1', status: 'sent' }),
     )
     await expect(getLatestResponse('ticket-1')).rejects.toThrow(
-      'invalid customer response',
+      'invalid requester response',
     )
   })
 

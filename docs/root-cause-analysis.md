@@ -107,6 +107,6 @@ Queued/running/completed/failed/timed-out states are persisted. Provider unavail
 
 All endpoints require authentication. Mutations also require CSRF protection.
 
-## Remaining Human Boundary
+## Human Boundary
 
-Phase 8 introduces response drafting, recommendation approval/rejection/modification, and explicit resolve/escalate transitions. Until then, Phase 7 recommendations are display-only and no action is considered approved or sent.
+Response drafting, recommendation approval/rejection/modification, and explicit resolve/escalate transitions are implemented as separate human-controlled steps. Recommendations remain proposals until a decision is recorded, response approval is not delivery, and no remediation action is executed.

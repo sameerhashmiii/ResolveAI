@@ -80,7 +80,7 @@ describe('resolution panels', () => {
       />,
     )
     expect(
-      screen.queryByRole('button', { name: 'Generate customer response' }),
+      screen.queryByRole('button', { name: 'Generate requester response' }),
     ).not.toBeInTheDocument()
     rerender(
       <ResponsePanel
@@ -95,7 +95,7 @@ describe('resolution panels', () => {
       />,
     )
     expect(
-      screen.getByRole('button', { name: 'Generate customer response' }),
+      screen.getByRole('button', { name: 'Generate requester response' }),
     ).toBeInTheDocument()
   })
 

@@ -4,7 +4,7 @@ from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from app.models.enums import TicketPriority, TicketStatus
+from app.models.enums import Role, TicketPriority, TicketStatus
 from app.schemas.auth import UserResponse
 
 
@@ -109,4 +109,18 @@ class TicketEventResponse(BaseModel):
     event_type: str
     summary: str
     actor: UserResponse | None
+    created_at: datetime
+
+
+class AuditActorResponse(BaseModel):
+    display_name: str
+    role: Role
+
+
+class TicketAuditRecordResponse(BaseModel):
+    action: str
+    resource_type: str
+    resource_id: UUID | None
+    metadata: dict[str, str | int | float | bool | None]
+    actor: AuditActorResponse | None
     created_at: datetime

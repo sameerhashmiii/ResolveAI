@@ -53,15 +53,15 @@ export function ResponsePanel({
 
   return (
     <div className="resolution-block">
-      <p className="section-label">Customer communication</p>
-      <h3>Customer response</h3>
+      <p className="section-label">Requester communication</p>
+      <h3>Requester response</h3>
       {!response && canGenerate && !disabled && (
         <button
           className="button button--primary"
           disabled={pending}
           onClick={onGenerate}
         >
-          {pending ? 'Generating response...' : 'Generate customer response'}
+          {pending ? 'Generating response...' : 'Generate requester response'}
         </button>
       )}
       {!response && !canGenerate && (

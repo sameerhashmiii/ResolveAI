@@ -6,3 +6,8 @@ export const getAnalyticsOverview = (signal?: AbortSignal) =>
 
 export const getAiPerformance = (signal?: AbortSignal) =>
   apiRequest<AiPerformanceAnalytics>('/analytics/ai-performance', { signal })
+
+export const getEvaluationSummary = (signal?: AbortSignal) =>
+  apiRequest<AiPerformanceAnalytics>('/analytics/evaluation-summary', {
+    signal,
+  })

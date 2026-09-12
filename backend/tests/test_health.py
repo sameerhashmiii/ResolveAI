@@ -22,7 +22,7 @@ async def test_liveness_does_not_require_database() -> None:
     body = response.json()
     assert body["status"] == "alive"
     assert body["service"] == "ResolveAI API"
-    assert body["version"] == "0.10.0"
+    assert body["version"] == "0.11.0"
     assert body["checks"] is None
     assert body["timestamp"]
     assert response.headers["X-Request-ID"]

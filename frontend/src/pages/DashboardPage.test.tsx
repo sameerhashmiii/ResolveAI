@@ -33,7 +33,7 @@ function mockDashboard(recentTickets: unknown[] = []) {
 describe('DashboardPage', () => {
   it('renders Phase 2 metrics from the API', async () => {
     mockDashboard()
-    renderApp('/')
+    renderApp('/workspace')
 
     await screen.findByText('19')
     expect(screen.getByText('Total tickets')).toBeInTheDocument()
@@ -50,7 +50,7 @@ describe('DashboardPage', () => {
 
   it('shows an honest empty queue state', async () => {
     mockDashboard()
-    renderApp('/')
+    renderApp('/workspace')
     expect(
       await screen.findByRole('heading', { name: 'Your queue is ready.' }),
     ).toBeInTheDocument()

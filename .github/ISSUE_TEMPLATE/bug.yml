@@ -1,0 +1,61 @@
+name: Bug report
+description: Report a reproducible defect in the local portfolio application
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include real/confidential data, credentials, raw provider payloads, or vulnerabilities. Use the private security route for vulnerabilities.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Provide minimal steps using synthetic data.
+      placeholder: "1. Start a fresh stack...\n2. Select..."
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Revision
+      description: Commit SHA or release tag.
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: AI mode
+      options:
+        - local_demo
+        - openai_compatible
+        - Not applicable
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, browser, Docker/Compose versions, and relevant non-secret configuration.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence
+      description: Request ID, safe logs, or screenshots with all personal and machine data redacted.
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I used only synthetic data and removed secrets and personal/confidential information.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

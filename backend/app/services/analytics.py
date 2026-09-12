@@ -17,8 +17,8 @@ from app.schemas.analytics import (
 )
 
 _HIDDEN_DATA_KEY = re.compile(
-    r"case|ticket|prompt|input|output|message|email|description|excerpt|content|"
-    r"customer|requester",
+    r"body|case|ticket|prompt|input|output|expected|ground.?truth|message|email|"
+    r"description|excerpt|content|customer|requester",
     re.IGNORECASE,
 )
 

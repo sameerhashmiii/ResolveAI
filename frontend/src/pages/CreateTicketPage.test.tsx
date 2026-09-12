@@ -68,6 +68,21 @@ describe('CreateTicketPage', () => {
       await screen.findByRole('button', { name: 'Create ticket' }),
     )
     expect(screen.getAllByText('This field is required.')).toHaveLength(3)
+    expect(screen.getByLabelText(/Title/)).toHaveFocus()
+  })
+
+  it('prefills a validated scenario without starting a workflow', async () => {
+    setupFetch()
+    renderApp('/tickets/new?scenario=dallas-vpn-payrollpro-dns')
+
+    expect(await screen.findByLabelText(/Title/)).toHaveValue(
+      'VPN works, PayrollPro does not',
+    )
+    expect(screen.getByLabelText('Location')).toHaveValue('Dallas')
+    expect(screen.getByLabelText('Application')).toHaveValue('PayrollPro')
+    expect(
+      screen.getByText(/no workflow starts automatically/i),
+    ).toBeInTheDocument()
   })
 
   it('submits with CSRF and navigates to the created ticket', async () => {

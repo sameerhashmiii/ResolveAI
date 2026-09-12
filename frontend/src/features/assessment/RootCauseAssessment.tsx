@@ -72,7 +72,7 @@ export function RootCauseAssessment({
           <div className="assessment-state">
             <h3>Completed investigation required</h3>
             <p>
-              Complete AI Investigation first. An assessment can only use
+              Complete evidence investigation first. An assessment can only use
               persisted observations from a completed investigation.
             </p>
           </div>

@@ -104,6 +104,9 @@ def create_app(app_settings: Settings | None = None) -> FastAPI:
             )
         if request.url.path.startswith(
             ("/api/v1/auth", "/api/v1/analytics/", "/api/v1/admin/")
+        ) or (
+            request.url.path.startswith("/api/v1/tickets/")
+            and request.url.path.endswith("/audit")
         ):
             response.headers["Cache-Control"] = "no-store"
         if (

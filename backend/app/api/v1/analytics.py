@@ -21,3 +21,12 @@ async def ai_performance(
     del auth
     response.headers["Cache-Control"] = "no-store"
     return await AnalyticsService(db).ai_performance()
+
+
+@router.get("/evaluation-summary", response_model=AIPerformanceResponse)
+async def evaluation_summary(
+    auth: AnalystAuth, db: DbSession, response: Response
+) -> AIPerformanceResponse:
+    del auth
+    response.headers["Cache-Control"] = "no-store"
+    return await AnalyticsService(db).ai_performance()

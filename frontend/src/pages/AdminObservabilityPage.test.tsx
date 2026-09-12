@@ -113,7 +113,7 @@ describe('AdminObservabilityPage', () => {
       screen.getAllByText('Synthetic demo measurement').length,
     ).toBeGreaterThan(3)
     expect(
-      screen.getByText(/operational completion, not AI accuracy/i),
+      screen.getByText(/operational completion, not accuracy/i),
     ).toBeInTheDocument()
     expect(
       screen.getByRole('heading', { name: 'No completed evaluation yet.' }),
@@ -194,31 +194,20 @@ describe('AdminObservabilityPage', () => {
     expect(screen.getByText('900 ms')).toBeInTheDocument()
   })
 
-  it('redirects non-administrators home without fetching admin data', async () => {
+  it('shows a clear denied state to non-administrators without fetching admin data', async () => {
     const fetchMock = vi
       .spyOn(globalThis, 'fetch')
       .mockImplementation((input) => {
         const url = requestUrl(input)
         if (url.endsWith('/auth/me'))
           return Promise.resolve(jsonResponse(userResponse))
-        if (url.endsWith('/dashboard/overview')) {
-          return Promise.resolve(
-            jsonResponse({
-              total_tickets: 0,
-              open_tickets: 0,
-              resolved_tickets: 0,
-              escalated_tickets: 0,
-              recent_tickets: [],
-            }),
-          )
-        }
         return Promise.resolve(jsonResponse({ status: 'ready' }))
       })
     renderApp('/admin/observability')
 
     expect(
       await screen.findByRole('heading', {
-        name: 'Service desk, at a glance.',
+        name: 'This view requires administrator access.',
       }),
     ).toBeInTheDocument()
     expect(

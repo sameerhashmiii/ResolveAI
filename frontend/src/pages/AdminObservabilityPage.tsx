@@ -138,7 +138,7 @@ export function AdminObservabilityPage() {
                 <h3>Workflow execution</h3>
                 <p>
                   <SyntheticLabel /> Completion is operational completion, not
-                  AI accuracy.
+                  accuracy.
                 </p>
               </div>
               <div className="table-wrap">

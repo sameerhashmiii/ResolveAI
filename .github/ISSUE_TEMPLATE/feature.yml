@@ -1,0 +1,50 @@
+name: Feature request
+description: Propose a focused change to the portfolio application
+title: "feat: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user or maintainer problem should be solved?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the smallest useful outcome, including human-control and failure behavior.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Ticket workflow
+        - AI or retrieval
+        - API or data
+        - User interface or accessibility
+        - Evaluation or observability
+        - Documentation or tooling
+    validations:
+      required: true
+  - type: textarea
+    id: trust
+    attributes:
+      label: Trust, privacy, and AI claims
+      description: What data crosses boundaries? Is behavior deterministic or hosted? What must remain human-approved?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: The proposal does not assume production readiness, tenant isolation, autonomous remediation, or response delivery.
+          required: true

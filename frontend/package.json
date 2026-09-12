@@ -1,7 +1,7 @@
 {
   "name": "resolveai-frontend",
   "private": true,
-  "version": "0.10.0",
+  "version": "0.11.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,6 +12,7 @@
     "typecheck": "tsc -b",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
+    "screenshots": "node scripts/capture-screenshots.mjs",
     "lint": "eslint .",
     "format": "prettier --check .",
     "format:write": "prettier --write ."
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
+    "@axe-core/playwright": "4.10.2",
     "@playwright/test": "1.63.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",

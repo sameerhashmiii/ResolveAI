@@ -12,7 +12,7 @@ Completed assessment
   -> human edit
   -> human response approval (not delivery)
   -> explicit resolve OR explicit internal escalation
-  -> immutable activity and audit records
+  -> application-convention append-only activity and audit records
 ```
 
 ## Recommendation Decisions
@@ -25,7 +25,7 @@ Decision options:
 - **Reject:** stop the assisted resolution path.
 - **Modify:** replace instructions and accept the human-authored version.
 
-Every decision requires a reason and records actor, timestamp, ticket event, and audit entry. A decided recommendation cannot be silently decided again.
+Every decision requires a reason and records actor, timestamp, ticket event, and audit entry. A decided recommendation cannot be silently decided again through application APIs. Audit rows are append-only by application convention, not tamper-evident against database administrators or a compromised process.
 
 ## High-Impact Policy
 

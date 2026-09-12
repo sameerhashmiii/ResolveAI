@@ -1,94 +1,71 @@
-# AI Triage Design
+# AI System Design
 
-## Scope
+## Current End-To-End Flow
 
-Phase 4 implements ticket triage only: category classification, entity extraction, impact signals, deterministic priority assignment, and human override. It does not claim a root cause, retrieve knowledge, correlate incidents, or recommend remediation. Those capabilities require later evidence-backed phases.
-
-## Trust Boundary
+ResolveAI separates model-like assistance, deterministic policy, persisted evidence, and human authority:
 
 ```text
-Validated ticket input
-        -> provider adapter
-        -> strict ProviderSignals schema
-        -> deterministic priority policy
-        -> persisted advisory analysis
-        -> human review or override
+validated ticket
+  -> structured triage provider
+  -> deterministic priority policy
+  -> bounded read-only investigation
+  -> normalized persisted evidence
+  -> probable-cause provider
+  -> deterministic evidence-confidence policy
+  -> proposed recommendation
+  -> human decision
+  -> grounded response provider and human edit
+  -> human approval (not delivery)
+  -> explicit internal resolve or escalation
 ```
 
-The provider cannot update a ticket, choose the persisted priority directly, invoke tools, or perform an action. It returns only category, confidence, entities, and boolean/scope factors. Pydantic rejects unknown fields, invalid enums, out-of-range confidence, and oversized entity strings.
+The provider cannot directly update a ticket, choose persisted priority, invoke arbitrary tools, approve guidance, execute remediation, send a response, or resolve a ticket. Provider output is constrained by strict Pydantic schemas, allowed enums, lengths, citation-subset validation, timeouts, and one bounded malformed-output repair attempt.
 
-Ticket content is treated as untrusted data. The hosted system contract instructs the model to ignore instructions embedded in ticket text. Regardless of prompt behavior, the strict schema and deterministic policy prevent provider output from bypassing allowed fields.
+## Modes And Data Boundary
 
-## Provider Modes
+### Deterministic Local Demo
 
-### Local Demo
+`RESOLVEAI_AI_MODE=local_demo` is the default and needs no key. It uses versioned keyword/symptom triage, deterministic policy, signed-hash retrieval, bounded investigation planning, synthetic evidence correlation, and response templates. The UI identifies deterministic demo output. Reproducibility is not evidence of machine-learning or production accuracy.
 
-`RESOLVEAI_AI_MODE=local_demo` is the zero-configuration default. It uses versioned deterministic keyword and symptom rules. The API and UI label this output as a deterministic demo analysis and never imply that an LLM was called.
+### Hosted OpenAI-Compatible
 
-This mode makes recruiter demonstrations predictable and supports offline development, tests, and failure handling without paid services.
+`RESOLVEAI_AI_MODE=openai_compatible` calls a configured `/chat/completions` endpoint with schema response formatting, temperature zero, timeout enforcement, and one constrained repair attempt. It requires `RESOLVEAI_LLM_BASE_URL`, `RESOLVEAI_LLM_MODEL`, and `RESOLVEAI_LLM_API_KEY`.
 
-### Hosted Structured Model
+**Hosted mode transmits bounded ticket context outside the local deployment.** Triage includes bounded title and description. Assessment includes bounded ticket context plus normalized evidence and allowed source IDs. Response generation includes bounded ticket context, probable inference/limitations, and the human-accepted recommendation. Ticket and evidence text are untrusted and the prompt instructs the provider not to follow embedded instructions, but prompt controls are not a security boundary. Provider terms govern processing and retention.
 
-`RESOLVEAI_AI_MODE=openai_compatible` uses an explicitly configured `/chat/completions` endpoint with JSON-schema response formatting, temperature zero, timeout enforcement, and one constrained malformed-output repair attempt.
+The key is represented as `SecretStr`, used for authorization, and not intentionally persisted or logged. Raw prompts and provider responses are not intentionally persisted. Missing configuration fails safely.
 
-Required configuration:
+## Deterministic Policies
 
-- `RESOLVEAI_LLM_BASE_URL`
-- `RESOLVEAI_LLM_MODEL`
-- `RESOLVEAI_LLM_API_KEY`
+Triage returns a category, a category signal confidence, entities, and impact factors. Application code assigns P1-P4; urgency language alone cannot create P1. A human priority override with a reason prevents later analysis from overwriting the chosen priority.
 
-The API key is held as a Pydantic `SecretStr`, sent only in the authorization header, and never persisted or logged. Missing hosted configuration returns a safe service-unavailable response rather than a stack trace.
+Assessment confidence is a versioned deterministic evidence-coverage score based on persisted source types, agreement, and contradictions. **It is not calibrated accuracy, probability that the cause is correct, or provider confidence.** Below the configured threshold the workflow recommends human escalation.
 
-## Structured Signals
+The provider's selected citations must be a subset of normalized evidence supplied to it. The UI presents observed evidence before the probable inference and exposes safe timeline/factor rationale, not hidden chain of thought.
 
-Allowed categories:
+## Execution And Human Boundary
 
-- VPN
-- Network
-- Wi-Fi
-- Email
-- Password
-- Account Access
-- Hardware
-- Software
-- Application
-- Security
-- Other
+Analysis, investigation, and assessment are queued in PostgreSQL, then run as FastAPI in-process background tasks. They use fresh database sessions and retain completed/failed/timed-out lifecycle states. **The task mechanism is non-durable:** an API restart can interrupt work and there is no external worker queue, lease, or automatic crash recovery.
 
-Extracted entities contain user, location, application, device, issue type, affected scope, and urgency. Priority factors contain affected scope, business criticality, production outage, security risk, workaround availability, and information-request status.
+Recommendations are proposals. Ordinary guidance requires an authenticated human decision; deterministically recognized account/access/credential actions require Manager or Administrator. Generated responses can be edited and must be approved. There is **no remediation adapter and no message-delivery adapter**. Approval records `approval_only_not_sent`; resolution and escalation are internal state transitions only.
 
-## Priority Policy
+## Evaluation And Limitations
 
-| Priority | Deterministic conditions |
-|---|---|
-| P1 Critical | Explicit production outage, organization-wide scope, and critical urgency |
-| P2 High | Security risk; multi-user/organization high impact; or business-critical function without a workaround |
-| P3 Medium | Individual or ordinary productivity-impacting incident not matching P1/P2/P4 |
-| P4 Low | Information request or low urgency without critical, outage, or security factors |
+The measured local baseline and its material limitations are in [evaluation-results.md](evaluation-results.md). The synthetic generator and deterministic provider share a domain and are not independent. Hosted behavior is not covered by that baseline. Confidence is not an evaluation metric, retrieval relevance is synthetic, and rubric compliance is not factual correctness.
 
-Urgency language alone cannot create P1. The primary VPN-connected/PayrollPro-unavailable scenario is P2 because a critical business workflow is blocked without a stated workaround, not because the provider arbitrarily selected P2.
+Further limitations:
 
-## Workflow Lifecycle
+- Ticket text can be incomplete, biased, adversarial, or wrong; schemas restrict effects but cannot make conclusions correct.
+- Read-only tools observe a synthetic corpus, not live enterprise systems.
+- Citation existence establishes provenance, not truth or causal sufficiency.
+- The current deployment has one tenant, one API process, process-local rate limits, and no production privacy/compliance controls.
 
-1. An authenticated analyst requests analysis with CSRF protection.
-2. ResolveAI rejects duplicate queued/running analysis for the same ticket.
-3. A queued record, activity event, and audit entry commit atomically.
-4. A bounded background task opens a fresh database session and marks the analysis running.
-5. Provider output is validated and passed to priority policy.
-6. Completed analysis updates ticket category and priority unless a human priority override already exists.
-7. Timeout, unavailable provider, invalid output, and unexpected failure become safe persisted states with stable error codes.
-8. Failed/timed-out analysis can be explicitly retried.
+## Component References
 
-The UI polls only while status is queued or running. It displays provider mode, workflow version, confidence, entities, factors, duration, and manual-review status.
-
-## Human Override
-
-An analyst can override priority only by selecting P1-P4 and supplying a reason. The decision updates the ticket and writes an immutable ticket event and audit record in one transaction. Later analyses retain their own recommendation but cannot overwrite a human override.
-
-## Limitations
-
-- Local rules are deterministic product behavior, not machine-learning accuracy.
-- Hosted integration is tested with mocked HTTP and requires user-supplied compatible credentials.
-- Confidence currently represents category signal strength and has not yet been calibrated against the Phase 3 ground-truth dataset.
-- Background tasks are suitable for the current single-instance portfolio deployment. A production multi-instance deployment would move jobs to a durable worker queue while retaining the same persisted lifecycle.
-- No evidence or root-cause statement is produced in this phase.
+- [Priority and triage details](#deterministic-policies)
+- [RAG architecture](rag-architecture.md)
+- [Investigation workflow](investigation-workflow.md)
+- [Root-cause assessment and confidence factors](root-cause-analysis.md)
+- [Human approval and resolution](human-approval.md)
+- [Architecture and trust boundaries](architecture.md)
+- [Evaluation methodology](evaluation.md)

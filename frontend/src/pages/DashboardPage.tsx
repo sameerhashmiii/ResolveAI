@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { getDashboardOverview } from '../api/dashboard'
 import { TicketTable } from '../components/TicketTable'
+import { ScenarioPicker } from '../components/ScenarioPicker'
 
 export function DashboardPage() {
   const overview = useQuery({
@@ -85,6 +86,18 @@ export function DashboardPage() {
           </section>
         </>
       )}
+      <section
+        className="workspace-scenarios"
+        aria-labelledby="workspace-scenarios-title"
+      >
+        <div className="section-heading">
+          <div>
+            <p className="section-label">Synthetic guided intake</p>
+            <h2 id="workspace-scenarios-title">Explore an evidence scenario</h2>
+          </div>
+        </div>
+        <ScenarioPicker authenticated />
+      </section>
     </div>
   )
 }

@@ -31,6 +31,7 @@ Every report includes eligible denominators, dataset and runner versions, provid
 ## Product Surfaces
 
 - `GET /api/v1/analytics/overview` returns authenticated operational snapshots with source, window, denominator, and methodology labels.
+- `GET /api/v1/analytics/evaluation-summary` returns the latest completed aggregate evaluation to authenticated analysts.
 - `GET /api/v1/analytics/ai-performance` is Manager-only and returns only the latest completed aggregate evaluation.
 - `GET /api/v1/admin/health` is Administrator-only and returns sanitized component status and check latency.
 - `/admin/observability` presents these measurements to administrators and explicitly distinguishes workflow completion from evaluation accuracy.

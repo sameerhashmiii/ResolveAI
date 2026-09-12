@@ -141,7 +141,7 @@ export function AIInvestigation({ ticket, csrfToken }: AIInvestigationProps) {
       <div className="section-heading investigation-heading">
         <div>
           <p className="section-label">Persisted tool observations</p>
-          <h2 id="ai-investigation-title">AI Investigation</h2>
+          <h2 id="ai-investigation-title">Evidence investigation</h2>
         </div>
         {investigation && (
           <span

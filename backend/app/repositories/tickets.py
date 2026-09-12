@@ -4,8 +4,11 @@ from uuid import UUID
 from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.domain import AuditLog, Ticket, TicketEvent, User
+from app.models.assessments import RootCauseAssessment
+from app.models.domain import AIAnalysis, AuditLog, Ticket, TicketEvent, User
 from app.models.enums import TicketPriority, TicketStatus
+from app.models.operational import Investigation
+from app.models.recommendations import Recommendation, SupportResponse
 
 
 class TicketRepository:
@@ -68,6 +71,43 @@ class TicketRepository:
             .order_by(TicketEvent.created_at.asc(), TicketEvent.id.asc())
         )
         return list(rows)
+
+    async def audit(self, ticket_id: UUID) -> list[tuple[AuditLog, User | None]]:
+        statement = (
+            select(AuditLog, User)
+            .outerjoin(User, User.id == AuditLog.actor_id)
+            .where(
+                or_(
+                    (AuditLog.resource_type == "ticket")
+                    & (AuditLog.resource_id == ticket_id),
+                    (AuditLog.resource_type == "ticket.analysis")
+                    & AuditLog.resource_id.in_(
+                        select(AIAnalysis.id).where(AIAnalysis.ticket_id == ticket_id)
+                    ),
+                    (AuditLog.resource_type == "ticket.investigation")
+                    & AuditLog.resource_id.in_(
+                        select(Investigation.id).where(Investigation.ticket_id == ticket_id)
+                    ),
+                    (AuditLog.resource_type == "ticket.root_cause_assessment")
+                    & AuditLog.resource_id.in_(
+                        select(RootCauseAssessment.id).where(
+                            RootCauseAssessment.ticket_id == ticket_id
+                        )
+                    ),
+                    (AuditLog.resource_type == "ticket.recommendation")
+                    & AuditLog.resource_id.in_(
+                        select(Recommendation.id).where(Recommendation.ticket_id == ticket_id)
+                    ),
+                    (AuditLog.resource_type == "ticket.support_response")
+                    & AuditLog.resource_id.in_(
+                        select(SupportResponse.id).where(SupportResponse.ticket_id == ticket_id)
+                    ),
+                )
+            )
+            .order_by(AuditLog.created_at.asc(), AuditLog.id.asc())
+        )
+        rows = await self.db.execute(statement)
+        return [(row[0], row[1]) for row in rows.all()]
 
     async def overview(self) -> tuple[int, int, int, int, list[Ticket]]:
         result = await self.db.execute(

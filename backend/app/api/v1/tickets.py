@@ -1,9 +1,15 @@
 from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, BackgroundTasks, HTTPException, Query, Request, status
+from fastapi import APIRouter, BackgroundTasks, HTTPException, Query, Request, Response, status
 
-from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession, enforce_workflow_rate_limit
+from app.api.dependencies import (
+    CsrfAuth,
+    CurrentAuth,
+    DbSession,
+    ManagerAuth,
+    enforce_workflow_rate_limit,
+)
 from app.models.enums import TicketPriority, TicketStatus
 from app.schemas.analyses import (
     AnalysisAccepted,
@@ -18,6 +24,7 @@ from app.schemas.investigations import (
 )
 from app.schemas.tickets import (
     AssignTicketRequest,
+    TicketAuditRecordResponse,
     TicketCreate,
     TicketEventResponse,
     TicketListResponse,
@@ -213,3 +220,12 @@ async def ticket_events(
         TicketEventResponse.model_validate(event)
         for event in await TicketService(db).events(ticket_id)
     ]
+
+
+@router.get("/{ticket_id}/audit", response_model=list[TicketAuditRecordResponse])
+async def ticket_audit(
+    ticket_id: UUID, auth: ManagerAuth, db: DbSession, response: Response
+) -> list[TicketAuditRecordResponse]:
+    del auth
+    response.headers["Cache-Control"] = "no-store"
+    return await TicketService(db).audit(ticket_id)

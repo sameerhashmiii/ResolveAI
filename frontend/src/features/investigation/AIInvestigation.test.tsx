@@ -286,7 +286,7 @@ describe('AI Investigation', () => {
     renderApp(`/tickets/${ticket.id}`)
 
     const heading = await screen.findByRole('heading', {
-      name: 'AI Investigation',
+      name: 'Evidence investigation',
     })
     const section = heading.closest('section')
     if (!section) throw new Error('Investigation section was not rendered.')

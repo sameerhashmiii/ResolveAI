@@ -36,9 +36,13 @@ jobs:
           enable-cache: true
           cache-dependency-glob: backend/uv.lock
       - run: uv sync --frozen --extra dev
-      - run: uv run --frozen ruff check app tests alembic ../evaluation
+      - run: uv run --frozen ruff check app tests alembic ../evaluation ../scripts/export_openapi.py
       - run: uv run --frozen mypy
       - run: uv run --frozen pytest
+      - name: Verify generated OpenAPI is current
+        run: |
+          uv run --frozen python ../scripts/export_openapi.py
+          git diff --exit-code ../docs/openapi.json
       - name: Export locked runtime dependencies
         run: >-
           uv export --frozen --no-dev --no-emit-project --format requirements-txt

@@ -51,7 +51,7 @@ describe('authentication', () => {
     vi.spyOn(globalThis, 'fetch').mockReturnValue(
       new Promise<Response>(() => undefined),
     )
-    renderApp('/')
+    renderApp('/workspace')
     expect(screen.getByRole('status')).toHaveTextContent(
       'Preparing your workspace',
     )
@@ -65,5 +65,35 @@ describe('authentication', () => {
         screen.getByRole('heading', { name: 'Sign in to ResolveAI' }),
       ).toBeInTheDocument(),
     )
+  })
+
+  it('preserves a guided scenario through demo login', async () => {
+    const user = userEvent.setup()
+    vi.spyOn(globalThis, 'fetch').mockImplementation((input) => {
+      const url = requestUrl(input)
+      if (url.endsWith('/auth/me'))
+        return Promise.resolve(jsonResponse({}, 401))
+      if (url.endsWith('/auth/demo'))
+        return Promise.resolve(jsonResponse(userResponse))
+      return Promise.resolve(jsonResponse({ status: 'ready' }))
+    })
+    renderApp('/login?scenario=dallas-vpn-payrollpro-dns')
+
+    await user.click(
+      await screen.findByRole('button', { name: 'Continue guided demo' }),
+    )
+    expect(await screen.findByLabelText(/Title/)).toHaveValue(
+      'VPN works, PayrollPro does not',
+    )
+  })
+
+  it('renders a clear not-found state', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(jsonResponse({}, 401))
+    renderApp('/missing-dossier')
+    expect(
+      await screen.findByRole('heading', {
+        name: 'This page is not in the dossier.',
+      }),
+    ).toBeInTheDocument()
   })
 })

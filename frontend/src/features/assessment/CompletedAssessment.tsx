@@ -51,9 +51,11 @@ export function CompletedAssessment({
         aria-labelledby="confidence-title"
       >
         <p className="assessment-index">03</p>
-        <h3 id="confidence-title">Confidence</h3>
+        <h3 id="confidence-title">Evidence confidence</h3>
         <strong>{Math.round(assessment.confidence.score * 100)}%</strong>
-        <p>Confidence in this recommendation, not accuracy.</p>
+        <p>
+          Evidence confidence in this recommendation, not measured accuracy.
+        </p>
         <small>{assessment.confidence.description}</small>
       </section>
       <section
@@ -86,7 +88,7 @@ export function CompletedAssessment({
       {assessment.escalation.required && (
         <div className="assessment-warning" role="alert">
           <strong>
-            AI confidence is low. Human investigation recommended.
+            Evidence confidence is low. Human investigation recommended.
           </strong>
           {assessment.escalation.reason && (
             <p>{assessment.escalation.reason}</p>

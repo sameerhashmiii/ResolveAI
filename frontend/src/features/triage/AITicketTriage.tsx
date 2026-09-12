@@ -109,7 +109,7 @@ function CompletedAnalysis({ analysis }: { analysis: Analysis }) {
           <small>
             {confidence === null
               ? 'Confidence not provided'
-              : `${String(confidence)}% confidence`}
+              : `${String(confidence)}% evidence confidence`}
           </small>
         </article>
         <article>

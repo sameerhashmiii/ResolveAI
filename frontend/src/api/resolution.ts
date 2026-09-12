@@ -74,7 +74,7 @@ export function parseSupportResponse(value: unknown): SupportResponse | null {
     typeof value.updated_at !== 'string' ||
     value.approval_semantics !== 'approval_only_not_sent'
   )
-    throw new ApiError('ResolveAI returned an invalid customer response.')
+    throw new ApiError('ResolveAI returned an invalid requester response.')
   return value as unknown as SupportResponse
 }
 
@@ -133,7 +133,7 @@ const responseMutation = (
 ) =>
   guarded(apiRequest<unknown>(path, options), (value) => {
     const parsed = parseSupportResponse(value)
-    if (!parsed) throw new ApiError('ResolveAI returned no customer response.')
+    if (!parsed) throw new ApiError('ResolveAI returned no requester response.')
     return parsed
   })
 

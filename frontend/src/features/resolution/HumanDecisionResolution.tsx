@@ -87,7 +87,7 @@ export function HumanDecisionResolution({
   })
   const generate = useMutation({
     mutationFn: () => generateResponse(ticket.id, requireToken()),
-    onSuccess: success('Customer response draft generated.'),
+    onSuccess: success('Requester response draft generated.'),
     onError: failure,
   })
   const save = useMutation({

@@ -2,7 +2,11 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { jsonResponse, requestUrl } from '../test/renderApp'
 import { getAdminHealth } from './adminHealth'
-import { getAiPerformance, getAnalyticsOverview } from './analytics'
+import {
+  getAiPerformance,
+  getAnalyticsOverview,
+  getEvaluationSummary,
+} from './analytics'
 
 afterEach(() => vi.restoreAllMocks())
 
@@ -17,12 +21,14 @@ describe('observability APIs', () => {
     await Promise.all([
       getAnalyticsOverview(),
       getAiPerformance(),
+      getEvaluationSummary(),
       getAdminHealth(),
     ])
 
     expect(requests.map(({ input }) => requestUrl(input))).toEqual([
       '/api/v1/analytics/overview',
       '/api/v1/analytics/ai-performance',
+      '/api/v1/analytics/evaluation-summary',
       '/api/v1/admin/health',
     ])
     requests.forEach(({ init }) => {

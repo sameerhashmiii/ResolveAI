@@ -335,7 +335,7 @@ describe('Root Cause Assessment', () => {
 
     expect(
       await screen.findByText(
-        'AI confidence is low. Human investigation recommended.',
+        'Evidence confidence is low. Human investigation recommended.',
       ),
     ).toBeInTheDocument()
     expect(screen.getByText('Escalation threshold 80%')).toBeInTheDocument()
@@ -359,7 +359,7 @@ describe('Root Cause Assessment', () => {
     expect(await screen.findByText('42%')).toBeInTheDocument()
     expect(
       screen.queryByText(
-        'AI confidence is low. Human investigation recommended.',
+        'Evidence confidence is low. Human investigation recommended.',
       ),
     ).not.toBeInTheDocument()
     expect(

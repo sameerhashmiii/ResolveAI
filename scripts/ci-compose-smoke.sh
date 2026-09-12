@@ -41,3 +41,9 @@ tr -d '\r' < "$work_dir/asset-headers" | grep -Eiq '^cache-control: public, max-
 
 test "$(docker compose exec -T backend id -u)" -ne 0
 test "$(docker compose exec -T frontend id -u)" -ne 0
+
+for service in migrate ingest operational-ingest evaluation-run; do
+  container="$(docker compose ps --all --quiet "$service")"
+  test -n "$container"
+  test "$(docker inspect --format='{{.State.ExitCode}}' "$container")" = "0"
+done

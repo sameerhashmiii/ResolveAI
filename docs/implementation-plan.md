@@ -1,5 +1,7 @@
 # ResolveAI Implementation Plan
 
+> **Historical planning document:** this file records the original phased design and contains superseded future-tense statements. It is not the authority for the current API, architecture, security posture, or behavior. Use [Architecture](architecture.md), [API](api.md), [AI design](ai-design.md), [Setup](setup.md), and [Evaluation results](evaluation-results.md) for the implemented system.
+
 ## 1. Purpose and Current State
 
 ResolveAI is a portfolio-grade IT support copilot that demonstrates an auditable workflow from ticket intake through human-approved resolution. It is not a chatbot and must not imply that an AI recommendation is a confirmed diagnosis or an action that has already occurred.
@@ -10,7 +12,7 @@ Repository state at planning time:
 - No application code, configuration, tests, or infrastructure currently exists.
 - The requested React, FastAPI, PostgreSQL, pgvector, and Docker stack has no existing compatibility constraints.
 
-This document is the implementation contract. Phase 1 begins only after this plan is reviewed.
+At planning time, this document served as the implementation contract and required review before Phase 1.
 
 ## 2. Scope and Technical Decisions
 

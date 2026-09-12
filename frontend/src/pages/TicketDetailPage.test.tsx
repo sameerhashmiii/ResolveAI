@@ -331,7 +331,7 @@ describe('TicketDetailPage AI triage', () => {
 
     await user.click(
       await screen.findByRole('button', {
-        name: 'Generate customer response',
+        name: 'Generate requester response',
       }),
     )
     const editor = await screen.findByLabelText('Professional response draft')
@@ -407,7 +407,9 @@ describe('TicketDetailPage AI triage', () => {
     expect(
       await within(triage).findByText('VPN / Remote Access'),
     ).toBeInTheDocument()
-    expect(within(triage).getByText('92% confidence')).toBeInTheDocument()
+    expect(
+      within(triage).getByText('92% evidence confidence'),
+    ).toBeInTheDocument()
     expect(within(triage).getByText('P2')).toBeInTheDocument()
     expect(within(triage).getByText('Jordan Lee')).toBeInTheDocument()
     expect(within(triage).getByText('London')).toBeInTheDocument()

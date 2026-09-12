@@ -7,7 +7,28 @@ from app.errors import ConflictError, NotFoundError, ServiceError
 from app.models.domain import AuditLog, Ticket, TicketEvent, User
 from app.models.enums import TicketPriority, TicketStatus
 from app.repositories.tickets import TicketRepository
-from app.schemas.tickets import TicketCreate
+from app.schemas.tickets import AuditActorResponse, TicketAuditRecordResponse, TicketCreate
+
+_AUDIT_METADATA_KEYS = {
+    "action_type",
+    "assigned_to_id",
+    "confidence",
+    "confidence_version",
+    "decision",
+    "destination",
+    "error_code",
+    "evidence_count",
+    "generated_by",
+    "instructions_modified",
+    "limitations",
+    "priority",
+    "requires_escalation",
+    "requires_manual_review",
+    "response_delivery",
+    "response_id",
+    "routing_only",
+    "status",
+}
 
 
 class TicketService:
@@ -96,6 +117,25 @@ class TicketService:
         await self.get(ticket_id)
         return await self.repository.events(ticket_id)
 
+    async def audit(self, ticket_id: UUID) -> list[TicketAuditRecordResponse]:
+        await self.get(ticket_id)
+        records = await self.repository.audit(ticket_id)
+        return [
+            TicketAuditRecordResponse(
+                action=audit.action,
+                resource_type=audit.resource_type,
+                resource_id=audit.resource_id,
+                metadata=self._safe_audit_metadata(audit.data),
+                actor=(
+                    AuditActorResponse(display_name=actor.name, role=actor.role)
+                    if actor is not None
+                    else None
+                ),
+                created_at=audit.created_at,
+            )
+            for audit, actor in records
+        ]
+
     async def override_priority(
         self, ticket_id: UUID, priority: TicketPriority, reason: str, actor: User
     ) -> Ticket:
@@ -124,6 +164,24 @@ class TicketService:
         if assignee is None:
             raise ServiceError("Assignee must be an active user")
         return assignee
+
+    @staticmethod
+    def _safe_audit_metadata(
+        data: dict[str, Any] | None,
+    ) -> dict[str, str | int | float | bool | None]:
+        if not isinstance(data, dict):
+            return {}
+        safe: dict[str, str | int | float | bool | None] = {}
+        for key in _AUDIT_METADATA_KEYS.intersection(data):
+            value = data[key]
+            if (
+                value is None
+                or isinstance(value, (int, float, bool))
+                or isinstance(value, str)
+                and len(value) <= 200
+            ):
+                safe[key] = value
+        return safe
 
     def _record(
         self,

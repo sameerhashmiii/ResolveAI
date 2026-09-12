@@ -16,7 +16,11 @@ export function AppShell() {
     () => window.matchMedia(mobileQuery).matches,
   )
   const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const sidebarRef = useRef<HTMLElement>(null)
   const wasOpen = useRef(false)
+  const initialRoute = useRef(true)
+  const menuOpenRef = useRef(menuOpen)
+  menuOpenRef.current = menuOpen
 
   useEffect(() => {
     const media = window.matchMedia(mobileQuery)
@@ -28,6 +32,28 @@ export function AppShell() {
 
   useEffect(() => {
     setMenuOpen(false)
+    const titles: Record<string, string> = {
+      '/workspace': 'Workspace',
+      '/tickets': 'Tickets',
+      '/tickets/new': 'Create request',
+      '/analytics': 'Evaluation',
+      '/admin/observability': 'Observability',
+    }
+    const section =
+      titles[location.pathname] ??
+      (location.pathname.startsWith('/tickets/') ? 'Ticket' : 'ResolveAI')
+    document.title = `${section} | ResolveAI`
+    if (initialRoute.current) {
+      initialRoute.current = false
+    } else if (!menuOpenRef.current) {
+      window.requestAnimationFrame(() => {
+        const heading = document.querySelector<HTMLElement>('#main-content h1')
+        if (heading) {
+          heading.tabIndex = -1
+          heading.focus()
+        }
+      })
+    }
   }, [location.pathname])
 
   useEffect(() => {
@@ -37,11 +63,39 @@ export function AppShell() {
 
   useEffect(() => {
     if (!menuOpen || !isMobile) return
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setMenuOpen(false)
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const focusable = () =>
+      Array.from(
+        sidebarRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled])',
+        ) ?? [],
+      )
+    sidebarRef.current?.querySelector<HTMLElement>('nav a[href]')?.focus()
+    const handleKeyboard = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        return
+      }
+      if (event.key !== 'Tab') return
+      const items = focusable()
+      if (!items.length) return
+      const first = items.at(0)
+      const last = items.at(-1)
+      if (!first || !last) return
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
     }
-    document.addEventListener('keydown', closeOnEscape)
-    return () => document.removeEventListener('keydown', closeOnEscape)
+    document.addEventListener('keydown', handleKeyboard)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      document.removeEventListener('keydown', handleKeyboard)
+    }
   }, [isMobile, menuOpen])
 
   const signOut = async () => {
@@ -54,6 +108,9 @@ export function AppShell() {
 
   return (
     <div className="product-shell">
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <header className="mobile-header">
         <Brand />
         <button
@@ -76,13 +133,14 @@ export function AppShell() {
         />
       )}
       <aside
+        ref={sidebarRef}
         className={`sidebar ${menuOpen ? 'sidebar--open' : ''}`}
         aria-hidden={isMobile && !menuOpen ? true : undefined}
         inert={isMobile && !menuOpen ? true : undefined}
       >
         <Brand />
         <nav id="primary-navigation" aria-label="Primary navigation">
-          <NavLink to="/" end onClick={() => setMenuOpen(false)}>
+          <NavLink to="/workspace" onClick={() => setMenuOpen(false)}>
             <span aria-hidden="true">01</span> Overview
           </NavLink>
           <NavLink to="/tickets" onClick={() => setMenuOpen(false)}>
@@ -91,12 +149,15 @@ export function AppShell() {
           <NavLink to="/tickets/new" onClick={() => setMenuOpen(false)}>
             <span aria-hidden="true">03</span> New request
           </NavLink>
+          <NavLink to="/analytics" onClick={() => setMenuOpen(false)}>
+            <span aria-hidden="true">04</span> Evaluation
+          </NavLink>
           {user?.role === 'administrator' && (
             <NavLink
               to="/admin/observability"
               onClick={() => setMenuOpen(false)}
             >
-              <span aria-hidden="true">04</span> Observability
+              <span aria-hidden="true">05</span> Observability
             </NavLink>
           )}
         </nav>
@@ -120,7 +181,7 @@ export function AppShell() {
           </button>
         </div>
       </aside>
-      <main className="product-main">
+      <main className="product-main" id="main-content">
         {user?.is_demo && (
           <aside
             className="demo-environment"

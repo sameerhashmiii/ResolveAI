@@ -1,0 +1,31 @@
+name: Documentation issue
+description: Report missing, stale, unclear, or inaccessible documentation
+title: "docs: "
+labels: [documentation]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Document or URL
+      placeholder: docs/api.md
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: Issue
+      description: Quote or describe the stale, incorrect, missing, or inaccessible content.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+      description: Include an implementation reference or source for factual changes when possible.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: This report contains no real/confidential data, credentials, or undisclosed vulnerability details.
+          required: true

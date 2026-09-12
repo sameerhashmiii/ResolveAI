@@ -42,10 +42,10 @@ function setMobile(matches: boolean) {
 
 function renderShell() {
   return render(
-    <MemoryRouter initialEntries={['/']}>
+    <MemoryRouter initialEntries={['/workspace']}>
       <Routes>
         <Route element={<AppShell />}>
-          <Route index element={<h1>Overview page</h1>} />
+          <Route path="workspace" element={<h1>Overview page</h1>} />
           <Route path="tickets" element={<h1>Tickets page</h1>} />
         </Route>
       </Routes>
@@ -69,6 +69,8 @@ describe('AppShell mobile navigation', () => {
     expect(sidebar).toHaveAttribute('aria-hidden', 'true')
     expect(sidebar).toHaveAttribute('inert')
     await user.click(menu)
+    expect(screen.getByRole('link', { name: /Overview/ })).toHaveFocus()
+    expect(document.body).toHaveStyle({ overflow: 'hidden' })
     expect(menu).toHaveAttribute('aria-expanded', 'true')
     expect(sidebar).not.toHaveAttribute('aria-hidden')
     expect(
@@ -78,6 +80,7 @@ describe('AppShell mobile navigation', () => {
     await user.keyboard('{Escape}')
     expect(menu).toHaveAttribute('aria-expanded', 'false')
     expect(menu).toHaveFocus()
+    expect(document.body).not.toHaveStyle({ overflow: 'hidden' })
   })
 
   it('closes on navigation and restores focus to the menu button', async () => {
