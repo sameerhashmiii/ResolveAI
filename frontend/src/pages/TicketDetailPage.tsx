@@ -16,6 +16,7 @@ import {
   StatusBadge,
 } from '../components/TicketTable'
 import { KnowledgeSources } from '../features/knowledge/KnowledgeSources'
+import { AIInvestigation } from '../features/investigation/AIInvestigation'
 import { AITicketTriage } from '../features/triage/AITicketTriage'
 
 export function TicketDetailPage() {
@@ -132,6 +133,7 @@ export function TicketDetailPage() {
           </section>
           <AITicketTriage ticket={item} csrfToken={csrfToken} />
           <KnowledgeSources ticket={item} isAuthenticated={Boolean(user)} />
+          <AIInvestigation ticket={item} csrfToken={csrfToken} />
           <section className="content-card">
             <div className="section-heading">
               <div>

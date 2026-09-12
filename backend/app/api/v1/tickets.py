@@ -10,6 +10,11 @@ from app.schemas.analyses import (
     AnalysisResponse,
     PriorityOverrideRequest,
 )
+from app.schemas.investigations import (
+    InvestigationAccepted,
+    InvestigationResponse,
+    SimilarTicketResponse,
+)
 from app.schemas.tickets import (
     AssignTicketRequest,
     TicketCreate,
@@ -19,9 +24,52 @@ from app.schemas.tickets import (
     TicketUpdate,
 )
 from app.services.analyses import AnalysisService, analysis_response, run_analysis_job
+from app.services.investigations import (
+    InvestigationService,
+    investigation_response,
+    run_investigation_job,
+)
+from app.services.similar_tickets import SimilarTicketService
 from app.services.tickets import TicketService
 
 router = APIRouter(prefix="/tickets", tags=["tickets"])
+
+
+@router.get("/{ticket_id}/similar", response_model=list[SimilarTicketResponse])
+async def similar_tickets(
+    ticket_id: UUID,
+    auth: CurrentAuth,
+    db: DbSession,
+    top_k: Annotated[int, Query(ge=1, le=10)] = 5,
+) -> list[SimilarTicketResponse]:
+    del auth
+    ticket = await TicketService(db).get(ticket_id)
+    return await SimilarTicketService(db).search(ticket.title, ticket.description, top_k)
+
+
+@router.post(
+    "/{ticket_id}/investigations",
+    response_model=InvestigationAccepted,
+    status_code=status.HTTP_202_ACCEPTED,
+)
+async def request_investigation(
+    ticket_id: UUID,
+    background_tasks: BackgroundTasks,
+    auth: CsrfAuth,
+    db: DbSession,
+) -> InvestigationAccepted:
+    investigation = await InvestigationService(db).request(ticket_id, auth.user)
+    background_tasks.add_task(run_investigation_job, investigation.id)
+    return InvestigationAccepted(investigation_id=investigation.id, status=investigation.status)
+
+
+@router.get("/{ticket_id}/investigations/latest", response_model=InvestigationResponse | None)
+async def latest_investigation(
+    ticket_id: UUID, auth: CurrentAuth, db: DbSession
+) -> InvestigationResponse | None:
+    del auth
+    investigation = await InvestigationService(db).latest(ticket_id)
+    return investigation_response(investigation) if investigation is not None else None
 
 
 @router.post(

@@ -299,9 +299,6 @@ export function AITicketTriage({ ticket, csrfToken }: AITicketTriageProps) {
       {(analysis?.status === 'completed' || ticket.priority) && (
         <PriorityOverrideForm ticket={ticket} csrfToken={csrfToken} />
       )}
-      <p className="triage-later-note">
-        Evidence-backed investigation is planned for a later phase.
-      </p>
     </section>
   )
 }

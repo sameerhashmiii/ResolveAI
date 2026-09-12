@@ -134,3 +134,62 @@ export interface PriorityOverrideInput {
   priority: TicketPriority
   reason: string
 }
+
+export type InvestigationStatus = AnalysisStatus
+
+export interface InvestigationStep {
+  id: string
+  step_key: string
+  step_order: number
+  label: string
+  tool_name: string | null
+  status: string
+  source_count: number
+  duration_ms: number
+  sanitized_inputs: Record<string, unknown>
+  result: Record<string, unknown> | null
+  created_at: string
+}
+
+export interface Investigation {
+  id: string
+  ticket_id: string
+  analysis_id: string | null
+  requested_by_id: string
+  status: InvestigationStatus
+  workflow_version: string
+  reference_time: string
+  reference_basis: 'ticket_created_at' | 'curated_demo_scenario'
+  simulated_reference: boolean
+  planned_tools: Array<Record<string, unknown>>
+  limitations: string[]
+  error_code: string | null
+  started_at: string | null
+  completed_at: string | null
+  duration_ms: number | null
+  created_at: string
+  steps: InvestigationStep[]
+}
+
+export interface InvestigationAccepted {
+  investigation_id: string
+  status: 'queued'
+}
+
+export interface SimilarTicket {
+  source_id: string
+  title: string
+  description: string
+  category: string | null
+  priority: string | null
+  status: string
+  resolution: string | null
+  resolution_time_minutes: number | null
+  opened_at: string
+  similarity: number
+  incident_id: string | null
+}
+
+export interface SimilarTicketsResponse {
+  items: SimilarTicket[]
+}

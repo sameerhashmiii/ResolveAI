@@ -88,6 +88,8 @@ function setupFetch(
         return Promise.resolve(
           jsonResponse({ analysis_id: 'analysis-new', status: 'queued' }, 202),
         )
+      if (url.endsWith(`/tickets/${ticket.id}/investigations/latest`))
+        return Promise.resolve(jsonResponse(null))
       if (url.endsWith('/analyses/analysis-new'))
         return Promise.resolve(
           jsonResponse(

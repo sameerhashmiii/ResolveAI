@@ -4,7 +4,7 @@ AI-powered IT support ticket copilot designed around auditable evidence, determi
 
 ## Project Status
 
-ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 5 adds source-backed knowledge ingestion and hybrid pgvector retrieval; incident correlation and root-cause analysis are intentionally not represented as complete yet.
+ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 6 adds semantic historical-ticket search and a bounded LangGraph investigation over source-backed operational tools; root-cause inference is intentionally not represented as complete yet.
 
 Current product foundation:
 
@@ -26,6 +26,9 @@ Current product foundation:
 - Human priority override with reason, activity event, and audit record
 - Idempotent Markdown ingestion with 300 source-preserving chunks and pgvector embeddings
 - Hybrid vector/lexical retrieval with inspectable source excerpts and provenance
+- Idempotent import of 1,000 historical tickets, 25 incidents, 10,800 telemetry observations, and 2,767 logs
+- Bounded LangGraph investigation with seven read-only tools and a persisted auditable timeline
+- Similar-ticket, system-status, telemetry, log, incident, history, and knowledge observations
 - Backend and frontend tests, linting, formatting, and strict type checks
 
 The ticket detail page clearly labels deterministic demo analysis versus hosted model output. ResolveAI does not display fabricated retrieval evidence, root causes, or quality metrics.
@@ -100,6 +103,20 @@ RESOLVEAI_KNOWLEDGE_DATA_DIR=../data/knowledge \
 ```
 
 See [the RAG architecture](docs/rag-architecture.md) for chunking, ranking, citation integrity, and limitations.
+
+## Investigation Workflow
+
+After structured triage completes, an analyst can start a bounded investigation. ResolveAI plans at most ten read-only tool calls and records each result as an auditable step:
+
+- Search approved knowledge
+- Search semantically similar resolved tickets
+- Read current ticket history
+- Inspect synthetic service status
+- Inspect bounded telemetry windows
+- Search bounded synthetic logs
+- Read related public incident facts
+
+The primary VPN/PayrollPro scenario uses a clearly labeled curated synthetic reference time and collects both healthy VPN observations and degraded DNS observations. Phase 6 displays facts only and does not state a root cause, confidence, or recommendation. See [the investigation workflow](docs/investigation-workflow.md).
 
 ## Local Development
 

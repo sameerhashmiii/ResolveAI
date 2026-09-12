@@ -13,6 +13,13 @@ def default_knowledge_data_dir() -> Path:
     return Path(__file__).resolve().parents[2] / "data" / "knowledge"
 
 
+def default_operational_data_dir() -> Path:
+    container_path = Path("/data")
+    if container_path.is_dir():
+        return container_path
+    return Path(__file__).resolve().parents[2] / "data"
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_prefix="RESOLVEAI_",
@@ -22,7 +29,7 @@ class Settings(BaseSettings):
     )
 
     app_name: str = "ResolveAI"
-    app_version: str = "0.5.0"
+    app_version: str = "0.6.0"
     environment: str = "production"
     log_level: str = "INFO"
     database_url: str = Field(
@@ -38,6 +45,8 @@ class Settings(BaseSettings):
     llm_api_key: SecretStr | None = None
     llm_model: str | None = None
     knowledge_data_dir: Path = Field(default_factory=default_knowledge_data_dir)
+    operational_data_dir: Path = Field(default_factory=default_operational_data_dir)
+    investigation_timeout_seconds: float = Field(default=30.0, gt=0, le=300)
 
 
 @lru_cache

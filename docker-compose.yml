@@ -49,6 +49,8 @@ services:
         condition: service_completed_successfully
       ingest:
         condition: service_completed_successfully
+      operational-ingest:
+        condition: service_completed_successfully
     healthcheck:
       test:
         - CMD
@@ -71,6 +73,23 @@ services:
       RESOLVEAI_DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-resolveai}:${POSTGRES_PASSWORD:-resolveai_local}@database:5432/${POSTGRES_DB:-resolveai}
       RESOLVEAI_ENVIRONMENT: ${RESOLVEAI_ENVIRONMENT:-development}
       RESOLVEAI_KNOWLEDGE_DATA_DIR: /data/knowledge
+    volumes:
+      - ./data:/data:ro
+    depends_on:
+      database:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    restart: "no"
+
+  operational-ingest:
+    build:
+      context: ./backend
+    command: ["python", "-m", "app.demo.ingest"]
+    environment:
+      RESOLVEAI_DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-resolveai}:${POSTGRES_PASSWORD:-resolveai_local}@database:5432/${POSTGRES_DB:-resolveai}
+      RESOLVEAI_ENVIRONMENT: ${RESOLVEAI_ENVIRONMENT:-development}
+      RESOLVEAI_OPERATIONAL_DATA_DIR: /data
     volumes:
       - ./data:/data:ro
     depends_on:

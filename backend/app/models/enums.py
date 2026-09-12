@@ -29,6 +29,21 @@ class AnalysisStatus(StrEnum):
     TIMED_OUT = "timed_out"
 
 
+class InvestigationStatus(StrEnum):
+    QUEUED = "queued"
+    RUNNING = "running"
+    COMPLETED = "completed"
+    FAILED = "failed"
+    TIMED_OUT = "timed_out"
+
+
+class InvestigationStepStatus(StrEnum):
+    STARTED = "started"
+    COMPLETED = "completed"
+    SKIPPED = "skipped"
+    FAILED = "failed"
+
+
 _ROLE_ORDER = {
     Role.SUPPORT_ANALYST: 0,
     Role.MANAGER: 1,
