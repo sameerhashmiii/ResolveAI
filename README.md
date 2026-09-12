@@ -4,7 +4,7 @@ AI-powered IT support ticket copilot designed around auditable evidence, determi
 
 ## Project Status
 
-ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 9 adds reproducible synthetic evaluation, stored AI performance metrics, sourced operational analytics, and administrator observability.
+ResolveAI is being built incrementally against the reviewed [implementation plan](docs/implementation-plan.md). Phase 10 adds rate limiting, secure response policy, application recovery boundaries, real browser coverage, frozen non-root containers, and continuous integration.
 
 Current product foundation:
 
@@ -38,6 +38,11 @@ Current product foundation:
 - Reproducible 150-case evaluation across classification, priority, retrieval, and response rubrics
 - Persisted aggregate evaluation runs with dataset checksums and documented methodology
 - Role-controlled operational analytics and sanitized administrator health visibility
+- Bounded authentication and AI-workflow rate limits with safe retry responses
+- Secure API/nginx headers, trusted hosts, sensitive-response no-store policy, and safe failures
+- Frozen lockfile-based, non-root, read-only backend and frontend containers
+- Desktop and mobile Playwright acceptance coverage against the real Docker stack
+- GitHub Actions for tests, types, lint, audits, data, migrations, evaluation, images, and Compose
 - Backend and frontend tests, linting, formatting, and strict type checks
 
 The ticket detail page clearly labels deterministic demo analysis versus hosted model output. ResolveAI does not display fabricated retrieval evidence, root causes, or quality metrics.
@@ -160,23 +165,30 @@ RESOLVEAI_DATABASE_URL=postgresql+asyncpg://resolveai:resolveai_local@localhost:
 
 Administrators can review sourced demo workflow measurements, the latest completed evaluation, and sanitized component health at `/admin/observability`. Workflow completion is explicitly not presented as AI accuracy. See [evaluation and observability](docs/evaluation.md) for metric definitions, provenance, limitations, and the reproducibility contract.
 
+## Security And CI
+
+The API applies trusted-host validation, bounded authentication and workflow quotas, safe request IDs, restrictive browser headers, sensitive-response `no-store`, and HSTS only for secure production deployments. The current limiter is intentionally process-local because the deployment runs one API worker; a multi-worker or horizontally scaled deployment must replace it with a shared atomic store.
+
+The frontend runs as unprivileged nginx on port 8080 inside its container with a read-only root filesystem, dedicated health endpoint, restrictive content policy, immutable hashed assets, and non-cached HTML. React and router recovery boundaries prevent unexpected rendering failures from blanking the workspace or exposing exception details.
+
+GitHub Actions reproduces backend and frontend quality gates, dependency audits, deterministic data, PostgreSQL migration round-trips, knowledge ingestion, the full Phase 9 evaluation, locked image builds, hardened Compose smoke checks, Playwright, and CodeQL. See [Phase 10 hardening](docs/security-hardening.md).
+
 ## Local Development
 
 Backend requires Python 3.12:
 
 ```bash
 cd backend
-python3.12 -m venv .venv
-.venv/bin/pip install -e '.[dev]'
-RESOLVEAI_DATABASE_URL=postgresql+asyncpg://resolveai:resolveai_local@localhost:5432/resolveai .venv/bin/alembic upgrade head
-RESOLVEAI_DATABASE_URL=postgresql+asyncpg://resolveai:resolveai_local@localhost:5432/resolveai RESOLVEAI_SESSION_COOKIE_SECURE=false .venv/bin/uvicorn app.main:app --reload
+uv sync --frozen --extra dev
+RESOLVEAI_DATABASE_URL=postgresql+asyncpg://resolveai:resolveai_local@localhost:5432/resolveai uv run alembic upgrade head
+RESOLVEAI_DATABASE_URL=postgresql+asyncpg://resolveai:resolveai_local@localhost:5432/resolveai RESOLVEAI_SESSION_COOKIE_SECURE=false uv run uvicorn app.main:app --reload
 ```
 
 Frontend requires Node.js 22 or later:
 
 ```bash
 cd frontend
-npm install
+npm ci
 npm run dev
 ```
 
@@ -184,9 +196,9 @@ npm run dev
 
 ```bash
 cd backend
-.venv/bin/ruff check .
-.venv/bin/mypy app tests
-.venv/bin/pytest
+uv run --frozen ruff check app tests alembic ../evaluation
+uv run --frozen mypy
+uv run --frozen pytest
 ```
 
 ```bash
@@ -194,7 +206,9 @@ cd frontend
 npm run format
 npm run lint
 npm test
+npm run typecheck
 npm run build
+npm run test:e2e
 ```
 
 ## Architecture

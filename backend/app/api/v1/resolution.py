@@ -1,8 +1,8 @@
 from uuid import UUID
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
 
-from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession
+from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession, enforce_workflow_rate_limit
 from app.schemas.outcomes import EscalateTicketRequest, ResolveTicketRequest
 from app.schemas.recommendations import RecommendationDecision, RecommendationResponse
 from app.schemas.responses import ResponseEdit, ResponseRejection, SupportResponseView
@@ -42,8 +42,9 @@ async def decide_recommendation(
 
 @router.post("/tickets/{ticket_id}/responses", response_model=SupportResponseView)
 async def generate_response(
-    ticket_id: UUID, auth: CsrfAuth, db: DbSession
+    ticket_id: UUID, auth: CsrfAuth, db: DbSession, request: Request
 ) -> SupportResponseView:
+    await enforce_workflow_rate_limit(request, auth, "/api/v1/tickets/{ticket_id}/responses")
     value = await ResponseService(db).generate(ticket_id, auth.user)
     return SupportResponseView.model_validate(value)
 

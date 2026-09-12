@@ -1,8 +1,8 @@
 from uuid import UUID
 
-from fastapi import APIRouter, BackgroundTasks, status
+from fastapi import APIRouter, BackgroundTasks, Request, status
 
-from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession
+from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession, enforce_workflow_rate_limit
 from app.schemas.assessments import AssessmentAccepted, AssessmentExplanation, AssessmentResponse
 from app.services.assessments import AssessmentService, assessment_response, run_assessment_job
 
@@ -36,7 +36,9 @@ async def retry_assessment(
     background_tasks: BackgroundTasks,
     auth: CsrfAuth,
     db: DbSession,
+    request: Request,
 ) -> AssessmentAccepted:
+    await enforce_workflow_rate_limit(request, auth, "/api/v1/assessments/{assessment_id}/retry")
     assessment = await AssessmentService(db).retry(assessment_id, auth.user)
     background_tasks.add_task(run_assessment_job, assessment.id)
     return AssessmentAccepted(assessment_id=assessment.id, status=assessment.status)

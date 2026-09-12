@@ -1,8 +1,8 @@
 from uuid import UUID
 
-from fastapi import APIRouter, BackgroundTasks, status
+from fastapi import APIRouter, BackgroundTasks, Request, status
 
-from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession
+from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession, enforce_workflow_rate_limit
 from app.schemas.analyses import AnalysisAccepted, AnalysisResponse
 from app.services.analyses import AnalysisService, analysis_response, run_analysis_job
 
@@ -25,7 +25,9 @@ async def retry_analysis(
     background_tasks: BackgroundTasks,
     auth: CsrfAuth,
     db: DbSession,
+    request: Request,
 ) -> AnalysisAccepted:
+    await enforce_workflow_rate_limit(request, auth, "/api/v1/analyses/{analysis_id}/retry")
     analysis = await AnalysisService(db).retry(analysis_id, auth.user)
     background_tasks.add_task(run_analysis_job, analysis.id)
     return AnalysisAccepted(analysis_id=analysis.id, status=analysis.status)

@@ -10,7 +10,7 @@ from app.db.session import get_db_session
 from app.models.domain import Session, User
 from app.models.enums import Role, role_allows
 from app.repositories.auth import AuthRepository
-from app.security import hash_session_token
+from app.security import RATE_LIMIT_DETAIL, FixedWindowRateLimiter, hash_session_token
 
 DbSession = Annotated[AsyncSession, Depends(get_db_session)]
 
@@ -71,6 +71,39 @@ async def require_csrf(
 
 
 CsrfAuth = Annotated[AuthContext, Depends(require_csrf)]
+
+
+async def enforce_auth_rate_limit(request: Request) -> None:
+    client_host = request.client.host if request.client is not None else "unknown"
+    settings: Settings = request.app.state.settings
+    limiter: FixedWindowRateLimiter = request.app.state.rate_limiter
+    retry_after = await limiter.check(
+        f"auth:{client_host}",
+        limit=settings.auth_rate_limit,
+        window_seconds=settings.auth_rate_window_seconds,
+    )
+    if retry_after is not None:
+        raise HTTPException(
+            status.HTTP_429_TOO_MANY_REQUESTS,
+            RATE_LIMIT_DETAIL,
+            headers={"Retry-After": str(retry_after)},
+        )
+
+
+async def enforce_workflow_rate_limit(request: Request, auth: AuthContext, route: str) -> None:
+    settings: Settings = request.app.state.settings
+    limiter: FixedWindowRateLimiter = request.app.state.rate_limiter
+    retry_after = await limiter.check(
+        f"workflow:{auth.user.id}:{route}",
+        limit=settings.workflow_rate_limit,
+        window_seconds=settings.workflow_rate_window_seconds,
+    )
+    if retry_after is not None:
+        raise HTTPException(
+            status.HTTP_429_TOO_MANY_REQUESTS,
+            RATE_LIMIT_DETAIL,
+            headers={"Retry-After": str(retry_after)},
+        )
 
 
 async def require_manager_csrf(auth: CsrfAuth) -> AuthContext:

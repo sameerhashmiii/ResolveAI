@@ -1,14 +1,48 @@
-import { useState } from 'react'
-import { NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../auth/AuthContext'
 import { Brand } from './Brand'
 import { PlatformHealth } from './PlatformHealth'
 
+const mobileQuery = '(max-width: 920px)'
+
 export function AppShell() {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(
+    () => window.matchMedia(mobileQuery).matches,
+  )
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const wasOpen = useRef(false)
+
+  useEffect(() => {
+    const media = window.matchMedia(mobileQuery)
+    const update = () => setIsMobile(media.matches)
+    update()
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location.pathname])
+
+  useEffect(() => {
+    if (wasOpen.current && !menuOpen) menuButtonRef.current?.focus()
+    wasOpen.current = menuOpen
+  }, [menuOpen])
+
+  useEffect(() => {
+    if (!menuOpen || !isMobile) return
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+    document.addEventListener('keydown', closeOnEscape)
+    return () => document.removeEventListener('keydown', closeOnEscape)
+  }, [isMobile, menuOpen])
 
   const signOut = async () => {
     try {
@@ -23,6 +57,7 @@ export function AppShell() {
       <header className="mobile-header">
         <Brand />
         <button
+          ref={menuButtonRef}
           className="menu-button"
           type="button"
           aria-expanded={menuOpen}
@@ -32,7 +67,19 @@ export function AppShell() {
           Menu
         </button>
       </header>
-      <aside className={`sidebar ${menuOpen ? 'sidebar--open' : ''}`}>
+      {isMobile && menuOpen && (
+        <button
+          className="menu-backdrop"
+          type="button"
+          aria-label="Close navigation menu"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+      <aside
+        className={`sidebar ${menuOpen ? 'sidebar--open' : ''}`}
+        aria-hidden={isMobile && !menuOpen ? true : undefined}
+        inert={isMobile && !menuOpen ? true : undefined}
+      >
         <Brand />
         <nav id="primary-navigation" aria-label="Primary navigation">
           <NavLink to="/" end onClick={() => setMenuOpen(false)}>

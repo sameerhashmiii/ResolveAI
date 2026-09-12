@@ -8,12 +8,14 @@ from uuid import uuid4
 from fastapi import FastAPI, Request, Response, status
 from fastapi.responses import JSONResponse
 from starlette.middleware.base import RequestResponseEndpoint
+from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from app.api.router import api_router
-from app.config import get_settings
+from app.config import Settings, get_settings
 from app.db.session import engine
 from app.errors import ServiceError
 from app.logging import configure_logging
+from app.security import FixedWindowRateLimiter
 
 settings = get_settings()
 configure_logging(settings.log_level)
@@ -39,12 +41,20 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
     await engine.dispose()
 
 
-def create_app() -> FastAPI:
+def create_app(app_settings: Settings | None = None) -> FastAPI:
+    effective_settings = app_settings or settings
     application = FastAPI(
-        title=f"{settings.app_name} API",
-        version=settings.app_version,
+        title=f"{effective_settings.app_name} API",
+        version=effective_settings.app_version,
         description="ResolveAI support operations API",
         lifespan=lifespan,
+    )
+    application.state.settings = effective_settings
+    application.state.rate_limiter = FixedWindowRateLimiter()
+    if app_settings is not None:
+        application.dependency_overrides[get_settings] = lambda: effective_settings
+    application.add_middleware(
+        TrustedHostMiddleware, allowed_hosts=effective_settings.trusted_hosts
     )
 
     @application.exception_handler(ServiceError)
@@ -74,8 +84,33 @@ def create_app() -> FastAPI:
                 content={"detail": "Internal server error"},
             )
         response.headers["X-Request-ID"] = request_id
-        if request.url.path.startswith(("/api/v1/analytics/", "/api/v1/admin/")):
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["Referrer-Policy"] = "no-referrer"
+        response.headers["Permissions-Policy"] = (
+            "accelerometer=(), camera=(), geolocation=(), gyroscope=(), "
+            "microphone=(), payment=(), usb=()"
+        )
+        if request.url.path in {"/docs", "/redoc"} or request.url.path.startswith("/docs/"):
+            response.headers["Content-Security-Policy"] = (
+                "default-src 'none'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; "
+                "style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; "
+                "img-src 'self' data: https://fastapi.tiangolo.com; connect-src 'self'; "
+                "frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
+            )
+        else:
+            response.headers["Content-Security-Policy"] = (
+                "default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
+            )
+        if request.url.path.startswith(
+            ("/api/v1/auth", "/api/v1/analytics/", "/api/v1/admin/")
+        ):
             response.headers["Cache-Control"] = "no-store"
+        if (
+            effective_settings.environment.lower() == "production"
+            and effective_settings.session_cookie_secure
+        ):
+            response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
         logger.info(
             "Request completed",
             extra={

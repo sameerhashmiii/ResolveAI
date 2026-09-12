@@ -7,6 +7,7 @@ import {
 
 import { useAuth } from './auth/AuthContext'
 import { AppShell } from './components/AppShell'
+import { RouterErrorRecovery } from './components/ErrorRecovery'
 import { AdminObservabilityPage } from './pages/AdminObservabilityPage'
 import { CreateTicketPage } from './pages/CreateTicketPage'
 import { DashboardPage } from './pages/DashboardPage'
@@ -44,10 +45,15 @@ export function AdministratorRoute() {
 }
 
 export const routes: RouteObject[] = [
-  { path: '/login', element: <LoginPage /> },
+  {
+    path: '/login',
+    element: <LoginPage />,
+    errorElement: <RouterErrorRecovery />,
+  },
   {
     path: '/',
     element: <ProtectedRoute />,
+    errorElement: <RouterErrorRecovery />,
     children: [
       { index: true, element: <DashboardPage /> },
       { path: 'tickets', element: <TicketsPage /> },

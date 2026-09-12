@@ -338,7 +338,7 @@ describe('TicketDetailPage AI triage', () => {
     await user.clear(editor)
     await user.type(
       editor,
-      'Hello Jordan, your VPN access has now been restored.',
+      'Hello Jordan, based on evidence, the VPN issue appears to require the approved profile recovery steps. No remediation action has been completed or sent by this response.',
     )
     await user.click(screen.getByRole('button', { name: 'Save draft' }))
     await screen.findByText('Response draft saved.')

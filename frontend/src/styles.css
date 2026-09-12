@@ -228,6 +228,9 @@ h3 {
 .mobile-header {
   display: none;
 }
+.menu-backdrop {
+  display: none;
+}
 .product-main {
   min-height: 100vh;
   margin-left: 252px;
@@ -2219,6 +2222,25 @@ select:focus {
   background: var(--cream);
   font-size: 13px;
 }
+.error-recovery {
+  display: grid;
+  min-height: 100vh;
+  padding: 24px;
+  place-items: center;
+  background: var(--cream);
+}
+.error-recovery__card {
+  width: min(560px, 100%);
+  padding: clamp(28px, 6vw, 54px);
+}
+.error-recovery__card h1 {
+  margin-bottom: 16px;
+  font-size: clamp(38px, 7vw, 58px);
+}
+.error-recovery__card > p:not(.section-label) {
+  color: var(--muted);
+  line-height: 1.65;
+}
 
 @media (max-width: 920px) {
   .sidebar {
@@ -2228,6 +2250,17 @@ select:focus {
   .sidebar--open {
     transform: translateX(0);
     box-shadow: 18px 0 60px rgba(0, 0, 0, 0.25);
+  }
+  .menu-backdrop {
+    position: fixed;
+    z-index: 14;
+    inset: 0;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: rgba(10, 43, 37, 0.42);
+    cursor: pointer;
   }
   .sidebar > .brand {
     display: none;

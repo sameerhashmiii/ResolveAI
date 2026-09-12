@@ -1,8 +1,8 @@
 from uuid import UUID
 
-from fastapi import APIRouter, BackgroundTasks, status
+from fastapi import APIRouter, BackgroundTasks, Request, status
 
-from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession
+from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession, enforce_workflow_rate_limit
 from app.schemas.investigations import InvestigationAccepted, InvestigationResponse
 from app.services.investigations import (
     InvestigationService,
@@ -31,7 +31,11 @@ async def retry_investigation(
     background_tasks: BackgroundTasks,
     auth: CsrfAuth,
     db: DbSession,
+    request: Request,
 ) -> InvestigationAccepted:
+    await enforce_workflow_rate_limit(
+        request, auth, "/api/v1/investigations/{investigation_id}/retry"
+    )
     investigation = await InvestigationService(db).retry(investigation_id, auth.user)
     background_tasks.add_task(run_investigation_job, investigation.id)
     return InvestigationAccepted(investigation_id=investigation.id, status=investigation.status)

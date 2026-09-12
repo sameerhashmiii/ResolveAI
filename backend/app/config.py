@@ -1,8 +1,9 @@
+import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Literal
 
-from pydantic import Field, SecretStr
+from pydantic import Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -29,7 +30,7 @@ class Settings(BaseSettings):
     )
 
     app_name: str = "ResolveAI"
-    app_version: str = "0.9.0"
+    app_version: str = "0.10.0"
     environment: str = "production"
     log_level: str = "INFO"
     database_url: str = Field(
@@ -49,6 +50,33 @@ class Settings(BaseSettings):
     investigation_timeout_seconds: float = Field(default=30.0, gt=0, le=300)
     root_cause_timeout_seconds: float = Field(default=30.0, gt=0, le=300)
     root_cause_confidence_threshold: float = Field(default=0.70, ge=0, le=1)
+    auth_rate_limit: int = Field(default=10, ge=1, le=10_000)
+    auth_rate_window_seconds: int = Field(default=60, ge=1, le=86_400)
+    workflow_rate_limit: int = Field(default=20, ge=1, le=10_000)
+    workflow_rate_window_seconds: int = Field(default=60, ge=1, le=86_400)
+    trusted_hosts: list[str] = Field(
+        default_factory=lambda: ["localhost", "127.0.0.1", "test", "backend"]
+    )
+
+    @field_validator("trusted_hosts")
+    @classmethod
+    def validate_trusted_hosts(cls, hosts: list[str]) -> list[str]:
+        if not hosts:
+            raise ValueError("trusted_hosts must not be empty")
+        for host in hosts:
+            candidate = host.removeprefix("*.")
+            if (
+                not candidate
+                or host == "*"
+                or not re.fullmatch(r"[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?", candidate)
+                or ".." in candidate
+                or any(
+                    label.startswith("-") or label.endswith("-")
+                    for label in candidate.split(".")
+                )
+            ):
+                raise ValueError("trusted_hosts contains an invalid hostname")
+        return hosts
 
 
 @lru_cache

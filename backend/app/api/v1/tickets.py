@@ -1,9 +1,9 @@
 from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, BackgroundTasks, HTTPException, Query, status
+from fastapi import APIRouter, BackgroundTasks, HTTPException, Query, Request, status
 
-from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession
+from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession, enforce_workflow_rate_limit
 from app.models.enums import TicketPriority, TicketStatus
 from app.schemas.analyses import (
     AnalysisAccepted,
@@ -47,7 +47,9 @@ async def request_assessment(
     background_tasks: BackgroundTasks,
     auth: CsrfAuth,
     db: DbSession,
+    request: Request,
 ) -> AssessmentAccepted:
+    await enforce_workflow_rate_limit(request, auth, "/api/v1/tickets/{ticket_id}/assessments")
     assessment = await AssessmentService(db).request(ticket_id, auth.user)
     background_tasks.add_task(run_assessment_job, assessment.id)
     return AssessmentAccepted(assessment_id=assessment.id, status=assessment.status)
@@ -85,7 +87,9 @@ async def request_investigation(
     background_tasks: BackgroundTasks,
     auth: CsrfAuth,
     db: DbSession,
+    request: Request,
 ) -> InvestigationAccepted:
+    await enforce_workflow_rate_limit(request, auth, "/api/v1/tickets/{ticket_id}/investigations")
     investigation = await InvestigationService(db).request(ticket_id, auth.user)
     background_tasks.add_task(run_investigation_job, investigation.id)
     return InvestigationAccepted(investigation_id=investigation.id, status=investigation.status)
@@ -110,7 +114,9 @@ async def request_analysis(
     background_tasks: BackgroundTasks,
     auth: CsrfAuth,
     db: DbSession,
+    request: Request,
 ) -> AnalysisAccepted:
+    await enforce_workflow_rate_limit(request, auth, "/api/v1/tickets/{ticket_id}/analyses")
     analysis = await AnalysisService(db).request(ticket_id, auth.user)
     background_tasks.add_task(run_analysis_job, analysis.id)
     return AnalysisAccepted(analysis_id=analysis.id, status=analysis.status)

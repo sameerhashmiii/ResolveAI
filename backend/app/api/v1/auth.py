@@ -1,8 +1,8 @@
 from typing import Annotated
 
-from fastapi import APIRouter, Depends, Response, status
+from fastapi import APIRouter, Depends, Request, Response, status
 
-from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession
+from app.api.dependencies import CsrfAuth, CurrentAuth, DbSession, enforce_auth_rate_limit
 from app.config import Settings, get_settings
 from app.schemas.auth import AuthResponse, LoginRequest, UserResponse
 from app.services.auth import AuthService, CreatedSession
@@ -28,7 +28,9 @@ async def login(
     response: Response,
     db: DbSession,
     settings: Annotated[Settings, Depends(get_settings)],
+    request: Request,
 ) -> AuthResponse:
+    await enforce_auth_rate_limit(request)
     created = await AuthService(db, settings).login(payload.email, payload.password)
     _set_cookie(response, created, settings)
     return AuthResponse(
@@ -41,7 +43,9 @@ async def demo(
     response: Response,
     db: DbSession,
     settings: Annotated[Settings, Depends(get_settings)],
+    request: Request,
 ) -> AuthResponse:
+    await enforce_auth_rate_limit(request)
     created = await AuthService(db, settings).demo()
     _set_cookie(response, created, settings)
     return AuthResponse(
